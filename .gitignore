@@ -1,0 +1,7 @@
+/nbproject
+/target/
+parse-jdt/target/
+parse-javaparser/target/
+**/target/
+.DS_Store
+nb-configuration.xml
