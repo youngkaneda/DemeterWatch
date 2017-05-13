@@ -18,7 +18,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 public class ListagemDasChamadasDosMetodos {
 
     public static void main(String[] args) throws IOException {
-        String file = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/A.java";
+        String file = "C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src/main/java/com/mycompany/atividade/app/App.java";
 
         ListASTVisitor visitor = new ListASTVisitor();
 
@@ -34,10 +34,10 @@ public class ListagemDasChamadasDosMetodos {
         Map options = JavaCore.getOptions();
         parser.setCompilerOptions(options);
 
-        String unitName = "A.java";
+        String unitName = "App.java";
         parser.setUnitName(unitName);
 
-        String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
+        String[] sources = {"C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src/main/java/"};
         String[] classpath = {System.getProperty("java.home")+"/lib/rt.jar"};
 
         parser.setEnvironment( classpath, sources, new String[]{"UTF-8"}, true);
