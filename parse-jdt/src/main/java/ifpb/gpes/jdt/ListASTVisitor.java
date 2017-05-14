@@ -25,7 +25,6 @@ public class ListASTVisitor extends ASTVisitor {
 
     @Override
     public boolean visit(FieldAccess node) {
-
         System.out.println("field: " + node.getName() + " ex: " + node.getExpression());
         return super.visit(node); //To change body of generated methods, choose Tools | Templates.
     }
@@ -48,7 +47,7 @@ public class ListASTVisitor extends ASTVisitor {
                 ));
         return super.visit(node);
     }
-
+    
     private void infoMethod(MethodInvocation node) {
         IMethodBinding resolveMethodBinding = node.resolveMethodBinding();
         System.out.println("resolveMethodBinding " + resolveMethodBinding);
