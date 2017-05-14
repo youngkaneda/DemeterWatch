@@ -1,9 +1,9 @@
 package ifpb.gpes.jdt.main;
 
-import ifpb.gpes.jdt.ListASTVisitor;
+import ifpb.gpes.jdt.MyAnotherVisitor;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Map;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.dom.AST;
@@ -17,37 +17,65 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
  */
 public class ListagemDasChamadasDosMetodos {
 
-    public static void main(String[] args) throws IOException {
-        String file = "C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src/main/java/com/mycompany/atividade/app/App.java";
-
-        ListASTVisitor visitor = new ListASTVisitor();
-
-        byte[] readAllBytes = Files.readAllBytes(Paths.get(file));
-        String str = new String(readAllBytes);
+    public static void main(String[] args) {
 
         ASTParser parser = ASTParser.newParser(AST.JLS8);
-        parser.setResolveBindings(true);
+        String sourceDir = "C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src";
+
+        try {
+            getFilePath(new File(sourceDir), parser);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+    }
+
+    public static void getFilePath(File file, ASTParser parser) throws IOException {
+        if (file.isDirectory()) {
+            for (File listFile : file.listFiles()) {
+                getFilePath(listFile, parser);
+            }
+        } else {
+            showMethods(file, parser);
+        }
+    }
+
+    private static void showMethods(File file, ASTParser parser) throws IOException {
+
+        setConfig(file.getName(), parser);
+
+        MyAnotherVisitor visitor = new MyAnotherVisitor();
+
+        byte[] readBytes = Files.readAllBytes(file.toPath());
+        String str = new String(readBytes);
+
+        parser.setSource(str.toCharArray());
+
+        CompilationUnit cu = (CompilationUnit) parser.createAST(null);
+
+        if (cu.getAST().hasBindingsRecovery()) {
+            System.out.println("Binding activated.");
+        }
+
+        System.out.println("_" + file.getName() + "_\n");
+        cu.accept(visitor);
+
+    }
+
+    public static void setConfig(String name, ASTParser parser) {
         parser.setKind(ASTParser.K_COMPILATION_UNIT);
 
+        parser.setResolveBindings(true);
         parser.setBindingsRecovery(true);
 
         Map options = JavaCore.getOptions();
         parser.setCompilerOptions(options);
 
-        String unitName = "App.java";
-        parser.setUnitName(unitName);
-
+        parser.setUnitName(name);
         String[] sources = {"C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src/main/java/"};
-        String[] classpath = {System.getProperty("java.home")+"/lib/rt.jar"};
+        String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
 
-        parser.setEnvironment( classpath, sources, new String[]{"UTF-8"}, true);
-        parser.setSource(str.toCharArray());
-
-        CompilationUnit cut = (CompilationUnit) parser.createAST(null);
-
-        if (cut.getAST().hasBindingsRecovery()) {
-            System.out.println("Binding activated.");
-        }
-        cut.accept(visitor);
+        parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
     }
+
 }
