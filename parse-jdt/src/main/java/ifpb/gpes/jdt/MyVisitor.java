@@ -12,7 +12,7 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 public class MyVisitor extends ASTVisitor {
 
     @Override
-    public boolean visit(MethodDeclaration md) {       
+    public boolean visit(MethodDeclaration md) {
         infos(md);
         return super.visit(md);
     }
