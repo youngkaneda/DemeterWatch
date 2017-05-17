@@ -17,7 +17,7 @@ public class ListagemDasChamadasDosMetodos {
 
     public static void main(String[] args) {
 
-        File file = new File("C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src");
+        File file = new File("/Users/job/Downloads/multi_bds/atividade/src");
         try {
             percorrePacotes(file);
         } catch (FileNotFoundException ex) {
@@ -41,6 +41,7 @@ public class ListagemDasChamadasDosMetodos {
     public static void showCallMethods(File file) throws FileNotFoundException {
 
         FileInputStream in = new FileInputStream(file);
+        
         CompilationUnit cu = JavaParser.parse(in);
         
         System.out.println("* " + file.getName() + " *");
