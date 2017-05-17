@@ -20,7 +20,7 @@ public class ListagemTodosMetodosDaClasse {
     public static void main(String[] args) {
 
         ASTParser parser = ASTParser.newParser(AST.JLS8);
-        String sourceDir = "C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src";
+        String sourceDir = "/Users/job/Downloads/multi_bds/atividade/src";
 
         try {
             getFilePath(new File(sourceDir), parser);
@@ -72,7 +72,7 @@ public class ListagemTodosMetodosDaClasse {
         parser.setCompilerOptions(options);
 
         parser.setUnitName(name);
-        String[] sources = {"C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src/main/java/"};
+        String[] sources = {"/Users/job/Downloads/multi_bds/atividade/src/main/java/"};
         String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
 
         parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);

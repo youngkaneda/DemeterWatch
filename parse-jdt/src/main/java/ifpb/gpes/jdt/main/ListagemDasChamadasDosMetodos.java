@@ -20,7 +20,7 @@ public class ListagemDasChamadasDosMetodos {
     public static void main(String[] args) {
 
         ASTParser parser = ASTParser.newParser(AST.JLS8);
-        String sourceDir = "C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src";
+        String sourceDir = "/Users/job/Downloads/multi_bds/atividade/src/";
 
         try {
             getFilePath(new File(sourceDir), parser);
@@ -72,8 +72,8 @@ public class ListagemDasChamadasDosMetodos {
         parser.setCompilerOptions(options);
 
         parser.setUnitName(name);
-        String[] sources = {"C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src/main/java/"};
-        String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
+        String[] sources = {"/Users/job/Downloads/multi_bds/atividade/src/main/java/"};
+        String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar", "/Users/job/.m2/repository/org/neo4j/driver/neo4j-java-driver/1.2.1/neo4j-java-driver-1.2.1.jar"};
 
         parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
     }

@@ -10,18 +10,15 @@ import java.io.FileNotFoundException;
 public class ListagemTodosMetodosDaClasse {
 
     public static void main(String[] args) {
-
-        File file = new File("C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src");
+        File file = new File("/Users/job/Downloads/multi_bds/atividade/src");
         try {
             percorrePacotes(file);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
-
     }
 
     public static void percorrePacotes(File file) throws FileNotFoundException {
-
         if (file.isDirectory()) {
             File[] files = file.listFiles();
             for (File file1 : files) {
@@ -34,7 +31,6 @@ public class ListagemTodosMetodosDaClasse {
     }
 
     public static void showClassMethods(File file) throws FileNotFoundException {
-
         FileInputStream in = new FileInputStream(file);
         CompilationUnit cu = JavaParser.parse(in);
 
@@ -59,6 +55,7 @@ public class ListagemTodosMetodosDaClasse {
 //        
 //        }
     
+        System.out.println("* " + file.getName() + " *");
         MethodVisitor mv = new MethodVisitor();
         mv.visit(cu, null);
 

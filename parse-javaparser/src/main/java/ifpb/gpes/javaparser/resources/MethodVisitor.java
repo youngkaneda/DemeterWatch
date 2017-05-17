@@ -7,7 +7,7 @@ public class MethodVisitor extends VoidVisitorAdapter<Void>{
 
     @Override
     public void visit(MethodDeclaration n, Void arg){
-        System.out.println(n.getType()+ " " + n.getName() + "\n");
+        System.out.print(n.getType()+ " " + n.getName() + "\n");
         super.visit(n, arg);
     }
     
