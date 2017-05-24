@@ -19,7 +19,7 @@ public class MyAnotherVisitor extends ASTVisitor {
     @Override
     public boolean visit(MethodInvocation mi) {
         IMethodBinding imb = mi.resolveMethodBinding();
-        System.out.println("\twho invoked " + mi.getExpression() + ": " + mi.getName());
+        System.out.println("\twho invoked "  + mi.getName() + "? " + mi.getExpression());
         if (imb != null) {
             infos(imb);
             resolveInvocation(mi);
@@ -31,6 +31,7 @@ public class MyAnotherVisitor extends ASTVisitor {
     }
 
     private void infos(IMethodBinding imb) {
+        System.out.println("\twho invoked type " + imb.getDeclaringClass().getQualifiedName());
         System.out.println("\tname " + imb.getName());
         System.out.println("\treturn type " + imb.getReturnType().getQualifiedName());
     }
