@@ -28,8 +28,8 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
  */
 public class ListagemDasChamadasDosMetodos {
 
-//    private static final String DIR_SRC = "C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src";
-    private static final String DIR_SRC = "/Users/job/Downloads/multi_bds/atividade/src";
+    private static final String DIR_SRC = "C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src";
+//    private static final String DIR_SRC = "/Users/job/Downloads/multi_bds/atividade/src";
     private static final String DIR_PATH = System.getProperty("java.home") + "/lib/rt.jar";
 
     public static void main(String[] args) {
