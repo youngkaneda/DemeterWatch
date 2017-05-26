@@ -1,5 +1,6 @@
 package ifpb.gpes.jdt.main;
 
+import ifpb.gpes.jdt.ListASTVisitor;
 import ifpb.gpes.jdt.MyAnotherVisitor;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
@@ -23,10 +24,10 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
  */
 public class ListagemDasChamadasDosMetodos {
 
-//    private static final String DIR_SRC = "C:/Users/Juan/Documents/NetBeansProjects/multiBds/atividade/src";
-    private static final String DIR_SRC = "/Users/job/Downloads/multi_bds/atividade/src";
+    private static final String DIR_SRC = "/home/juan/Downloads/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
+//    private static final String DIR_SRC = "/Users/job/Downloads/multi_bds/atividade/src";
     private static final String DIR_PATH = System.getProperty("java.home") + "/lib/rt.jar";
-
+    
     public static void main(String[] args) {
         ASTParser parser = ASTParser.newParser(AST.JLS8);
 //        TODO: Esses métodos podem/devem ser transferidos/usados em outra classe
@@ -77,8 +78,6 @@ public class ListagemDasChamadasDosMetodos {
             String fileName = path.toFile().getName();
             setConfig(fileName, parser);
 
-            
-
             byte[] readBytes = Files.readAllBytes(path);
             String str = new String(readBytes);
 
@@ -91,10 +90,10 @@ public class ListagemDasChamadasDosMetodos {
             }
 
 //            System.out.println("_" + fileName + "_\n");
-            MyAnotherVisitor visitor = new MyAnotherVisitor(fileName);
+//            MyAnotherVisitor visitor = new MyAnotherVisitor(fileName);
+            ListASTVisitor visitor = new ListASTVisitor();
             cu.accept(visitor);
-
-            visitor.showLista();
+//            visitor.showLista();
             
         } catch (IOException ex) {
             Logger.getLogger(ListagemDasChamadasDosMetodos.class.getName()).log(Level.SEVERE, null, ex);
