@@ -10,7 +10,13 @@ import java.util.List;
 public class A{
     private List<A> elements;
     public List<A> getElements(){
-        elements.add(this);
         return this.elements;
+    }
+    
+    private class C{
+        private A a = new A();
+        public void teste(){
+            a.getElements().add(null);
+        }
     }
 }

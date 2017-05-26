@@ -23,6 +23,6 @@ class No {
 
     @Override
     public String toString() {
-        return "Node{" + "nome=" + nome + ", returnType=" + returnType + ", invocacoes=" + invocacoes + '}';
+        return "No{" + "nome=" + nome + ", returnType=" + returnType + ", invocacoes=" + invocacoes + '}';
     }
 }

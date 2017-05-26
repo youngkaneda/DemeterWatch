@@ -47,7 +47,7 @@ public class ListASTVisitor extends ASTVisitor {
                 ));
         return super.visit(node);
     }
-    
+
     private void infoMethod(MethodInvocation node) {
         IMethodBinding resolveMethodBinding = node.resolveMethodBinding();
         System.out.println("resolveMethodBinding " + resolveMethodBinding);
