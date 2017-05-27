@@ -13,7 +13,7 @@ public class A{
         return this.elements;
     }
     
-    private class C{
+    class C{
         private A a = new A();
         public void teste(){
             a.getElements().add(null);
