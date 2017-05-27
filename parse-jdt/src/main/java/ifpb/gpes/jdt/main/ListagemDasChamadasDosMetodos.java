@@ -27,15 +27,16 @@ public class ListagemDasChamadasDosMetodos {
     private static final String DIR_SRC = "/home/juan/Downloads/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
 //    private static final String DIR_SRC = "/Users/job/Downloads/multi_bds/atividade/src";
     private static final String DIR_PATH = System.getProperty("java.home") + "/lib/rt.jar";
-    
+
     public static void main(String[] args) {
         ASTParser parser = ASTParser.newParser(AST.JLS8);
 //        TODO: Esses métodos podem/devem ser transferidos/usados em outra classe
 //        readFilePath(new File(DIR_SRC), parser);
 //        readFilesInPath(new File(DIR_SRC), parser);
-        walkFileTreeInPath(Paths.get(DIR_SRC), parser);
+//        walkFileTreeInPath(Paths.get(DIR_SRC), parser);
+        previousMethod();
     }
-    
+
     private static void walkFileTreeInPath(Path get, ASTParser parser) {
         try {
             Files.walkFileTree(get, new SimpleFileVisitor<Path>() {
@@ -72,6 +73,41 @@ public class ListagemDasChamadasDosMetodos {
 //            showMethods(file, parser);
 //        }
 //    }
+    private static void previousMethod() {
+        try {
+            String file = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/D.java";
+            
+            ListASTVisitor visitor = new ListASTVisitor();
+            
+            byte[] readAllBytes = Files.readAllBytes(Paths.get(file));
+            String str = new String(readAllBytes);
+            
+            ASTParser parser = ASTParser.newParser(AST.JLS8);
+            parser.setResolveBindings(true);
+            parser.setKind(ASTParser.K_COMPILATION_UNIT);
+            
+            parser.setBindingsRecovery(true);
+            
+            Map options = JavaCore.getOptions();
+            parser.setCompilerOptions(options);
+            
+            String unitName = "D.java";
+            parser.setUnitName(unitName);
+            
+            String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
+            String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
+            parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
+            parser.setSource(str.toCharArray());
+            CompilationUnit cut = (CompilationUnit) parser.createAST(null);
+            if (cut.getAST().hasBindingsRecovery()) {
+                System.out.println("Binding activated.");
+            }
+            cut.accept(visitor);
+        } catch (IOException ex) {
+            Logger.getLogger(ListagemDasChamadasDosMetodos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     private static void showMethods(Path path, ASTParser parser) {
 
         try {
@@ -94,9 +130,10 @@ public class ListagemDasChamadasDosMetodos {
             ListASTVisitor visitor = new ListASTVisitor();
             cu.accept(visitor);
 //            visitor.showLista();
-            
+
         } catch (IOException ex) {
-            Logger.getLogger(ListagemDasChamadasDosMetodos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListagemDasChamadasDosMetodos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }
 
