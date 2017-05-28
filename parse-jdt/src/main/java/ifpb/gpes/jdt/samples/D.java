@@ -8,6 +8,6 @@ package ifpb.gpes.jdt.samples;
 public class D {
     private A a = new A();
     public void teste() {
-        this.a.getElements().add(new A());
+        a.getElements().add(new A());
     }
 }

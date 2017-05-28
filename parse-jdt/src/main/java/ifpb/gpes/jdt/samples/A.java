@@ -12,11 +12,4 @@ public class A{
     public List<A> getElements(){
         return this.elements;
     }
-    
-    class C{
-        private A a = new A();
-        public void teste(){
-            a.getElements().add(null);
-        }
-    }
 }

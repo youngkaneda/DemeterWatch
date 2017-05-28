@@ -1,6 +1,5 @@
 package ifpb.gpes.jdt.main;
 
-import ifpb.gpes.jdt.ListASTVisitor;
 import ifpb.gpes.jdt.MyAnotherVisitor;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
@@ -24,17 +23,13 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
  */
 public class ListagemDasChamadasDosMetodos {
 
-    private static final String DIR_SRC = "/home/juan/Downloads/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
-//    private static final String DIR_SRC = "/Users/job/Downloads/multi_bds/atividade/src";
-    private static final String DIR_PATH = System.getProperty("java.home") + "/lib/rt.jar";
-
     public static void main(String[] args) {
         ASTParser parser = ASTParser.newParser(AST.JLS8);
 //        TODO: Esses métodos podem/devem ser transferidos/usados em outra classe
 //        readFilePath(new File(DIR_SRC), parser);
 //        readFilesInPath(new File(DIR_SRC), parser);
-//        walkFileTreeInPath(Paths.get(DIR_SRC), parser);
-        previousMethod();
+//        previousMethod();
+        readFilesInPath(Paths.get("/home/juan/facul/periodo4/projetoDePesquisa/parse/parse-jdt/src/main/java/ifpb/gpes/jdt/samples"), parser);
     }
 
     private static void walkFileTreeInPath(Path get, ASTParser parser) {
@@ -64,7 +59,7 @@ public class ListagemDasChamadasDosMetodos {
         }
     }
 
-//    public static void readFilePath1(File file, ASTParser parser) {
+//    public static void readFilePath(File file, ASTParser parser) {
 //        if (file.isDirectory()) {
 //            for (File listFile : file.listFiles()) {
 //                readFilePath(listFile, parser);
@@ -75,26 +70,26 @@ public class ListagemDasChamadasDosMetodos {
 //    }
     private static void previousMethod() {
         try {
-            String file = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/D.java";
-            
-            ListASTVisitor visitor = new ListASTVisitor();
-            
+//            String file = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/D.java";
+            String file = "/home/juan/facul/periodo4/projetoDePesquisa/parse/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/A.java";
+            MyAnotherVisitor visitor = new MyAnotherVisitor();
             byte[] readAllBytes = Files.readAllBytes(Paths.get(file));
             String str = new String(readAllBytes);
-            
+
             ASTParser parser = ASTParser.newParser(AST.JLS8);
             parser.setResolveBindings(true);
             parser.setKind(ASTParser.K_COMPILATION_UNIT);
-            
+
             parser.setBindingsRecovery(true);
-            
+
             Map options = JavaCore.getOptions();
             parser.setCompilerOptions(options);
-            
+
             String unitName = "D.java";
             parser.setUnitName(unitName);
-            
-            String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
+
+//            String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
+            String[] sources = {"/home/juan/facul/periodo4/projetoDePesquisa/parse/parse-jdt/src/main/java/"};
             String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
             parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
             parser.setSource(str.toCharArray());
@@ -111,47 +106,31 @@ public class ListagemDasChamadasDosMetodos {
     private static void showMethods(Path path, ASTParser parser) {
 
         try {
-            String fileName = path.toFile().getName();
-            setConfig(fileName, parser);
+            MyAnotherVisitor visitor = new MyAnotherVisitor();
+            byte[] readAllBytes = Files.readAllBytes(path);
+            String str = new String(readAllBytes);
 
-            byte[] readBytes = Files.readAllBytes(path);
-            String str = new String(readBytes);
+            parser.setResolveBindings(true);
+            parser.setKind(ASTParser.K_COMPILATION_UNIT);
 
+            parser.setBindingsRecovery(true);
+
+            Map options = JavaCore.getOptions();
+            parser.setCompilerOptions(options);
+            parser.setUnitName(path.getFileName().toString());
+
+//            String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
+            String[] sources = {"/home/juan/facul/periodo4/projetoDePesquisa/parse/parse-jdt/src/main/java/"};
+            String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
+            parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
             parser.setSource(str.toCharArray());
-
-            CompilationUnit cu = (CompilationUnit) parser.createAST(null);
-
-            if (cu.getAST().hasBindingsRecovery()) {
-                System.out.println("\nBinding activated.");
+            CompilationUnit cut = (CompilationUnit) parser.createAST(null);
+            if (cut.getAST().hasBindingsRecovery()) {
+                System.out.println("Binding activated.");
             }
-
-//            System.out.println("_" + fileName + "_\n");
-//            MyAnotherVisitor visitor = new MyAnotherVisitor(fileName);
-            ListASTVisitor visitor = new ListASTVisitor();
-            cu.accept(visitor);
-//            visitor.showLista();
-
+            cut.accept(visitor);
         } catch (IOException ex) {
-            Logger.getLogger(ListagemDasChamadasDosMetodos.class
-                    .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListagemDasChamadasDosMetodos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public static void setConfig(String name, ASTParser parser) {
-        parser.setKind(ASTParser.K_COMPILATION_UNIT);
-
-        parser.setResolveBindings(true);
-        parser.setBindingsRecovery(true);
-
-        Map options = JavaCore.getOptions();
-        parser.setCompilerOptions(options);
-
-        parser.setUnitName(name);
-
-        String[] sources = {DIR_SRC};
-        String[] classpath = {DIR_PATH};
-
-        parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
-    }
-
 }
