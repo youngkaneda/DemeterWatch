@@ -10,4 +10,7 @@ public class D {
     public void teste() {
         a.getElements().add(new A());
     }
+    public A m1(){
+        return this.a;
+    }
 }

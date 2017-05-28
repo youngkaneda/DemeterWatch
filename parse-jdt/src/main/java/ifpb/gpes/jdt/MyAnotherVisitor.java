@@ -16,6 +16,7 @@ public class MyAnotherVisitor extends ASTVisitor {
 
     private No n;
     private static List<No> ns = new ArrayList<>();
+//    private static Set<No> ns = new HashSet<>();
     private static int count = 0;
 
     @Override
@@ -49,12 +50,16 @@ public class MyAnotherVisitor extends ASTVisitor {
                         ns.add(n);
                         count++;
 
-                        if(count>1)
-                            if(ns.get(count-2).getInv().contains(m))
-                                ns.get(count-1).setMi(ns.get(count -2).getM());
+                        if (count > 1) {
+                            if (ns.get(count - 2).getInv().contains(m)) {
+                                ns.get(count - 1).setMi(ns.get(count - 2).getM());
+                            }
+                        }
 
-                        System.out.println(ns.toString());
-                        
+//                        System.out.println(ns.toString());
+                        System.out.println("--");
+                        ns.stream().filter(t -> t.getMi() != null).forEach(System.out::println);
+
                         return super.visit(mi);
                     }
                 });
