@@ -24,8 +24,8 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 public class ListagemDasChamadasDosMetodos {
 
     public static void main(String[] args) {
-//        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
-        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
+//        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
+        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse/alvo/src/main/java";
         ASTParser parser = ASTParser.newParser(AST.JLS8);
 //        TODO: Esses métodos podem/devem ser transferidos/usados em outra classe
 //        readFilePath(new File(DIR_SRC), parser);
@@ -121,8 +121,8 @@ public class ListagemDasChamadasDosMetodos {
             parser.setCompilerOptions(options);
             parser.setUnitName(path.getFileName().toString());
 
-            String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
-//            String[] sources = {"/home/juan/facul/periodo4/projetoDePesquisa/parse/parse-jdt/src/main/java/"};
+//            String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
+            String[] sources = {"/home/juan/facul/periodo4/projetoDePesquisa/parse/alvo/src/main/java"};
             String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
             parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
             parser.setSource(str.toCharArray());
