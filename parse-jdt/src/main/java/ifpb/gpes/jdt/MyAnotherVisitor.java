@@ -21,49 +21,59 @@ public class MyAnotherVisitor extends ASTVisitor {
 
     @Override
     public boolean visit(MethodDeclaration md) {
-        md.getBody().
-                accept(new ASTVisitor() {
-                    @Override
-                    public boolean visit(MethodInvocation mi) {
+        if (!md.isConstructor()) {
+            if (md.getBody() != null) {
+                md.getBody().
+                        accept(new ASTVisitor() {
+                            @Override
+                            public boolean visit(MethodInvocation mi) {
 
-                        n = new No();
+                                n = new No();
 
-                        IMethodBinding imb = mi.resolveMethodBinding();
+                                IMethodBinding imb = mi.resolveMethodBinding();
 
-                        String a = mi.resolveMethodBinding().getDeclaringClass().getBinaryName();
-                        n.setA(a);
-                        String m = mi.getName().getIdentifier();
-                        n.setM(m);
-                        String returnType = imb.getReturnType().getQualifiedName();
-                        n.setRt(returnType);
-                        String c = md.resolveBinding().getDeclaringClass().getQualifiedName();
-                        n.setC(c);
-                        String m1 = md.getName().getIdentifier();
-                        n.setM1(m1);
-                        Expression inv = mi.getExpression();
+                                String a = "SAD";
+                                String returnType = "SADNESS";
+                                if (imb != null) {
+                                    a = imb.getDeclaringClass().getBinaryName();
+                                    returnType = imb.getReturnType().getQualifiedName();
+                                }
+                                n.setA(a);
+                                String m = mi.getName().getIdentifier();
+                                n.setM(m);
+                                n.setRt(returnType);
+                                String c = md.resolveBinding().getDeclaringClass().getQualifiedName();
+                                n.setC(c);
+                                String m1 = md.getName().getIdentifier();
+                                n.setM1(m1);
+                                Expression inv = mi.getExpression();
 
-                        String[] ms = inv.toString().split("\\.");
-                        int size = ms.length;
+                                if (inv != null) {
+                                    String[] ms = inv.toString().split("\\.");
+                                    int size = ms.length;
 
-                        n.setInv(ms[size - 1]);
+                                    n.setInv(ms[size - 1]);
+                                } else {
+                                    n.setInv("nothing here");
+                                }
 
-                        ns.add(n);
-                        count++;
+                                ns.add(n);
+                                count++;
 
-                        if (count > 1) {
-                            if (ns.get(count - 2).getInv().contains(m)) {
-                                ns.get(count - 1).setMi(ns.get(count - 2).getM());
+                                if (count > 1) {
+                                    if (ns.get(count - 2).getInv().contains(m)) {
+                                        ns.get(count - 1).setMi(ns.get(count - 2).getM());
+                                    }
+                                }
+
+                                System.out.println("--");
+                                ns.stream().filter(t -> t.getMi() != null).forEach(System.out::println);
+
+                                return super.visit(mi);
                             }
-                        }
-
-//                        System.out.println(ns.toString());
-                        System.out.println("--");
-                        ns.stream().filter(t -> t.getMi() != null).forEach(System.out::println);
-
-                        return super.visit(mi);
-                    }
-                });
-
+                        });
+            }
+        }
         return super.visit(md);
     }
 
