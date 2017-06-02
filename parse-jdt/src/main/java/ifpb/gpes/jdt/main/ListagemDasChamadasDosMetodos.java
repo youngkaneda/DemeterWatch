@@ -1,7 +1,6 @@
 package ifpb.gpes.jdt.main;
 
-import ifpb.gpes.jdt.MyAnotherVisitor;
-import ifpb.gpes.jdt.No;
+import ifpb.gpes.jdt.MethodDeclarationVisitor;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -20,7 +19,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 // JDR
 public class ListagemDasChamadasDosMetodos {
 
-    static MyAnotherVisitor visitor = new MyAnotherVisitor();
+    static MethodDeclarationVisitor visitor = new MethodDeclarationVisitor();
 
     public static void main(String[] args) {
         String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
