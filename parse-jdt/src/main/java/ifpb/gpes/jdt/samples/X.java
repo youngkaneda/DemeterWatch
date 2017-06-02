@@ -12,4 +12,7 @@ public class X {
     public void m2() {
         this.d.m1().getElements().remove(new A());
     }
+        public void m2(String tst) {
+        this.d.m1().getElements().remove(new A());
+    }
 }
