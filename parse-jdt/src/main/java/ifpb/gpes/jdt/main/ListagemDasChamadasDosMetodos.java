@@ -1,6 +1,7 @@
 package ifpb.gpes.jdt.main;
 
 import ifpb.gpes.jdt.MyAnotherVisitor;
+import ifpb.gpes.jdt.No;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -17,14 +18,19 @@ import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
 // JDR
-
 public class ListagemDasChamadasDosMetodos {
 
+    static MyAnotherVisitor visitor = new MyAnotherVisitor();
+
     public static void main(String[] args) {
-//        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
-        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse/alvo/sigeve/src/main/java/";
+        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
+//        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse/alvo/sigeve/src/main/java/";
         ASTParser parser = ASTParser.newParser(AST.JLS8);
         readFilesInPath(Paths.get(path), parser);
+
+        visitor
+                .methodsCallFilter()
+                .forEach(n -> System.out.println(n.callGraph()));
     }
 
     private static void walkFileTreeInPath(Path get, ASTParser parser) {
@@ -42,6 +48,7 @@ public class ListagemDasChamadasDosMetodos {
     }
 
     public static boolean extensionVerification(Path file) {
+        //TODO: poderia ser return file.endsWith(".java");
         String uri = file.getFileName().toString();
         String[] uriValues = uri.split("\\.");
 
@@ -72,7 +79,7 @@ public class ListagemDasChamadasDosMetodos {
     private static void showMethods(Path path, ASTParser parser) {
 
         try {
-            MyAnotherVisitor visitor = new MyAnotherVisitor();
+
             byte[] readAllBytes = Files.readAllBytes(path);
             String str = new String(readAllBytes);
 
@@ -85,9 +92,9 @@ public class ListagemDasChamadasDosMetodos {
             parser.setCompilerOptions(options);
             parser.setUnitName(path.getFileName().toString());
 
-//            String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
-            String[] sources = {"/home/juan/facul/periodo4/projetoDePesquisa/parse/alvo/sigeve/"
-                    + "src/main/java/"};
+            String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
+//            String[] sources = {"/home/juan/facul/periodo4/projetoDePesquisa/parse/alvo/sigeve/"
+//                    + "src/main/java/"};
             String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
             parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
             parser.setSource(str.toCharArray());
