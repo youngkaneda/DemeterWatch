@@ -4,7 +4,9 @@ package ifpb.gpes.jdt;
  *
  * @author Juan
  */
-class No {
+public class No {
+
+    //TODO: atualizar os nomes dos atributos
     private String a;
     private String m;
     private String rt;
@@ -20,7 +22,7 @@ class No {
     public void setInv(String inv) {
         this.inv = inv;
     }
-    
+
     public String getA() {
         return a;
     }
@@ -73,5 +75,9 @@ class No {
     public String toString() {
         return "No{" + "a=" + a + ", m=" + m + ", rt=" + rt + ", c=" + c + ", m1=" + m1 + ", mi=" + mi + ", inv=" + inv + '}';
     }
-    
+
+    public String callGraph() {
+        return "<" + a + ", " + m + ", " + rt + ", " + c + ", " + m1 + ", " + mi + ">";
+    }
+
 }
