@@ -19,7 +19,6 @@ import org.eclipse.jdt.core.dom.MethodInvocation;
 public class MyAnotherVisitor extends ASTVisitor {
 
     private final List<No> ns = new ArrayList<>();
-    private int count = 0;
 
     @Override
     public boolean visit(MethodDeclaration md) {
@@ -31,7 +30,8 @@ public class MyAnotherVisitor extends ASTVisitor {
         if (block == null) {
             return super.visit(md);
         }
-        block.accept(new BlockVisitor(md));
+        block.accept(new BlockVisitor(md, ns));
+//        block.accept(new BlockVisitorRemover(md));
 
         return super.visit(md);
     }
@@ -47,98 +47,82 @@ public class MyAnotherVisitor extends ASTVisitor {
                         .collect(Collectors.toList()));
     }
 
-    class BlockVisitor extends ASTVisitor {
-
-        private final MethodDeclaration md;
-
-        private BlockVisitor(MethodDeclaration md) {
-            this.md = md;
-        }
-
-        @Override
-        public boolean visit(MethodInvocation mi) {
-
-            No no = new No();
-
-            String a = "SAD";
-            String returnType = "SADNESS";
-
-            IMethodBinding imb = mi.resolveMethodBinding();
-
-            ITypeBinding[] bindings = {};
-//            int length = 0;
-
-            if (imb != null) {
-                bindings = imb.getParameterTypes();
-//                length = bindings.length;
-                a = imb.getDeclaringClass().getBinaryName();
-                returnType = imb.getReturnType().getQualifiedName();
-            }
-
-            no.setA(a);
-
-            String m = fillMethodName(mi.getName().toString(), bindings);
-
-            no.setM(m);
-
-            no.setRt(returnType);
-
-            String c = md.resolveBinding().getDeclaringClass().getQualifiedName();
-
-            no.setC(c);
-
-            bindings = md.resolveBinding().getParameterTypes();
-//            length = bindings.length;
-
-            String m1 = fillMethodName(md.getName().getIdentifier(), bindings);
-            no.setM1(m1);
-
-            Expression inv = mi.getExpression();
-
-            if (inv != null) {
-                String[] ms = inv.toString().split("\\.");
-                int size = ms.length;
-                no.setInv(ms[size - 1]);
-            } else {
-                no.setInv("nothing here");
-            }
-
-            ns.add(no);
-            count++;
-
-            String[] values = m.split("\\[");
-
-            if (count > 1) {
-                if (ns.get(count - 2).getInv().contains(values[0])) {
-                    ns.get(count - 1).setMi(ns.get(count - 2).getM());
-                }
-            }
-//            System.out.println("--");
-//            ns.stream().forEach(System.out::println);
-
-            return super.visit(mi);
-        }
-
-        private String fillMethodName(String methodName, ITypeBinding[] bindings) {
-            return Arrays
-                    .asList(bindings)
-                    .stream()
-                    .map(b -> b.getQualifiedName())
-                    .collect(Collectors.joining(", ", methodName + "[", "]"));
-
-//            StringBuilder m = new StringBuilder(methodName);
-//            m.append("[");
-//            for (int i = 0; i < length; i++) {
-//                if (i < length - 1) {
-//                    m.append(bindings[i].getQualifiedName()).append(",");
-//                } else {
-//                    m.append(bindings[i].getQualifiedName());
+//    class BlockVisitorRemover extends ASTVisitor {
+//
+//        private final MethodDeclaration md;
+//
+//        private BlockVisitorRemover(MethodDeclaration md) {
+//            this.md = md;
+//        }
+//
+//        @Override
+//        public boolean visit(MethodInvocation mi) {
+//
+//            No no = new No();
+//
+//            String a = "SAD";
+//            String returnType = "SADNESS";
+//
+//            IMethodBinding imb = mi.resolveMethodBinding();
+//
+//            ITypeBinding[] bindings = {};
+//
+//            if (imb != null) {
+//                bindings = imb.getParameterTypes();
+//                a = imb.getDeclaringClass().getBinaryName();
+//                returnType = imb.getReturnType().getQualifiedName();
+//            }
+//
+//            no.setA(a);
+//
+//            String m = fillMethodName(mi.getName().toString(), bindings);
+//
+//            no.setM(m);
+//
+//            no.setRt(returnType);
+//
+//            String c = md.resolveBinding().getDeclaringClass().getQualifiedName();
+//
+//            no.setC(c);
+//
+//            bindings = md.resolveBinding().getParameterTypes();
+//
+//            String m1 = fillMethodName(md.getName().getIdentifier(), bindings);
+//            no.setM1(m1);
+//
+//            Expression inv = mi.getExpression();
+//
+//            if (inv != null) {
+//                String[] ms = inv.toString().split("\\.");
+//                int size = ms.length;
+//                no.setInv(ms[size - 1]);
+//            } else {
+//                no.setInv("nothing here");
+//            }
+//
+//            ns.add(no);
+//            count++;
+//
+//            String[] values = m.split("\\[");
+//
+//            if (count > 1) {
+//                if (ns.get(count - 2).getInv().contains(values[0])) {
+//                    ns.get(count - 1).setMi(ns.get(count - 2).getM());
 //                }
 //            }
-//            m.append("]");
-//            
-//            return m.toString();
-        }
-    }
+//
+//            return super.visit(mi);
+//        }
+//
+//        private String fillMethodName(String methodName, ITypeBinding[] bindings) {
+//            String prefix = methodName + "[";
+//            String sufix = "]";
+//            return Arrays
+//                    .asList(bindings)
+//                    .stream()
+//                    .map(b -> b.getQualifiedName())
+//                    .collect(Collectors.joining(", ", prefix, sufix));
+//        }
+//    }
 
 }

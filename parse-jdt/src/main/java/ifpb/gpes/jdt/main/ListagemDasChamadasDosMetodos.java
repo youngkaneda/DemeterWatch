@@ -28,9 +28,8 @@ public class ListagemDasChamadasDosMetodos {
         ASTParser parser = ASTParser.newParser(AST.JLS8);
         readFilesInPath(Paths.get(path), parser);
 
-        visitor
-                .methodsCallFilter()
-                .forEach(n -> System.out.println(n.callGraph()));
+        visitor.methodsCallFilter()
+               .forEach(n -> System.out.println(n.callGraph()));
     }
 
     private static void walkFileTreeInPath(Path get, ASTParser parser) {
@@ -76,11 +75,9 @@ public class ListagemDasChamadasDosMetodos {
         }
     }
 
-    private static void showMethods(Path path, ASTParser parser) {
-
+    private static void showMethods(Path fileJava, ASTParser parser) {
         try {
-
-            byte[] readAllBytes = Files.readAllBytes(path);
+            byte[] readAllBytes = Files.readAllBytes(fileJava);
             String str = new String(readAllBytes);
 
             parser.setResolveBindings(true);
@@ -90,7 +87,7 @@ public class ListagemDasChamadasDosMetodos {
 
             Map options = JavaCore.getOptions();
             parser.setCompilerOptions(options);
-            parser.setUnitName(path.getFileName().toString());
+            parser.setUnitName(fileJava.getFileName().toString());
 
             String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/"};
 //            String[] sources = {"/home/juan/facul/periodo4/projetoDePesquisa/parse/alvo/sigeve/"
