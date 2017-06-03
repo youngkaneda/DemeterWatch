@@ -78,11 +78,13 @@ public class BlockVisitor extends ASTVisitor {
 
     private String getMethodInvocation(int count, String methodName) {
         if (count <= 1) {
-            return "null";
+//            return "null";
+            return null;
         }
 
         if (!ns.get(count - 2).getInv().contains(methodName)) {
-            return "null";
+//            return "null";
+            return null;
         }
 
         return ns.get(count - 2).getM();
