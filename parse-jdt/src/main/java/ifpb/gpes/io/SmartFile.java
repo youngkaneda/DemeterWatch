@@ -1,4 +1,4 @@
-package ifpb.gpes.jdt.main;
+package ifpb.gpes.io;
 
 import java.io.File;
 import java.io.FileFilter;

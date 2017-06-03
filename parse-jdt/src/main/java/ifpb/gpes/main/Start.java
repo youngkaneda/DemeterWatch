@@ -1,8 +1,8 @@
-package ifpb.gpes.jdt.main;
+package ifpb.gpes.main;
 
-import ifpb.gpes.jdt.MethodDeclarationVisitor;
+import ifpb.gpes.io.SmartFile;
+import ifpb.gpes.jdt.SmartMethodVisitor;
 import ifpb.gpes.jdt.SmartASTParser;
-import static ifpb.gpes.jdt.main.ListagemDasChamadasDosMetodos.visitor;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
@@ -14,7 +14,7 @@ import java.util.stream.Stream;
  */
 public class Start {
 
-    static MethodDeclarationVisitor visitor = new MethodDeclarationVisitor();
+    static SmartMethodVisitor visitor = new SmartMethodVisitor();
 
     public static void main(String[] args) {
 

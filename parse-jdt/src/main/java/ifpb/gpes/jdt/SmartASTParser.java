@@ -1,6 +1,5 @@
 package ifpb.gpes.jdt;
 
-import ifpb.gpes.jdt.main.ListagemDasChamadasDosMetodos;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -58,7 +57,7 @@ public class SmartASTParser {
             this.parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
             this.parser.setSource(str.toCharArray());
         } catch (IOException ex) {
-            Logger.getLogger(ListagemDasChamadasDosMetodos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SmartASTParser.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -66,7 +65,7 @@ public class SmartASTParser {
     public void acceptVisitor(ASTVisitor visitor) {
         ASTNode createAST = parser.createAST(null);
         if (createAST.getAST().hasBindingsRecovery()) {
-            Logger.getLogger(ListagemDasChamadasDosMetodos.class.getName()).log(Level.INFO, "Binding activated.");
+            Logger.getLogger(SmartASTParser.class.getName()).log(Level.INFO, "Binding activated.");
         }
         createAST.accept(visitor);
     }
