@@ -9,7 +9,7 @@ import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 
 // JDR
-//TODO atualizar o nome da classe
+//TODO: atualizar o nome da classe
 public class MethodDeclarationVisitor extends ASTVisitor {
 
     private final List<No> ns = new ArrayList<>();
@@ -36,7 +36,7 @@ public class MethodDeclarationVisitor extends ASTVisitor {
     public List<No> methodsCallFilter() {
         return Collections
                 .unmodifiableList(ns.stream()
-                        .filter(t -> t.getMi() != null)
+                        .filter(t -> t.getMi() != null || "null".equalsIgnoreCase(t.getMi()))
                         .collect(Collectors.toList()));
     }
 }
