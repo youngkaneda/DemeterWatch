@@ -1,5 +1,6 @@
 package ifpb.gpes.jdt;
 
+import ifpb.gpes.No;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,7 +11,7 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 
 // JDR
 //TODO: atualizar o nome da classe
-public class MethodDeclarationVisitor extends ASTVisitor {
+public class SmartMethodVisitor extends ASTVisitor {
 
     private final List<No> ns = new ArrayList<>();
 
@@ -24,7 +25,7 @@ public class MethodDeclarationVisitor extends ASTVisitor {
         if (block == null) {
             return super.visit(md);
         }
-        block.accept(new BlockVisitor(md, ns));
+        block.accept(new SmartBlockVisitor(md, ns));
 
         return super.visit(md);
     }

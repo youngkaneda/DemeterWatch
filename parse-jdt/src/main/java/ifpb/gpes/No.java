@@ -1,4 +1,4 @@
-package ifpb.gpes.jdt;
+package ifpb.gpes;
 
 /**
  *

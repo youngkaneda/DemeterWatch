@@ -1,5 +1,6 @@
 package ifpb.gpes.jdt;
 
+import ifpb.gpes.No;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,12 +16,12 @@ import org.eclipse.jdt.core.dom.MethodInvocation;
  * @mail ricardo.job@ifpb.edu.br
  * @since 02/06/2017, 11:20:18
  */
-public class BlockVisitor extends ASTVisitor {
+public class SmartBlockVisitor extends ASTVisitor {
 
     private final List<No> ns;
     private final MethodDeclaration methodDeclarion;
 
-    protected BlockVisitor(MethodDeclaration methodDeclarion, List<No> no) {
+    protected SmartBlockVisitor(MethodDeclaration methodDeclarion, List<No> no) {
         this.methodDeclarion = methodDeclarion;
         this.ns = no;
     }

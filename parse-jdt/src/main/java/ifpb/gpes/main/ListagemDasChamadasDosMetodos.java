@@ -1,7 +1,7 @@
-package ifpb.gpes.jdt.main;
+package ifpb.gpes.main;
 
 import ifpb.gpes.jdt.SmartASTParser;
-import ifpb.gpes.jdt.MethodDeclarationVisitor;
+import ifpb.gpes.jdt.SmartMethodVisitor;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 // JDR
 public class ListagemDasChamadasDosMetodos {
 
-    static MethodDeclarationVisitor visitor = new MethodDeclarationVisitor();
+    static SmartMethodVisitor visitor = new SmartMethodVisitor();
 
     public static void main(String[] args) {
         String sources = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
