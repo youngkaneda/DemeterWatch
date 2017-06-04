@@ -59,7 +59,6 @@ public class SmartASTParser {
         } catch (IOException ex) {
             Logger.getLogger(SmartASTParser.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public void acceptVisitor(ASTVisitor visitor) {
