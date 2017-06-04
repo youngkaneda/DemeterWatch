@@ -1,4 +1,5 @@
 package ifpb.gpes.main;
+//package br.edu.ifpb.scm.api.git
 
 import ifpb.gpes.io.SmartFile;
 import ifpb.gpes.jdt.SmartMethodVisitor;

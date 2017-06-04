@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 // JDR
-public class ListagemDasChamadasDosMetodos {
+public class Listagem {
 
     static SmartMethodVisitor visitor = new SmartMethodVisitor();
 
@@ -56,6 +56,7 @@ public class ListagemDasChamadasDosMetodos {
     }
 
 }
+
 
 //<
 //    ifpb.gpes.jdt.samples.A, // nome da classe totalmente qualificado
