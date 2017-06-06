@@ -32,4 +32,3 @@ class C{
 # Como utilizar a ferramenta
 Antes de tudo é preciso que você tenha instalado o maven, após instalado vá até a pasta deste projeto e abra o terminal, digite
 `mvn clean install` Isso instalará as dependências necessárias para que a ferramenta funcione.
---
