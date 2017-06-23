@@ -44,7 +44,6 @@ public class SmartASTParser {
     private SmartASTParser(String... sources) {
         this.sources = sources;
         this.parser.setKind(ASTParser.K_COMPILATION_UNIT);
-        this.parser.setBindingsRecovery(true);
         this.parser.setCompilerOptions(JavaCore.getOptions());
     }
 
@@ -52,6 +51,7 @@ public class SmartASTParser {
         try {
             byte[] readAllBytes = Files.readAllBytes(fileJava);
             String str = new String(readAllBytes);
+            this.parser.setBindingsRecovery(true);
             this.parser.setResolveBindings(true);
             this.parser.setUnitName(fileJava.getFileName().toString());
             this.parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);

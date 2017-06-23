@@ -19,15 +19,18 @@ import org.eclipse.jdt.core.dom.MethodInvocation;
 public class SmartBlockVisitor extends ASTVisitor {
 
     private final List<No> ns;
-    private final MethodDeclaration methodDeclarion;
+    private final MethodDeclaration methodDeclaration;
 
     protected SmartBlockVisitor(MethodDeclaration methodDeclarion, List<No> no) {
-        this.methodDeclarion = methodDeclarion;
+        this.methodDeclaration = methodDeclarion;
         this.ns = no;
     }
-
+    
     @Override
     public boolean visit(MethodInvocation mi) {
+
+        ITypeBinding callClass = methodDeclaration.resolveBinding().getDeclaringClass();
+        
         No no = new No();
         String a = "SAD";
         String returnType = "SADNESS";
@@ -38,19 +41,20 @@ public class SmartBlockVisitor extends ASTVisitor {
             a = imb.getDeclaringClass().getBinaryName();
             returnType = imb.getReturnType().getQualifiedName();
         }
-
+        
         no.setA(a);
         no.setRt(returnType);
 
         String m = fillMethodName(mi.getName().toString(), bindings);
         no.setM(m);
-
-        String c = methodDeclarion.resolveBinding().getDeclaringClass().getQualifiedName();
+    
+        String c = callClassToString(callClass);
+        
         no.setC(c);
 
-        bindings = methodDeclarion.resolveBinding().getParameterTypes();
+        bindings = methodDeclaration.resolveBinding().getParameterTypes();
 
-        String m1 = fillMethodName(methodDeclarion.getName().getIdentifier(), bindings);
+        String m1 = fillMethodName(methodDeclaration.getName().getIdentifier(), bindings);
         no.setM1(m1);
 
         ns.add(no);
@@ -60,20 +64,26 @@ public class SmartBlockVisitor extends ASTVisitor {
 
         String methodInvocation = getMethodInvocation(count, mi.getName().toString());
         ns.get(count - 1).setMi(methodInvocation);
-
+        
         return super.visit(mi);
+    }
+    
+    public String callClassToString(ITypeBinding callClass){
+        if (callClass.isAnonymous()) {
+            return callClass.getSuperclass().getQualifiedName();
+        }
+        return callClass.getQualifiedName();    
     }
 
     private String updateInv(MethodInvocation mi) {
         Expression inv = mi.getExpression();
-
         if (inv == null) {
             return "nothing here";
         }
-        
+
         String[] ms = inv.toString().split("\\.");
         int size = ms.length;
-        
+
         return ms[size - 1];
     }
 
