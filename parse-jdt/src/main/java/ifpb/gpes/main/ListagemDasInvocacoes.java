@@ -1,4 +1,4 @@
-package ifpb.gpes.jdt.main;
+package ifpb.gpes.main;
 
 import ifpb.gpes.jdt.SmartMethodVisitor;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 
 // JDR
 
-public class ListagemDasChamadasDosMetodos {
+public class ListagemDasInvocacoes {
 
     public static void main(String[] args) {
         String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples";
@@ -37,7 +37,7 @@ public class ListagemDasChamadasDosMetodos {
                 }
             });
         } catch (IOException ex) {
-            Logger.getLogger(ListagemDasChamadasDosMetodos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListagemDasInvocacoes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -98,7 +98,7 @@ public class ListagemDasChamadasDosMetodos {
             visitor.methodsCall()
                 .forEach(n -> System.out.println(n.callGraph()));
         } catch (IOException ex) {
-            Logger.getLogger(ListagemDasChamadasDosMetodos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ListagemDasInvocacoes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
