@@ -13,7 +13,7 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 //TODO: atualizar o nome da classe
 public class SmartMethodVisitor extends ASTVisitor {
 
-    private final List<No> ns = new ArrayList<>();
+    private List<No> ns = new ArrayList<>();
 
     @Override
     public boolean visit(MethodDeclaration md) {
@@ -26,7 +26,6 @@ public class SmartMethodVisitor extends ASTVisitor {
             return super.visit(md);
         }
         block.accept(new SmartBlockVisitor(md, ns));
-
         return super.visit(md);
     }
 

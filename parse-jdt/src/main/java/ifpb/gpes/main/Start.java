@@ -1,8 +1,9 @@
 package ifpb.gpes.main;
 
 import ifpb.gpes.io.SmartFile;
-import ifpb.gpes.jdt.SmartMethodVisitor;
 import ifpb.gpes.jdt.SmartASTParser;
+import ifpb.gpes.jdt.SmartMethodVisitor;
+import ifpb.gpes.jdt.SmartRecursiveVisitor;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
@@ -14,24 +15,24 @@ import java.util.stream.Stream;
  */
 public class Start {
 
-    static SmartMethodVisitor visitor = new SmartMethodVisitor();
+    static SmartRecursiveVisitor visitor = new SmartRecursiveVisitor();
 
     public static void main(String[] args) {
-
-        String sources = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
-        String path = sources + "ifpb/gpes/jdt/samples";
+        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/"
+                + "main/java/ifpb/gpes/jdt/samples/X.java";
+        String sources = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/main/java";
 
         SmartFile smart = SmartFile.from(Paths.get(path));
         SmartASTParser parser = SmartASTParser.from(sources);
-        
+
         Stream<Path> files = smart.extension(".java");
-        
+
         files.forEach(p -> {
             parser.updateUnitName(p);
             parser.acceptVisitor(visitor);
         });
 
-        visitor.methodsCallFilter()
+        visitor.methodsCall()
                 .forEach(n -> System.out.println(n.callGraph()));
     }
 
