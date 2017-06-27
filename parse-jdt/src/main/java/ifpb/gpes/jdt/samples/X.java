@@ -43,7 +43,7 @@ public class X {
             new A().getElements().size();
             System.out.print("oi");
         };
-        Consumer<String> consumer = (a) -> {new A().getElements().equals(a);};
+        Consumer<String> consumer = (a) -> new A().getElements().equals(a);
         
         I seg = () -> {
             new A().getElements().iterator();
