@@ -57,13 +57,15 @@ public class SmartBlockVisitor extends ASTVisitor {
         String m1 = fillMethodName(methodDeclaration.getName().getIdentifier(), bindings);
         no.setM1(m1);
 
-        ns.add(no);
         int count = ns.size();
 
         no.setInv(updateInv(mi));
 
         String methodInvocation = getMethodInvocation(count, mi.getName().toString());
-        ns.get(count - 1).setMi(methodInvocation);
+        
+        no.setMi(methodInvocation);
+        
+        ns.add(no);
         
         return super.visit(mi);
     }
@@ -93,12 +95,12 @@ public class SmartBlockVisitor extends ASTVisitor {
             return null;
         }
 
-        if (!ns.get(count - 2).getInv().contains(methodName)) {
+        if (!ns.get(count - 1).getInv().contains(methodName)) {
 //            return "null";
             return null;
         }
 
-        return ns.get(count - 2).getM();
+        return ns.get(count - 1).getM();
     }
 
     private String fillMethodName(String methodName, ITypeBinding[] bindings) {

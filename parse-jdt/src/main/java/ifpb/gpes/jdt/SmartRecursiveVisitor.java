@@ -61,9 +61,9 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                         //de methodDeclaration -> methodInvocation
                         //a partir do body do lambda os proximos objetos sao expressioStatements
                         if (vdf.getInitializer() instanceof LambdaExpression) {
-                            LambdaExpression le = (LambdaExpression) vdf.getInitializer();
-                            Expression ex = (Expression) vdf.getName();
-                            le.accept(new SmartLambdaVisitor(ns, ex));
+                            Expression le = (LambdaExpression) vdf.getInitializer();
+                            //sinto que passar o proprio objeto como parametro é muito errado
+                            le.accept(new SmartLambdaVisitor(ns, le));
                         }
                     }
                 });
