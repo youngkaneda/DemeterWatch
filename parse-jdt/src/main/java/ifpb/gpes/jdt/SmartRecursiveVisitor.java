@@ -5,12 +5,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
-import org.eclipse.jdt.core.dom.Expression;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
-import org.eclipse.jdt.core.dom.IMethodBinding;
 import org.eclipse.jdt.core.dom.LambdaExpression;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
@@ -50,7 +49,8 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                         if (vdf.getInitializer() instanceof ClassInstanceCreation) {
                             ClassInstanceCreation cic = (ClassInstanceCreation) vdf.getInitializer();
                             //pegar a referencia da declaracao da classe anonima
-                            cic.getAnonymousClassDeclaration().accept(new SmartRecursiveVisitor());
+                            if(cic.getAnonymousClassDeclaration() != null)
+                                cic.getAnonymousClassDeclaration().accept(new SmartRecursiveVisitor());
                             //instancia um novo visitor desse pq n to conseguindo organizar um jeito
                             //legal de deixar tudo no metodo e ele ficar recursivo ate chegar no if
                             //do instanceof ExpressionStatement
@@ -61,9 +61,13 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                         //de methodDeclaration -> methodInvocation
                         //a partir do body do lambda os proximos objetos sao expressioStatements
                         if (vdf.getInitializer() instanceof LambdaExpression) {
-                            Expression le = (LambdaExpression) vdf.getInitializer();
+                            LambdaExpression le = (LambdaExpression) vdf.getInitializer();
                             //sinto que passar o proprio objeto como parametro é muito errado
-                            le.accept(new SmartLambdaVisitor(ns, le));
+                            if(le.getBody().getNodeType() == ASTNode.METHOD_INVOCATION)
+                                le.accept(new SmartLambdaMIVisitor(ns, le));
+                            else
+                                le.accept(new SmartLambdaVisitor(ns, le));
+
                         }
                     }
                 });
