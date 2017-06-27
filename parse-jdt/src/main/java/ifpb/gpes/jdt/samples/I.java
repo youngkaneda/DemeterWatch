@@ -9,6 +9,12 @@ package ifpb.gpes.jdt.samples;
  *
  * @author juan
  */
+@FunctionalInterface
 public interface I {
+
     public void semRetorno();
+
+    public default void methodDefault(String nome) {
+        System.out.println("oi" + nome);
+    }
 }
