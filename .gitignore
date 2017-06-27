@@ -5,3 +5,6 @@ parse-javaparser/target/
 **/target/
 .DS_Store
 nb-configuration.xml
+**/.settings
+**/.project
+**/.classpath
