@@ -31,34 +31,37 @@ public class X {
     }
 
     public void m3() {
-        i.semRetorno();
-        D d = new D() {
-            public void testando() {
-                System.out.println("oi");
-                new A().getElements().add(null);
-                D d2 = new D() {
-                    public void m4() {
-                        A a = new A();
-                        a.getElements().remove(null);
-                        a.getElements().isEmpty();
-                    }
-                };
-            }
-        };
-
-        List lista = new A().getElements();
-
-        Runnable runner = () -> {
-            int size = new A().getElements().size();
-            new A().getElements().contains(null);
-            System.out.print("oi");
-        };
+//        i.semRetorno();
+//        D d = new D() {
+//            public void testando() {
+//                System.out.println("oi");
+//                new A().getElements().add(null);
+//                D d2 = new D() {
+//                    public void m4() {
+//                        A a = new A();
+//                        a.getElements().remove(null);
+//                        a.getElements().isEmpty();
+//                    }
+//                };
+//            }
+//        };
+//
+//        List lista = new A().getElements();
+//
+//        Runnable runner = () -> {
+//            int size = new A().getElements().size();
+//            new A().getElements().contains(null);
+//            System.out.print("oi");
+//        };
         Consumer<String> consumer = (a) -> {
-            List<A> lista1 = new A().getElements();
+            List<A> lista = new A().getElements();
             lista.equals(a);
             lista.clear();
         };
         I seg = () -> new A().getElements().iterator();
+
+        A a = new A();
+        listar(a.getElements());
 
         B b = new B() {
             @Override
@@ -69,6 +72,10 @@ public class X {
                 return "2";
             }
         };
+    }
+    
+    private void listar(List<A> lista){
+    
     }
 
 }

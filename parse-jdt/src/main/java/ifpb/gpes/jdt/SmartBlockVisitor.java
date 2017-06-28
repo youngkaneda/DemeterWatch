@@ -4,10 +4,12 @@ import ifpb.gpes.No;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.Expression;
 import org.eclipse.jdt.core.dom.IMethodBinding;
 import org.eclipse.jdt.core.dom.ITypeBinding;
+import org.eclipse.jdt.core.dom.LambdaExpression;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 
@@ -25,12 +27,12 @@ public class SmartBlockVisitor extends ASTVisitor {
         this.methodDeclaration = methodDeclarion;
         this.ns = no;
     }
-    
+
     @Override
     public boolean visit(MethodInvocation mi) {
-
+        parseArguments(mi.arguments());
         ITypeBinding callClass = methodDeclaration.resolveBinding().getDeclaringClass();
-        
+
         No no = new No();
         String a = "SAD";
         String returnType = "SADNESS";
@@ -41,15 +43,15 @@ public class SmartBlockVisitor extends ASTVisitor {
             a = imb.getDeclaringClass().getBinaryName();
             returnType = imb.getReturnType().getQualifiedName();
         }
-        
+
         no.setA(a);
         no.setRt(returnType);
 
         String m = fillMethodName(mi.getName().toString(), bindings);
         no.setM(m);
-    
+
         String c = callClassToString(callClass);
-        
+
         no.setC(c);
 
         bindings = methodDeclaration.resolveBinding().getParameterTypes();
@@ -62,19 +64,19 @@ public class SmartBlockVisitor extends ASTVisitor {
         no.setInv(updateInv(mi));
 
         String methodInvocation = getMethodInvocation(count, mi.getName().toString());
-        
+
         no.setMi(methodInvocation);
-        
+
         ns.add(no);
-        
+
         return super.visit(mi);
     }
-    
-    public String callClassToString(ITypeBinding callClass){
+
+    public String callClassToString(ITypeBinding callClass) {
         if (callClass.isAnonymous()) {
             return callClass.getSuperclass().getQualifiedName();
         }
-        return callClass.getQualifiedName();    
+        return callClass.getQualifiedName();
     }
 
     private String updateInv(MethodInvocation mi) {
@@ -111,5 +113,18 @@ public class SmartBlockVisitor extends ASTVisitor {
                 .stream()
                 .map(b -> b.getQualifiedName())
                 .collect(Collectors.joining(", ", prefix, sufix));
+    }
+
+    private void parseArguments(List<Expression> arguments) {
+        for (Expression argument : arguments) {
+            if (argument.getNodeType() == ASTNode.METHOD_INVOCATION) {
+                argument.accept(new SmartBlockVisitor(methodDeclaration, ns));
+            } else if(argument.getNodeType() == ASTNode.LAMBDA_EXPRESSION){
+                Expression le = (LambdaExpression) argument;
+                //NAO TA FUNCNIONANDO NENHUMA DROGA DE RESOLVE BINDING, PQ EU N SEI!!!!!!
+                //NAO SEI PQ A ARVORE MOSTRA OS BINDING MAS QUANDO TENTO AQUI N FUNCIONA!!!INFERNO
+                //le.accept(new SmartLambdaMIVisitor(ns, argument));
+            }
+        }
     }
 }

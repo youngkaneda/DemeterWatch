@@ -20,12 +20,14 @@ public class SmartLambdaMIVisitor extends ASTVisitor {
     @Override
     public boolean visit(MethodInvocation mi) {
         No no = new No();
-
+        
         no.setC(ex.resolveTypeBinding().getQualifiedName());
         no.setM1(ex.resolveTypeBinding().getFunctionalInterfaceMethod().getName());
+
         no.setA(mi.resolveMethodBinding().getDeclaringClass().getQualifiedName());
-        no.setM(mi.getName().getFullyQualifiedName());
         no.setRt(mi.resolveMethodBinding().getReturnType().getQualifiedName());
+
+        no.setM(mi.getName().getFullyQualifiedName());
 
         no.setInv(updateInv(mi));
         no.setMi(getMethodInvocation(ns.size(), mi.getName().toString()));
@@ -62,4 +64,5 @@ public class SmartLambdaMIVisitor extends ASTVisitor {
 
         return ns.get(count - 1).getM();
     }
+
 }

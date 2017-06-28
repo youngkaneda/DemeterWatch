@@ -21,10 +21,10 @@ public class Start {
     static SmartRecursiveVisitor visitor = new SmartRecursiveVisitor();
 
     public static void main(String[] args) {
-//        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/X.java";
-//        String sources = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/main/java";
-        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/X.java";
-        String sources ="/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
+        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/X.java";
+        String sources = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/main/java";
+//        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/X.java";
+//        String sources ="/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
         SmartFile smart = SmartFile.from(Paths.get(path));
         SmartASTParser parser = SmartASTParser.from(sources);
 
