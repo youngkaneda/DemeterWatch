@@ -67,7 +67,6 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                                 le.accept(new SmartLambdaMIVisitor(ns, le));
                             else
                                 le.accept(new SmartLambdaVisitor(ns, le));
-
                         }
                     }
                 });
