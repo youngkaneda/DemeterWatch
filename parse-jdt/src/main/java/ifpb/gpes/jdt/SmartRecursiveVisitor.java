@@ -63,11 +63,12 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                         if (vdf.getInitializer() instanceof LambdaExpression) {
                             LambdaExpression le = (LambdaExpression) vdf.getInitializer();
                             //sinto que passar o proprio objeto como parametro é muito errado
-                            if(le.getBody().getNodeType() == ASTNode.METHOD_INVOCATION)
+                            int nodeType = le.getBody().getNodeType();
+                            if(nodeType == ASTNode.METHOD_INVOCATION)
                                 le.accept(new SmartLambdaMIVisitor(ns, le));
                             else
                                 le.accept(new SmartLambdaVisitor(ns, le));
-
+                            //VariableDeclarationStatement    
                         }
                     }
                 });

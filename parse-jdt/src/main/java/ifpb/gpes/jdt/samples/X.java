@@ -1,5 +1,6 @@
 package ifpb.gpes.jdt.samples;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 /**
@@ -24,6 +25,10 @@ public class X {
 //    public void m2(String tst, Integer a) {
 //        this.d.m1().getElements().remove(new A());
 //    }
+    public int m2(X x) {
+        return 1;
+    }
+
     public void m3() {
         i.semRetorno();
         D d = new D() {
@@ -40,13 +45,19 @@ public class X {
             }
         };
         Runnable runner = () -> {
-            new A().getElements().size();
+            // não está sendo lido. 
+            // É uma VariableDeclarationStatement
+            int lista = new A().getElements().size();
+             new A().getElements().contains(null);
             System.out.print("oi");
         };
-        Consumer<String> consumer = (a) -> new A().getElements().equals(a);
-        
-        I seg = () -> {
-            new A().getElements().iterator();
+        Consumer<String> consumer = (a) -> {
+            List<A> lista = new A().getElements();
+            lista.equals(a);
+            lista.clear();
         };
+
+        I seg = () ->  new A().getElements().iterator();
+        
     }
 }
