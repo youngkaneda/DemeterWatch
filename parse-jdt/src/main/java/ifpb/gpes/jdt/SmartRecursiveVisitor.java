@@ -9,6 +9,7 @@ import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
+import org.eclipse.jdt.core.dom.Expression;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.LambdaExpression;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
@@ -46,8 +47,9 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                     //o fragmento é um VariableDeclarationFragment ?
                     if (frag instanceof VariableDeclarationFragment) {
                         VariableDeclarationFragment vdf = (VariableDeclarationFragment) frag;
+                        Expression initializer = vdf.getInitializer();
                         //o initializer é um ClassInstanceCreation ?
-                        if (vdf.getInitializer() instanceof ClassInstanceCreation) {
+                        if (initializer instanceof ClassInstanceCreation) {
                             ClassInstanceCreation cic = (ClassInstanceCreation) vdf.getInitializer();
                             //pegar a referencia da declaracao da classe anonima
                             if (cic.getAnonymousClassDeclaration() != null) {
@@ -62,7 +64,7 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                         //em interfaces ou pelo menos em lambda n funciona no mesmo processo
                         //de methodDeclaration -> methodInvocation
                         //a partir do body do lambda os proximos objetos sao expressioStatements
-                        if (vdf.getInitializer() instanceof LambdaExpression) {
+                        if (initializer instanceof LambdaExpression) {
                             LambdaExpression le = (LambdaExpression) vdf.getInitializer();
                             //sinto que passar o proprio objeto como parametro é muito errado
                             int nodeType = le.getBody().getNodeType();
@@ -72,7 +74,7 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                                 le.accept(new SmartLambdaVisitor(ns, le));
                             }
                         }
-                        if (vdf.getInitializer() instanceof MethodInvocation) {
+                        if (initializer instanceof MethodInvocation) {
                             MethodInvocation mi = (MethodInvocation) vdf.getInitializer();
                             mi.accept(new SmartBlockVisitor(md, ns));
                         }

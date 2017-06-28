@@ -2,6 +2,7 @@ package ifpb.gpes.jdt.samples;
 
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 /**
  *
@@ -44,12 +45,10 @@ public class X {
                 };
             }
         };
-        
+
         List lista = new A().getElements();
-        
+
         Runnable runner = () -> {
-            // não está sendo lido. 
-            // É uma VariableDeclarationStatement
             int size = new A().getElements().size();
             new A().getElements().contains(null);
             System.out.print("oi");
@@ -59,8 +58,17 @@ public class X {
             lista.equals(a);
             lista.clear();
         };
+        I seg = () -> new A().getElements().iterator();
 
-        I seg = () ->  new A().getElements().iterator();
-        
+        B b = new B() {
+            @Override
+            public String m5() {
+                A a = new A();
+                Object[] mud = a.getElements().toArray();
+                a.getElements().stream().forEach(t -> t.m6(t));
+                return "2";
+            }
+        };
     }
+
 }
