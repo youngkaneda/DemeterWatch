@@ -12,6 +12,7 @@ import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.LambdaExpression;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 
@@ -49,8 +50,9 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                         if (vdf.getInitializer() instanceof ClassInstanceCreation) {
                             ClassInstanceCreation cic = (ClassInstanceCreation) vdf.getInitializer();
                             //pegar a referencia da declaracao da classe anonima
-                            if(cic.getAnonymousClassDeclaration() != null)
+                            if (cic.getAnonymousClassDeclaration() != null) {
                                 cic.getAnonymousClassDeclaration().accept(new SmartRecursiveVisitor());
+                            }
                             //instancia um novo visitor desse pq n to conseguindo organizar um jeito
                             //legal de deixar tudo no metodo e ele ficar recursivo ate chegar no if
                             //do instanceof ExpressionStatement
@@ -63,10 +65,16 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                         if (vdf.getInitializer() instanceof LambdaExpression) {
                             LambdaExpression le = (LambdaExpression) vdf.getInitializer();
                             //sinto que passar o proprio objeto como parametro é muito errado
-                            if(le.getBody().getNodeType() == ASTNode.METHOD_INVOCATION)
+                            int nodeType = le.getBody().getNodeType();
+                            if (nodeType == ASTNode.METHOD_INVOCATION) {
                                 le.accept(new SmartLambdaMIVisitor(ns, le));
-                            else
+                            } else {
                                 le.accept(new SmartLambdaVisitor(ns, le));
+                            }
+                        }
+                        if (vdf.getInitializer() instanceof MethodInvocation) {
+                            MethodInvocation mi = (MethodInvocation) vdf.getInitializer();
+                            mi.accept(new SmartBlockVisitor(md, ns));
                         }
                     }
                 });
