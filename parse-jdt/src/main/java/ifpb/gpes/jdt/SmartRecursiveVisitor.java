@@ -70,12 +70,29 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                             int nodeType = le.getBody().getNodeType();
                             if (nodeType == ASTNode.METHOD_INVOCATION) {
                                 le.accept(new SmartLambdaMIVisitor(ns, le));
+
+//                                MethodInvocation mi = (MethodInvocation) le.getBody();
+//                                List argumentos = mi.arguments();
+//                                if (argumentos != null && !argumentos.isEmpty()) {
+//                                    System.out.print(mi.getName().getFullyQualifiedName());
+//                                    System.out.println(" - " + md.getName().getFullyQualifiedName() + "->" + argumentos);
+//                                }
                             } else {
                                 le.accept(new SmartLambdaVisitor(ns, le));
                             }
                         }
                         if (initializer instanceof MethodInvocation) {
                             MethodInvocation mi = (MethodInvocation) vdf.getInitializer();
+//                            List argumentos = mi.arguments();
+//                            if (argumentos != null && !argumentos.isEmpty()) {
+//                                recursiveBlock(argumentos, md);
+//                            }
+//                            List argumentos = mi.arguments();
+//                            if (argumentos != null && !argumentos.isEmpty()) {
+//                                System.out.print(mi.getName().getFullyQualifiedName());
+//                                System.out.println(" - " + md.getName().getFullyQualifiedName() + "->" + argumentos);
+//                            }
+
                             mi.accept(new SmartBlockVisitor(md, ns));
                         }
                     }
@@ -83,6 +100,22 @@ public class SmartRecursiveVisitor extends ASTVisitor {
             }
             if (state instanceof ExpressionStatement) {
                 ExpressionStatement es = (ExpressionStatement) state;
+                if (es.getExpression() instanceof MethodInvocation) {
+                    MethodInvocation mi = (MethodInvocation) es.getExpression();
+                    List argumentos = mi.arguments();
+                    if (argumentos != null && !argumentos.isEmpty()) {
+//                        recursiveBlock(argumentos, md);
+                        for (Object argumento : argumentos) {
+
+                            if (argumento instanceof LambdaExpression) {
+                                System.out.print(es.getExpression().resolveTypeBinding());
+                                System.out.print(mi.getName().getFullyQualifiedName() + " - " + es.getExpression());
+                                System.out.println(" - " + md.getName().getFullyQualifiedName() + "->" + argumento);
+                            }
+                        }
+
+                    }
+                }
                 es.accept(new SmartBlockVisitor(md, ns));
             }
         }

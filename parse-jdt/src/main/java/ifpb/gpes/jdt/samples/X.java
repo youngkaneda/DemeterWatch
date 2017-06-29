@@ -68,14 +68,15 @@ public class X {
             public String m5() {
                 A a = new A();
                 Object[] mud = a.getElements().toArray();
-                a.getElements().stream().forEach(t -> t.m6(t));
+                a.getElements().stream().forEach(ts -> ts.m6(ts));
+                
                 return "2";
             }
         };
     }
     
     private void listar(List<A> lista){
-    
+        lista.get(0);
     }
 
 }
