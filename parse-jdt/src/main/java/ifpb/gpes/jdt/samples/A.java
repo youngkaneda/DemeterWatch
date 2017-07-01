@@ -18,7 +18,12 @@ public class A {
 
     public Predicate<A> m6(A a) {
 
-        return (A t) -> false;
+        return new Predicate<A>() {
+            @Override
+            public boolean test(A t) {
+                return false;
+            }
+        };
 
     }
 }

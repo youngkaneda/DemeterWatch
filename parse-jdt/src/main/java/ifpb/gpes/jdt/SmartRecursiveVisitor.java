@@ -65,21 +65,7 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                         //de methodDeclaration -> methodInvocation
                         //a partir do body do lambda os proximos objetos sao expressioStatements
                         if (initializer instanceof LambdaExpression) {
-                            LambdaExpression le = (LambdaExpression) vdf.getInitializer();
-                            //sinto que passar o proprio objeto como parametro é muito errado
-                            int nodeType = le.getBody().getNodeType();
-                            if (nodeType == ASTNode.METHOD_INVOCATION) {
-                                le.accept(new SmartLambdaMIVisitor(ns, le));
-
-//                                MethodInvocation mi = (MethodInvocation) le.getBody();
-//                                List argumentos = mi.arguments();
-//                                if (argumentos != null && !argumentos.isEmpty()) {
-//                                    System.out.print(mi.getName().getFullyQualifiedName());
-//                                    System.out.println(" - " + md.getName().getFullyQualifiedName() + "->" + argumentos);
-//                                }
-                            } else {
-                                le.accept(new SmartLambdaVisitor(ns, le));
-                            }
+                            lambdaExpression((LambdaExpression) vdf.getInitializer());
                         }
                         if (initializer instanceof MethodInvocation) {
                             MethodInvocation mi = (MethodInvocation) vdf.getInitializer();
@@ -100,24 +86,62 @@ public class SmartRecursiveVisitor extends ASTVisitor {
             }
             if (state instanceof ExpressionStatement) {
                 ExpressionStatement es = (ExpressionStatement) state;
+
                 if (es.getExpression() instanceof MethodInvocation) {
                     MethodInvocation mi = (MethodInvocation) es.getExpression();
                     List argumentos = mi.arguments();
                     if (argumentos != null && !argumentos.isEmpty()) {
 //                        recursiveBlock(argumentos, md);
-                        for (Object argumento : argumentos) {
+                        argumentos.stream()
+                                .filter((argumento) -> (argumento instanceof LambdaExpression))
+                                .forEach((argumento) -> {
+                                    LambdaExpression lambda = (LambdaExpression) argumento;
+                                    lambda.getBody();
 
-                            if (argumento instanceof LambdaExpression) {
-                                System.out.print(es.getExpression().resolveTypeBinding());
-                                System.out.print(mi.getName().getFullyQualifiedName() + " - " + es.getExpression());
-                                System.out.println(" - " + md.getName().getFullyQualifiedName() + "->" + argumento);
-                            }
-                        }
+                                    int nodeType = lambda.getBody().getNodeType();
+                                    if (nodeType == ASTNode.METHOD_INVOCATION) {
+                                        MethodInvocation mit = (MethodInvocation) lambda.getBody();
+                                        System.out.print(" mi - " + mit.getName().getFullyQualifiedName());
+                                        System.out.print(" mi - " + mit.typeArguments());
+                                        System.out.print(" mi - " + mit.resolveConstantExpressionValue());
+                                        System.out.print(" mi - " + mit.resolveMethodBinding());
+                                        System.out.print(" mi - " + mit.resolveTypeBinding());
+                                        System.out.print(" mi - " + mit.getExpression());
+                                        System.out.println(" ----- ");
+                                    }
+
+                                    System.out.print(lambda.parameters());
+                                    System.out.print(" - " + es.getExpression());
+                                    System.out.print(" - " + es.properties());
+                                    System.out.print(" - " + es.getExpression().resolveTypeBinding());
+                                    System.out.print(" - " + mi.getName().getFullyQualifiedName());
+                                    System.out.print(" - " + md.getName().getFullyQualifiedName());
+                                    System.out.print(" - " + mi.arguments());
+                                    System.out.println(" - " + argumento);
+//                                    lambdaExpression(lambda);
+                                });
 
                     }
                 }
                 es.accept(new SmartBlockVisitor(md, ns));
             }
+        }
+    }
+
+    private void lambdaExpression(LambdaExpression le) {
+        //sinto que passar o proprio objeto como parametro é muito errado
+        int nodeType = le.getBody().getNodeType();
+        if (nodeType == ASTNode.METHOD_INVOCATION) {
+            le.accept(new SmartLambdaMIVisitor(ns, le));
+
+//                                MethodInvocation mi = (MethodInvocation) le.getBody();
+//                                List argumentos = mi.arguments();
+//                                if (argumentos != null && !argumentos.isEmpty()) {
+//                                    System.out.print(mi.getName().getFullyQualifiedName());
+//                                    System.out.println(" - " + md.getName().getFullyQualifiedName() + "->" + argumentos);
+//                                }
+        } else {
+            le.accept(new SmartLambdaVisitor(ns, le));
         }
     }
 
