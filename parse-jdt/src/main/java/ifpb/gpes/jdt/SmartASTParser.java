@@ -3,6 +3,7 @@ package ifpb.gpes.jdt;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.eclipse.jdt.core.JavaCore;
@@ -44,7 +45,12 @@ public class SmartASTParser {
     private SmartASTParser(String... sources) {
         this.sources = sources;
         this.parser.setKind(ASTParser.K_COMPILATION_UNIT);
-        this.parser.setCompilerOptions(JavaCore.getOptions());
+        Hashtable options = JavaCore.getOptions();
+        options.put(JavaCore.COMPILER_COMPLIANCE, JavaCore.VERSION_1_8);
+        options.put(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, JavaCore.VERSION_1_8);
+        options.put(JavaCore.COMPILER_SOURCE, JavaCore.VERSION_1_8);
+//        this.parser.setCompilerOptions(JavaCore.getOptions());
+        this.parser.setCompilerOptions(options);
     }
 
     public void updateUnitName(Path fileJava) {

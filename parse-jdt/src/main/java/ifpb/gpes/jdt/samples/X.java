@@ -46,11 +46,11 @@ public class X {
 //
 //        List lista = new A().getElements();
 //
-        Runnable runner = () -> {
-            new A().getElements().contains(null);
-            int size = new A().getElements().size();
-            System.out.print("oi");
-        };
+//        Runnable runner = () -> {
+//            new A().getElements().contains(null);
+//            int size = new A().getElements().size();
+//            System.out.print("oi");
+//        };
 //        Consumer<String> consumer = (a) -> {
 //            List<A> lista = new A().getElements();
 //            lista.equals(a);
@@ -63,14 +63,14 @@ public class X {
         B b = new B() {
             @Override
             public String m5() {
-                A a = new A();
-                Object[] mud = a.getElements().toArray();
+//                A a = new A();
+//                Object[] mud = a.getElements().toArray();
 //                a.getElements()
 //                        .stream()
 //                        .forEach(t -> System.out.println(t.getElements()));
-                a.getElements()
+                new A().getElements()
                         .stream()
-                        .forEach( ts -> ts.m6(ts) );
+                        .forEach( ts -> ts.m6(ts).negate() );
 //a.getElements().stream().forEach(new Consumer<A>() {
 //                    @Override
 //                    public void accept(A t) {

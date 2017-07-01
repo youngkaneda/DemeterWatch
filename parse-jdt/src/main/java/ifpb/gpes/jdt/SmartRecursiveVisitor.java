@@ -10,10 +10,13 @@ import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.Expression;
+import org.eclipse.jdt.core.dom.ExpressionMethodReference;
 import org.eclipse.jdt.core.dom.ExpressionStatement;
 import org.eclipse.jdt.core.dom.LambdaExpression;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
+import org.eclipse.jdt.core.dom.MethodRef;
+import org.eclipse.jdt.core.dom.MethodRefParameter;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
 import org.eclipse.jdt.core.dom.VariableDeclarationStatement;
 
@@ -37,6 +40,81 @@ public class SmartRecursiveVisitor extends ASTVisitor {
         recursiveBlock(block.statements(), md);
 
         return super.visit(md);
+    }
+
+    @Override
+    public boolean visit(ExpressionMethodReference node) {
+        System.out.println("ExpressionMethodReference");
+        System.out.println("-----");
+        System.out.println(node);
+        System.out.println("-----");
+        return super.visit(node); //To change body of generated methods, choose Tools | Templates.
+    }
+
+//    @Override
+//    public boolean visit(ExpressionStatement node) {
+//        System.out.println("ExpressionStatement");
+//        System.out.println("\t-----");
+//        System.out.println(node);
+//        
+//        if (node.getExpression() instanceof MethodInvocation) {
+//            MethodInvocation mi = (MethodInvocation) node.getExpression();
+//            List argumentos = mi.arguments();
+//            if (argumentos != null && !argumentos.isEmpty()) {
+////                        recursiveBlock(argumentos, md);
+//                argumentos.stream()
+//                        .filter((argumento) -> (argumento instanceof LambdaExpression))
+//                        .forEach((argumento) -> {
+//                            LambdaExpression lambda = (LambdaExpression) argumento;
+//                             
+//
+//                            int nodeType = lambda.getBody().getNodeType();
+//                            if (nodeType == ASTNode.METHOD_INVOCATION) {
+//                                MethodInvocation mit = (MethodInvocation) lambda.getBody();
+//                                System.out.print(" mi - " + mit.getName().getFullyQualifiedName());
+//                                System.out.print(" mi - " + mit.typeArguments());
+//                                System.out.print(" mi - " + mit.resolveConstantExpressionValue());
+//                                System.out.print(" mi - " + mit.resolveMethodBinding());
+//                                System.out.print(" mi - " + mit.resolveTypeBinding());
+//                                System.out.print(" mi - " + mit.getExpression());
+//                                System.out.print(" mi - " + mit.getParent());
+//                                System.out.println(" ----- ");
+//                            }
+//
+//                            System.out.print(lambda.parameters());
+//                            System.out.print(" - " + node.getExpression());
+//                            System.out.print(" - " + node.properties());
+//                            System.out.print(" - " + node.getExpression().resolveTypeBinding());
+//                            System.out.print(" - " + mi.getName().getFullyQualifiedName());
+////                            System.out.print(" - " + md.getName().getFullyQualifiedName());
+//                            System.out.print(" - " + mi.arguments());
+//                            System.out.println(" - " + argumento);
+////                                    lambdaExpression(lambda);
+//                        });
+//
+//            }
+//        }
+//        
+//        System.out.println("\t----- ");
+//        return super.visit(node); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+    @Override
+    public void endVisit(MethodRef node) {
+        System.out.println("MethodRef");
+        System.out.println("-----");
+        System.out.println(node);
+        System.out.println("-----");
+        super.endVisit(node); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void endVisit(MethodRefParameter node) {
+        System.out.println("MethodRefParameter");
+        System.out.println("-----");
+        System.out.println(node);
+        System.out.println("-----");
+        super.endVisit(node); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void recursiveBlock(List statements, MethodDeclaration md) {
@@ -96,29 +174,29 @@ public class SmartRecursiveVisitor extends ASTVisitor {
                                 .filter((argumento) -> (argumento instanceof LambdaExpression))
                                 .forEach((argumento) -> {
                                     LambdaExpression lambda = (LambdaExpression) argumento;
-                                    lambda.getBody();
-
-                                    int nodeType = lambda.getBody().getNodeType();
-                                    if (nodeType == ASTNode.METHOD_INVOCATION) {
-                                        MethodInvocation mit = (MethodInvocation) lambda.getBody();
-                                        System.out.print(" mi - " + mit.getName().getFullyQualifiedName());
-                                        System.out.print(" mi - " + mit.typeArguments());
-                                        System.out.print(" mi - " + mit.resolveConstantExpressionValue());
-                                        System.out.print(" mi - " + mit.resolveMethodBinding());
-                                        System.out.print(" mi - " + mit.resolveTypeBinding());
-                                        System.out.print(" mi - " + mit.getExpression());
-                                        System.out.println(" ----- ");
-                                    }
-
-                                    System.out.print(lambda.parameters());
-                                    System.out.print(" - " + es.getExpression());
-                                    System.out.print(" - " + es.properties());
-                                    System.out.print(" - " + es.getExpression().resolveTypeBinding());
-                                    System.out.print(" - " + mi.getName().getFullyQualifiedName());
-                                    System.out.print(" - " + md.getName().getFullyQualifiedName());
-                                    System.out.print(" - " + mi.arguments());
-                                    System.out.println(" - " + argumento);
-//                                    lambdaExpression(lambda);
+//                                    lambda.getBody();
+//
+//                                    int nodeType = lambda.getBody().getNodeType();
+//                                    if (nodeType == ASTNode.METHOD_INVOCATION) {
+//                                        MethodInvocation mit = (MethodInvocation) lambda.getBody();
+//                                        System.out.print(" mi - " + mit.getName().getFullyQualifiedName());
+//                                        System.out.print(" mi - " + mit.typeArguments());
+//                                        System.out.print(" mi - " + mit.resolveConstantExpressionValue());
+//                                        System.out.print(" mi - " + mit.resolveMethodBinding());
+//                                        System.out.print(" mi - " + mit.resolveTypeBinding());
+//                                        System.out.print(" mi - " + mit.getExpression());
+//                                        System.out.println(" ----- ");
+//                                    }
+//
+//                                    System.out.print(lambda.parameters());
+//                                    System.out.print(" - " + es.getExpression());
+//                                    System.out.print(" - " + es.properties());
+//                                    System.out.print(" - " + es.getExpression().resolveTypeBinding());
+//                                    System.out.print(" - " + mi.getName().getFullyQualifiedName());
+//                                    System.out.print(" - " + md.getName().getFullyQualifiedName());
+//                                    System.out.print(" - " + mi.arguments());
+//                                    System.out.println(" - " + argumento);
+                                    lambdaExpression(lambda);
                                 });
 
                     }
