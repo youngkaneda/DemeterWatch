@@ -18,10 +18,19 @@ public class LambdaComArgumento {
                     }
                 });
     }
+
     public void m2() {
         new A().getElements()
-                .forEach((A ts) -> {
-                    ts.m6(ts).negate();
-        });
+                .forEach((A t) -> {
+                    t.m6(t).negate();
+                });
+    }
+
+    public void m3() {
+        A a = new A();
+        Object[] mud = a.getElements().toArray();
+        a.getElements()
+                .stream()
+                .forEach(t -> System.out.println(t.getElements().add(null)));
     }
 }

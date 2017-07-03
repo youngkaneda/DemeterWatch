@@ -19,7 +19,9 @@ import static org.junit.Assert.*;
  */
 public class PrintASTVisitorTest {
 
-    private ASTVisitor visitor = new PrintASTVisitor();
+//    private ASTVisitor visitor = new PrintASTVisitor();
+//    private SmartMethodVisitor visitor = new SmartMethodVisitor();
+    private SmartAllVisitor visitor = new SmartAllVisitor();
 
     @Test
     public void testPrintVisitor() {
@@ -34,6 +36,8 @@ public class PrintASTVisitorTest {
             parser.updateUnitName(p);
             parser.acceptVisitor(visitor);
         });
+        
+        visitor.methodsCall().forEach(a -> System.out.println(a.callGraph()));
         
     }
 
