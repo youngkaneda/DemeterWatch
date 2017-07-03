@@ -340,7 +340,7 @@ public class PrintASTVisitor extends ASTVisitor {
         class Local {
         };
         System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        + "/" + node);
+        + "/" + node+ "/" + node.getNodeType());
         super.endVisit(node);
     }
 
@@ -1105,7 +1105,7 @@ public class PrintASTVisitor extends ASTVisitor {
         class Local {
         };
         System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        + "/" + node);
+        + "/" + node+ "/" + node.getNodeType());
         return super.visit(node);
     }
 
