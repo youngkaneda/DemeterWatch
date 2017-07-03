@@ -70,7 +70,9 @@ public class X {
 //                        .forEach(t -> System.out.println(t.getElements()));
                 new A().getElements()
                         .stream()
-                        .forEach( ts -> ts.m6(ts).negate() );
+                        .forEach((A ts) -> {
+                            ts.m6(ts).negate();
+                });
 //a.getElements().stream().forEach(new Consumer<A>() {
 //                    @Override
 //                    public void accept(A t) {
