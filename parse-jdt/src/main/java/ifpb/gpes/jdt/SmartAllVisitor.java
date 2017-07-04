@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.eclipse.jdt.core.dom.ASTVisitor;
+import org.eclipse.jdt.core.dom.AnonymousClassDeclaration;
 import org.eclipse.jdt.core.dom.Expression;
 import org.eclipse.jdt.core.dom.IMethodBinding;
 import org.eclipse.jdt.core.dom.ITypeBinding;
@@ -27,12 +28,20 @@ public class SmartAllVisitor extends ASTVisitor {
         this.currentExpression = null;
         return super.visit(md);
     }
- 
+
     @Override
     public boolean visit(LambdaExpression node) {
         this.currentExpression = node;
         return super.visit(node);
     }
+
+    @Override
+    public void endVisit(LambdaExpression node) {
+        this.currentExpression = null;
+        super.endVisit(node);
+    }
+
+    
 
     @Override
     public boolean visit(MethodInvocation mi) {
@@ -73,7 +82,6 @@ public class SmartAllVisitor extends ASTVisitor {
                     .getName());
         }
 
-
         int count = ns.size();
 
         no.setInv(updateInv(mi));
@@ -83,6 +91,13 @@ public class SmartAllVisitor extends ASTVisitor {
         no.setMi(methodInvocation);
         ns.add(no);
         return super.visit(mi);
+    }
+
+    @Override
+    public void endVisit(MethodDeclaration node) {
+        this.currentMethodDeclaration = node;
+        this.currentExpression = null;
+        super.visit(node);
     }
 
     public String callClassToString(ITypeBinding callClass) {
@@ -125,7 +140,7 @@ public class SmartAllVisitor extends ASTVisitor {
                 .map(b -> b.getQualifiedName())
                 .collect(Collectors.joining(", ", prefix, sufix));
     }
- 
+
     public List<No> methodsCall() {
         return Collections.unmodifiableList(ns);
     }

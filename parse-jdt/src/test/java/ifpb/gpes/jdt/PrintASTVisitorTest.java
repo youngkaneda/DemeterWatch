@@ -25,7 +25,7 @@ public class PrintASTVisitorTest {
 
     @Test
     public void testPrintVisitor() {
-        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/LambdaComArgumento.java";
+        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/ClasseAnonima.java";
         String sources = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
         SmartFile smart = SmartFile.from(Paths.get(path));
         SmartASTParser parser = SmartASTParser.from(sources);
