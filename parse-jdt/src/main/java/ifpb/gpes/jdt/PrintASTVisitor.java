@@ -102,11 +102,16 @@ import org.eclipse.jdt.core.dom.WildcardType;
 //from metricminer2-master-PrintASTVisitor.java
 public class PrintASTVisitor extends ASTVisitor {
 
+    private StringBuilder builder  = new StringBuilder();
+    
+    public String visitToString(){
+        return this.builder.toString();
+    }
     @Override
     public void endVisit(AnnotationTypeDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -114,7 +119,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(AnnotationTypeMemberDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -122,7 +127,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(AnonymousClassDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -130,7 +135,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ArrayAccess node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -138,7 +143,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ArrayCreation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -146,7 +151,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ArrayInitializer node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -154,7 +159,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ArrayType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -162,7 +167,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(AssertStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -170,7 +175,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(Assignment node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -178,7 +183,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(Block node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -186,7 +191,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(BlockComment node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -194,7 +199,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(BooleanLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -202,7 +207,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(BreakStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -210,7 +215,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(CastExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -218,7 +223,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(CatchClause node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -226,7 +231,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(CharacterLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -234,8 +239,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ClassInstanceCreation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        +"/" + node);
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("/").append(node).append("\n");
         super.endVisit(node);
     }
 
@@ -243,7 +247,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(CompilationUnit node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -251,7 +255,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ConditionalExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -259,7 +263,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ConstructorInvocation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -267,7 +271,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ContinueStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -275,7 +279,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(CreationReference node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -283,7 +287,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(Dimension node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -291,7 +295,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(DoStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -299,7 +303,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(EmptyStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -307,7 +311,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(EnhancedForStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -315,7 +319,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(EnumConstantDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -323,7 +327,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(EnumDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -331,7 +335,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ExpressionMethodReference node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -339,8 +343,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ExpressionStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        + "/" + node+ "/" + node.getNodeType());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("/").append(node).append("/").append(node.getNodeType()).append("\n");
         super.endVisit(node);
     }
 
@@ -348,7 +351,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(FieldAccess node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -356,7 +359,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(FieldDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -364,7 +367,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ForStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -372,7 +375,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(IfStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -380,7 +383,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ImportDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -388,7 +391,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(InfixExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -396,7 +399,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(Initializer node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -404,7 +407,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(InstanceofExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -412,7 +415,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(IntersectionType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -420,7 +423,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(Javadoc node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -428,7 +431,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(LabeledStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -436,7 +439,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(LambdaExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -444,7 +447,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(LineComment node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -452,7 +455,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(MarkerAnnotation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -460,7 +463,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(MemberRef node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -468,7 +471,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(MemberValuePair node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -476,8 +479,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(MethodDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        + "/" + node.getName().getFullyQualifiedName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("/").append(node.getName().getFullyQualifiedName()).append("\n");
         super.endVisit(node);
     }
 
@@ -485,8 +487,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(MethodInvocation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        + "/" + node.getName().getFullyQualifiedName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("/").append(node.getName().getFullyQualifiedName()).append("\n");
         super.endVisit(node);
     }
 
@@ -494,7 +495,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(MethodRef node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -502,7 +503,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(MethodRefParameter node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -510,7 +511,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(Modifier node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -518,7 +519,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(NameQualifiedType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -526,7 +527,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(NormalAnnotation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -534,7 +535,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(NullLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -542,7 +543,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(NumberLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -550,7 +551,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(PackageDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -558,7 +559,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ParameterizedType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -566,7 +567,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ParenthesizedExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -574,7 +575,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(PostfixExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -582,7 +583,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(PrefixExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -590,7 +591,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(PrimitiveType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -598,7 +599,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(QualifiedName node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -606,7 +607,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(QualifiedType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -614,7 +615,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ReturnStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -622,7 +623,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SimpleName node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -630,7 +631,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SimpleType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -638,7 +639,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SingleMemberAnnotation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -646,7 +647,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SingleVariableDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -654,7 +655,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(StringLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -662,7 +663,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SuperConstructorInvocation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -670,7 +671,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SuperFieldAccess node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -678,7 +679,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SuperMethodInvocation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -686,7 +687,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SuperMethodReference node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -694,7 +695,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SwitchCase node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -702,7 +703,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SwitchStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -710,7 +711,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(SynchronizedStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -718,7 +719,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(TagElement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -726,7 +727,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(TextElement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -734,7 +735,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ThisExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -742,7 +743,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(ThrowStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -750,7 +751,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(TryStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -758,7 +759,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(TypeDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -766,7 +767,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(TypeDeclarationStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -774,7 +775,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(TypeLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -782,7 +783,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(TypeMethodReference node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -790,7 +791,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(TypeParameter node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -798,7 +799,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(UnionType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -806,7 +807,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(VariableDeclarationExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -814,7 +815,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(VariableDeclarationFragment node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -822,7 +823,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(VariableDeclarationStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -830,7 +831,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(WhileStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -838,7 +839,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void endVisit(WildcardType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.endVisit(node);
     }
 
@@ -846,7 +847,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void postVisit(ASTNode node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.postVisit(node);
     }
 
@@ -854,7 +855,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public void preVisit(ASTNode node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         super.preVisit(node);
     }
 
@@ -862,7 +863,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean preVisit2(ASTNode node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.preVisit2(node);
     }
 
@@ -870,7 +871,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(AnnotationTypeDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -878,7 +879,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(AnnotationTypeMemberDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -886,7 +887,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(AnonymousClassDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -894,7 +895,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ArrayAccess node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -902,7 +903,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ArrayCreation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -910,7 +911,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ArrayInitializer node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -918,7 +919,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ArrayType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -926,7 +927,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(AssertStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -934,7 +935,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(Assignment node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -942,7 +943,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(Block node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -950,7 +951,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(BlockComment node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -958,7 +959,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(BooleanLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -966,7 +967,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(BreakStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -974,7 +975,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(CastExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -982,7 +983,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(CatchClause node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -990,7 +991,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(CharacterLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -998,8 +999,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ClassInstanceCreation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        +"/" + node);
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("/").append(node).append("\n");
         return super.visit(node);
     }
 
@@ -1008,7 +1008,7 @@ public class PrintASTVisitor extends ASTVisitor {
 
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1016,7 +1016,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ConditionalExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1024,7 +1024,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ConstructorInvocation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1032,7 +1032,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ContinueStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1040,7 +1040,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(CreationReference node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1048,7 +1048,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(Dimension node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1056,7 +1056,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(DoStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1064,7 +1064,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(EmptyStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1072,7 +1072,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(EnhancedForStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1080,7 +1080,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(EnumConstantDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1088,7 +1088,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(EnumDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1096,7 +1096,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ExpressionMethodReference node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1104,8 +1104,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ExpressionStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        + "/" + node+ "/" + node.getNodeType());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("/").append(node).append("/").append(node.getNodeType()).append("\n");
         return super.visit(node);
     }
 
@@ -1113,7 +1112,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(FieldAccess node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1121,7 +1120,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(FieldDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1129,7 +1128,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ForStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1137,7 +1136,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(IfStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1145,7 +1144,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ImportDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1153,7 +1152,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(InfixExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1161,7 +1160,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(Initializer node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1169,7 +1168,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(InstanceofExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1177,7 +1176,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(IntersectionType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1185,7 +1184,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(Javadoc node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1193,7 +1192,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(LabeledStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1201,7 +1200,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(LambdaExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1209,7 +1208,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(LineComment node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1217,7 +1216,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(MarkerAnnotation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1225,7 +1224,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(MemberRef node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1233,7 +1232,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(MemberValuePair node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1241,8 +1240,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(MethodDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        + "/" + node.getName().getFullyQualifiedName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("/").append(node.getName().getFullyQualifiedName()).append("\n");
         return super.visit(node);
     }
 
@@ -1250,8 +1248,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(MethodInvocation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName()
-        + "/" + node.getName().getFullyQualifiedName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("/").append(node.getName().getFullyQualifiedName()).append("\n");
         return super.visit(node);
     }
 
@@ -1259,7 +1256,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(MethodRef node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1267,7 +1264,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(MethodRefParameter node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1275,7 +1272,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(Modifier node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1283,7 +1280,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(NameQualifiedType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1291,7 +1288,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(NormalAnnotation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1299,7 +1296,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(NullLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1307,7 +1304,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(NumberLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1315,7 +1312,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(PackageDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1323,7 +1320,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ParameterizedType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1331,7 +1328,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ParenthesizedExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1339,7 +1336,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(PostfixExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1347,7 +1344,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(PrefixExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1355,7 +1352,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(PrimitiveType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1363,7 +1360,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(QualifiedName node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1371,7 +1368,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(QualifiedType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1379,7 +1376,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ReturnStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1387,7 +1384,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SimpleName node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1395,7 +1392,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SimpleType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1403,7 +1400,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SingleMemberAnnotation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1411,7 +1408,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SingleVariableDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1419,7 +1416,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(StringLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1427,7 +1424,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SuperConstructorInvocation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1435,7 +1432,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SuperFieldAccess node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1443,7 +1440,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SuperMethodInvocation node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1451,7 +1448,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SuperMethodReference node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1459,7 +1456,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SwitchCase node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1467,7 +1464,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SwitchStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1475,7 +1472,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(SynchronizedStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1483,7 +1480,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(TagElement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1491,7 +1488,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(TextElement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1499,7 +1496,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ThisExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1507,7 +1504,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(ThrowStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1515,7 +1512,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(TryStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1523,7 +1520,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(TypeDeclaration node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1531,7 +1528,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(TypeDeclarationStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1539,7 +1536,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(TypeLiteral node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1547,7 +1544,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(TypeMethodReference node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1555,7 +1552,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(TypeParameter node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1563,7 +1560,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(UnionType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1571,7 +1568,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(VariableDeclarationExpression node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1579,7 +1576,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(VariableDeclarationFragment node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1587,7 +1584,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(VariableDeclarationStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1595,7 +1592,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(WhileStatement node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 
@@ -1603,7 +1600,7 @@ public class PrintASTVisitor extends ASTVisitor {
     public boolean visit(WildcardType node) {
         class Local {
         };
-        System.out.println(Local.class.getEnclosingMethod().getName() + "/" + Local.class.getEnclosingMethod().getParameters()[0].getType().getName());
+        builder.append(Local.class.getEnclosingMethod().getName()).append("/").append(Local.class.getEnclosingMethod().getParameters()[0].getType().getName()).append("\n");
         return super.visit(node);
     }
 

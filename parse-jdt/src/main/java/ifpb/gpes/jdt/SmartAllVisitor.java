@@ -98,16 +98,20 @@ public class SmartAllVisitor extends ASTVisitor {
 
         int count = ns.size();
 
+                
+        //TODO: podemos usar a ideia do Stack para analisar?
         no.setInv(updateInv(mi));
 
-        //TODO: podemos usar a ideia do Stack para analisar?
         String methodInvocation = getMethodInvocation(count, mi.getName().toString());
 
         no.setMi(methodInvocation);
         ns.add(no);
         
+        //TODO: com o methodInvocation funcionou. 
+        //As informações são iguais.
+        // precisamos capturar os argumentos
         if(!stackMethodInvocation.isEmpty() && stackMethodInvocation.peek()!=null){
-            System.out.println(methodInvocation + " < - > "+stackMethodInvocation.peek().getName());
+//            System.out.println(methodInvocation + " < - > "+stackMethodInvocation.peek().getName());
         }
         stackMethodInvocation.push(mi);
         return super.visit(mi);

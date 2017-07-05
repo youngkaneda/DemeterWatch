@@ -1,7 +1,5 @@
 package ifpb.gpes.jdt.samples;
 
-import java.util.List;
-
 /**
  * @author Ricardo Job
  * @mail ricardo.job@ifpb.edu.br
