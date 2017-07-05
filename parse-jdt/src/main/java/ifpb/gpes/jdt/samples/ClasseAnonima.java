@@ -20,18 +20,23 @@ public class ClasseAnonima {
                         a.getElements().isEmpty();
                     }
                 };
+                new A().getElements().iterator();
+                new A().getElements().listIterator();
             }
         };
-    }
-
-    public void m4() {
         I seg = () -> new A().getElements().iterator();
-        m5(new A().getElements());
+        new A().getElements().hashCode();
     }
 
-    private void m5(List<A> lista) {
-        A value = lista.get(0);
-        value.getElements().listIterator();
-        lista.get(1).getElements().hashCode();
-    }
+//    public void m4() {
+//        I seg = () -> new A().getElements().iterator();
+//        int a = 1;
+//        m5(new A().getElements());
+//    }
+
+//    private void m5(List<A> lista) {
+//        A value = lista.get(0);
+//        value.getElements().listIterator();
+//        lista.get(1).getElements().hashCode();
+//    }
 }
