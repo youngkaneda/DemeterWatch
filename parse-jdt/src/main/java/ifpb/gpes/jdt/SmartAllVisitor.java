@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 import java.util.stream.Collectors;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.AnonymousClassDeclaration;
@@ -21,6 +22,9 @@ public class SmartAllVisitor extends ASTVisitor {
 
     private MethodDeclaration currentMethodDeclaration;
     private Expression currentExpression;
+    //TODO: criar uma classe para fazer substituir
+    private final Stack<MethodDeclaration> stackMethodDeclaration = new Stack<>();
+    private final Stack<MethodInvocation> stackMethodInvocation = new Stack<>();
 
     @Override
     public boolean visit(MethodDeclaration md) {
@@ -41,7 +45,17 @@ public class SmartAllVisitor extends ASTVisitor {
         super.endVisit(node);
     }
 
-    
+    @Override
+    public boolean visit(AnonymousClassDeclaration node) {
+        this.stackMethodDeclaration.push(currentMethodDeclaration);
+        return super.visit(node);
+    }
+
+    @Override
+    public void endVisit(AnonymousClassDeclaration node) {
+        this.currentMethodDeclaration = stackMethodDeclaration.pop();
+        super.endVisit(node);
+    }
 
     @Override
     public boolean visit(MethodInvocation mi) {
@@ -86,13 +100,26 @@ public class SmartAllVisitor extends ASTVisitor {
 
         no.setInv(updateInv(mi));
 
+        //TODO: podemos usar a ideia do Stack para analisar?
         String methodInvocation = getMethodInvocation(count, mi.getName().toString());
 
         no.setMi(methodInvocation);
         ns.add(no);
+        
+        if(!stackMethodInvocation.isEmpty() && stackMethodInvocation.peek()!=null){
+            System.out.println(methodInvocation + " < - > "+stackMethodInvocation.peek().getName());
+        }
+        stackMethodInvocation.push(mi);
         return super.visit(mi);
     }
 
+    @Override
+    public void endVisit(MethodInvocation node) {
+        stackMethodInvocation.pop();
+        super.endVisit(node); 
+    }
+
+    
     @Override
     public void endVisit(MethodDeclaration node) {
         this.currentMethodDeclaration = node;
