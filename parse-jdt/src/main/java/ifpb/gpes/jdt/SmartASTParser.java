@@ -42,7 +42,7 @@ public class SmartASTParser {
         return new SmartASTParser(sources);
     }
 
-    private SmartASTParser(String... sources) {
+    private SmartASTParser(String[] sources) {
         this.sources = sources;
         this.parser.setKind(ASTParser.K_COMPILATION_UNIT);
         Hashtable options = JavaCore.getOptions();

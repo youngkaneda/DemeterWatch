@@ -19,14 +19,16 @@ import static org.junit.Assert.*;
  */
 public class PrintASTVisitorTest {
 
-//    private ASTVisitor visitor = new PrintASTVisitor();
+    private PrintASTVisitor visitor = new PrintASTVisitor();
 //    private SmartMethodVisitor visitor = new SmartMethodVisitor();
-    private SmartAllVisitor visitor = new SmartAllVisitor();
+//    private SmartAllVisitor visitor = new SmartAllVisitor();
 
     @Test
     public void testPrintVisitor() {
-        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/ClasseAnonima.java";
-        String sources = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
+//        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/ClasseAnonima.java";
+//        String sources = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
+        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java";
+        String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/"};
         SmartFile smart = SmartFile.from(Paths.get(path));
         SmartASTParser parser = SmartASTParser.from(sources);
 
@@ -36,9 +38,10 @@ public class PrintASTVisitorTest {
             parser.updateUnitName(p);
             parser.acceptVisitor(visitor);
         });
-        
-        visitor.methodsCall().forEach(a -> System.out.println(a.callGraph()));
-        
+
+        System.out.println(visitor.visitToString());
+//        visitor.methodsCall().forEach(a -> System.out.println(a.noOf()));
+
     }
 
 }

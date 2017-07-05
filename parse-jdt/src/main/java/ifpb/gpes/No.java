@@ -1,5 +1,7 @@
 package ifpb.gpes;
 
+import java.util.Objects;
+
 /**
  *
  * @author Juan
@@ -14,6 +16,22 @@ public class No {
     private String m1;
     private String mi;
     private String inv;
+
+    public No() {
+    }
+
+    private No(String a, String m, String rt, String c, String m1, String mi) {
+        this.a = a;
+        this.m = m;
+        this.rt = rt;
+        this.c = c;
+        this.m1 = m1;
+        this.mi = mi;
+    }
+
+    public static No of(String a, String m, String rt, String c, String m1, String mi) {
+        return new No(a, m, rt, c, m1, mi);
+    }
 
     public String getInv() {
         return inv;
@@ -78,6 +96,57 @@ public class No {
 
     public String callGraph() {
         return "<" + a + ", " + m + ", " + rt + ", " + c + ", " + m1 + ", " + mi + ">";
+    }
+    
+    public String noOf(){
+//        No.of("java.util.List", "", rt, c, m1, mi, inv)
+        return "No.of(\""+a + "\", \"" + m + "\",\"" + rt + "\",\"" + c + "\",\"" + m1 + "\",\"" + mi + "\"),";
+//        No.of(a, m, rt, c, m1, mi, inv)
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.a);
+        hash = 89 * hash + Objects.hashCode(this.m);
+        hash = 89 * hash + Objects.hashCode(this.rt);
+        hash = 89 * hash + Objects.hashCode(this.c);
+        hash = 89 * hash + Objects.hashCode(this.m1);
+        hash = 89 * hash + Objects.hashCode(this.mi);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final No other = (No) obj;
+        if (!Objects.equals(this.a, other.a)) {
+            return false;
+        }
+        if (!Objects.equals(this.m, other.m)) {
+            return false;
+        }
+        if (!Objects.equals(this.rt, other.rt)) {
+            return false;
+        }
+        if (!Objects.equals(this.c, other.c)) {
+            return false;
+        }
+        if (!Objects.equals(this.m1, other.m1)) {
+            return false;
+        }
+        if (!Objects.equals(this.mi, other.mi)) {
+            return false;
+        }
+        return true;
     }
 
 }

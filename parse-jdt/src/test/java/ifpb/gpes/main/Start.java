@@ -2,13 +2,11 @@ package ifpb.gpes.main;
 //package br.edu.ifpb.scm.api.git
 
 import ifpb.gpes.io.SmartFile;
+import ifpb.gpes.jdt.PrintASTVisitor;
 import ifpb.gpes.jdt.SmartASTParser;
-import ifpb.gpes.jdt.SmartRecursiveVisitor;
+import ifpb.gpes.jdt.SmartAllVisitor;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
 
 /**
@@ -18,13 +16,17 @@ import java.util.stream.Stream;
  */
 public class Start {
 
-    static SmartRecursiveVisitor visitor = new SmartRecursiveVisitor();
+//    static SmartRecursiveVisitor visitor = new SmartRecursiveVisitor();
+    static SmartAllVisitor visitor = new SmartAllVisitor();
+//    static PrintASTVisitor visitor = new PrintASTVisitor();
 
     public static void main(String[] args) {
 //        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/X.java";
 //        String sources = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/main/java";
-        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/X.java";
-        String sources ="/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
+//        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/X.java";
+//        String sources ="/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";
+        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java";
+        String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/"};
         SmartFile smart = SmartFile.from(Paths.get(path));
         SmartASTParser parser = SmartASTParser.from(sources);
 
