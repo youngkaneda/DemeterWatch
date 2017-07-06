@@ -32,11 +32,12 @@ public class AnonymousClassTest {
                 No.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", null),
                 No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", "hashCode[]")
         ));
-
+//        expected.forEach(no -> System.out.println(no.callGraph()));
+////        result.forEach((no -> System.out.println(no.callGraph())));
         assertEquals(result.size(), expected.size());
         assertThat(result, is(expected));
         assertThat(result, IsIterableContainingInOrder.contains(expected.toArray()));
-        
+
         result.forEach(no -> logger.log(Level.INFO, no.callGraph()));
 
     }
@@ -53,15 +54,13 @@ public class AnonymousClassTest {
                 No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m2[]", "iterator[]"),
                 No.of("java.util.List", "listIterator[]", "java.util.ListIterator<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m2[]", null),
                 No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m2[]", "listIterator[]"),
-                No.of("java.util.List", "iterator[]", "java.util.Iterator<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.I", "semRetorno", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.I", "semRetorno", "iterator[]"),
+                No.of("java.util.List", "iterator[]", "java.util.Iterator<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.I", "semRetorno[]", null),
+                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.I", "semRetorno[]", "iterator[]"),
                 No.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", null),
                 No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", "hashCode[]"));
 
     }
 
-    //TODO: Refatorar para a classe de negocio
-    // talvez criar uma classe que encapsule esse processamento. Done!
     private List<No> ofAnonymousClass() {
         Project project = Project
                 .root(SingletonPath.ROOT)
