@@ -6,6 +6,8 @@
 package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
+import ifpb.gpes.Parse;
+import ifpb.gpes.Project;
 import ifpb.gpes.io.SmartFile;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -64,19 +66,27 @@ public class AnonymousClassTest {
     //TODO: Refatorar para a classe de negocio
     // talvez criar uma classe que encapsule esse processamento
     private List<No> ofAnonymousClass() {
-        SmartAllVisitor visitor = new SmartAllVisitor();
-        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java";
-        String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/"};
-        SmartFile smart = SmartFile.from(Paths.get(path));
-        SmartASTParser parser = SmartASTParser.from(sources);
+//        SmartAllVisitor visitor = new SmartAllVisitor();
+//        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java";
+//        String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/"};
+//        SmartFile smart = SmartFile.from(Paths.get(path));
+//        SmartASTParser parser = SmartASTParser.from(sources);
+//
+//        Stream<Path> files = smart.extension(".java");
+//
+//        files.forEach(p -> {
+//            parser.updateUnitName(p);
+//            parser.acceptVisitor(visitor);
+//        });
+//        return visitor.methodsCall();
+        Project project = Project
+                .root("/Users/job/Documents/dev/gpes/parse-review/parse-jdt/")
+                .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
+                .sources("src/test/java/") // root - não obrigatorio
+                .filter(".java");
 
-        Stream<Path> files = smart.extension(".java");
-
-        files.forEach(p -> {
-            parser.updateUnitName(p);
-            parser.acceptVisitor(visitor);
-        });
-        return visitor.methodsCall();
+        return  Parse.with(Parse.ParseStrategies.JDT).from(project);
+ 
     }
 
 }

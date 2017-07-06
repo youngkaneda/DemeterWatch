@@ -18,13 +18,21 @@ import org.eclipse.jdt.core.dom.MethodInvocation;
 
 public class SmartAllVisitor extends ASTVisitor {
 
-    private List<No> ns = new ArrayList<>();
+    private List<No> ns;// = new ArrayList<>();
 
     private MethodDeclaration currentMethodDeclaration;
     private Expression currentExpression;
     //TODO: criar uma classe para fazer substituir
     private final Stack<MethodDeclaration> stackMethodDeclaration = new Stack<>();
     private final Stack<MethodInvocation> stackMethodInvocation = new Stack<>();
+
+    public SmartAllVisitor() {
+        this(new ArrayList<>());
+    }
+
+    public SmartAllVisitor(List<No> elements) {
+        this.ns = elements;
+    }
 
     @Override
     public boolean visit(MethodDeclaration md) {
@@ -98,7 +106,6 @@ public class SmartAllVisitor extends ASTVisitor {
 
         int count = ns.size();
 
-                
         //TODO: podemos usar a ideia do Stack para analisar?
         no.setInv(updateInv(mi));
 
@@ -106,11 +113,11 @@ public class SmartAllVisitor extends ASTVisitor {
 
         no.setMi(methodInvocation);
         ns.add(no);
-        
+
         //TODO: com o methodInvocation funcionou. 
         //As informações são iguais.
         // precisamos capturar os argumentos
-        if(!stackMethodInvocation.isEmpty() && stackMethodInvocation.peek()!=null){
+        if (!stackMethodInvocation.isEmpty() && stackMethodInvocation.peek() != null) {
 //            System.out.println(methodInvocation + " < - > "+stackMethodInvocation.peek().getName());
         }
         stackMethodInvocation.push(mi);
@@ -120,10 +127,9 @@ public class SmartAllVisitor extends ASTVisitor {
     @Override
     public void endVisit(MethodInvocation node) {
         stackMethodInvocation.pop();
-        super.endVisit(node); 
+        super.endVisit(node);
     }
 
-    
     @Override
     public void endVisit(MethodDeclaration node) {
         this.currentMethodDeclaration = node;
