@@ -1,7 +1,7 @@
 package ifpb.gpes;
 
-import ifpb.gpes.Parse.ParseStrategies;
 import ifpb.gpes.jdt.PrintASTVisitor;
+import ifpb.gpes.jdt.SmartParseJDT;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,7 +46,7 @@ public class ProjectTest {
                 .filter(".java");
 
         PrintASTVisitor visit = new PrintASTVisitor();
-        Parse.ParseStrategy visitor = Parse.SmartParseJDT.of(visit);
+        ParseStrategy visitor = SmartParseJDT.of(visit);
         List<No> returnList = Parse.with(visitor).from(project);
 
         assertNotNull(project);

@@ -2,15 +2,12 @@ package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
 import ifpb.gpes.Parse;
+import ifpb.gpes.ParseStrategies;
 import ifpb.gpes.Project;
 import ifpb.gpes.SingletonPath;
-import ifpb.gpes.io.SmartFile;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -48,7 +45,7 @@ public class LambdaArgumentsTest {
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 
-        return Parse.with(Parse.ParseStrategies.JDT).from(project);
+        return Parse.with(ParseStrategies.JDT).from(project);
     }
 
 }

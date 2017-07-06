@@ -2,6 +2,7 @@ package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
 import ifpb.gpes.Parse;
+import ifpb.gpes.ParseStrategies;
 import ifpb.gpes.Project;
 import ifpb.gpes.SingletonPath;
 import java.util.List;
@@ -46,7 +47,7 @@ public class RandomCallsTest {
                 .sources("src/test/java/")
                 .filter(".java");
 
-        return Parse.with(Parse.ParseStrategies.JDT).from(project);
+        return Parse.with(ParseStrategies.JDT).from(project);
     }
 
 }
