@@ -2,6 +2,7 @@ package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
 import ifpb.gpes.Parse;
+import ifpb.gpes.ParseStrategies;
 import ifpb.gpes.Project;
 import ifpb.gpes.SingletonPath;
 import org.junit.Test;
@@ -32,8 +33,7 @@ public class AnonymousClassTest {
                 No.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", null),
                 No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", "hashCode[]")
         ));
-//        expected.forEach(no -> System.out.println(no.callGraph()));
-////        result.forEach((no -> System.out.println(no.callGraph())));
+        
         assertEquals(result.size(), expected.size());
         assertThat(result, is(expected));
         assertThat(result, IsIterableContainingInOrder.contains(expected.toArray()));
@@ -68,7 +68,7 @@ public class AnonymousClassTest {
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 
-        return Parse.with(Parse.ParseStrategies.JDT).from(project);
+        return Parse.with(ParseStrategies.JDT).from(project);
 
     }
 

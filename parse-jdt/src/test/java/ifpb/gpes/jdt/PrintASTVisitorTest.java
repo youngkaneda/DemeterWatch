@@ -2,6 +2,7 @@ package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
 import ifpb.gpes.Parse;
+import ifpb.gpes.ParseStrategy;
 import ifpb.gpes.Project;
 import ifpb.gpes.SingletonPath;
 import java.util.List;
@@ -27,7 +28,7 @@ public class PrintASTVisitorTest {
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 
-        Parse.ParseStrategy strategy = Parse.SmartParseJDT.of(visitor);
+        ParseStrategy strategy = SmartParseJDT.of(visitor);
         List<No> returnList = Parse.with(strategy).from(project);
 
         assertNotNull(returnList);
