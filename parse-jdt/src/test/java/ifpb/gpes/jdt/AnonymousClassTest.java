@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
+import ifpb.gpes.SingletonPath;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -68,8 +64,7 @@ public class AnonymousClassTest {
     // talvez criar uma classe que encapsule esse processamento. Done!
     private List<No> ofAnonymousClass() {
         Project project = Project
-                .root("/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/")
-//                .root("/Users/job/Documents/dev/gpes/parse-review/parse-jdt/")
+                .root(SingletonPath.ROOT)
                 .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");

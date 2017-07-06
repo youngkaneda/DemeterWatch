@@ -19,7 +19,7 @@ public class ProjectTest {
     @Test
     public void testProjectDefault() {
         Project project = Project
-                .root("/Users/job/Documents/dev/gpes/parse-review/parse-jdt/")
+                .root(SingletonPath.ROOT)
                 .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
@@ -40,7 +40,7 @@ public class ProjectTest {
     @Test
     public void testProjectOtherVisit() {
         Project project = Project
-                .root("/Users/job/Documents/dev/gpes/parse-review/parse-jdt/")
+                .root(SingletonPath.ROOT)
                 .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
