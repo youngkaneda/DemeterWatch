@@ -14,7 +14,7 @@ public class Project {
 
     private String extensions = "";
     private SmartFile smart;
-    private ProjectType type = new SmartProjectType();
+    private ProjectType type = new DefaultProjectType();
     private final String root;
 
     private Project(String dir) {
@@ -60,7 +60,7 @@ public class Project {
         String sources();
     }
 
-    private static class SmartProjectType implements ProjectType {
+    private static class DefaultProjectType implements ProjectType {
 
         private String sources;
 
