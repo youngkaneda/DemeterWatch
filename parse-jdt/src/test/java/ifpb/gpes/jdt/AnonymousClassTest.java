@@ -80,7 +80,8 @@ public class AnonymousClassTest {
 //        });
 //        return visitor.methodsCall();
         Project project = Project
-                .root("/Users/job/Documents/dev/gpes/parse-review/parse-jdt/")
+                .root("/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/")
+//                .root("/Users/job/Documents/dev/gpes/parse-review/parse-jdt/")
                 .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");

@@ -98,10 +98,13 @@ public class SmartAllVisitor extends ASTVisitor {
             no.setC(currentExpression
                     .resolveTypeBinding()
                     .getQualifiedName());
-            no.setM1(currentExpression
+            ITypeBinding[] bindingsLambda = currentExpression.resolveTypeBinding().
+                    getTypeArguments();
+            String m1Lambda = fillMethodName(currentExpression
                     .resolveTypeBinding()
                     .getFunctionalInterfaceMethod()
-                    .getName());
+                    .getName(), bindingsLambda);
+            no.setM1(m1Lambda);
         }
 
         int count = ns.size();
