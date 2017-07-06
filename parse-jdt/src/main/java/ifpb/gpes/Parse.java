@@ -27,12 +27,12 @@ public class Parse {
         return type.from(project);
     }
 
-    static interface ParseStrategy {
+    public static interface ParseStrategy {
 
         public List<No> from(Project project);
     }
 
-    static interface ParseJDT extends ParseStrategy {
+    public static interface ParseJDT extends ParseStrategy {
 
         public ParseJDT visitor(ASTVisitor visitor);
     }
@@ -47,11 +47,24 @@ public class Parse {
         }
     }
 
-    static class SmartParseJDT implements ParseJDT {
+    public static class SmartParseJDT implements ParseJDT {
 
-        private final List<No> elements = new ArrayList<>();
+        private List<No> elements = new ArrayList<>();
+        private ASTVisitor visitor;
+
         //TODO: isso não está bom. Just do It!
-        private ASTVisitor visitor = new SmartAllVisitor(elements);
+        protected SmartParseJDT() {
+            this.elements = new ArrayList<>();
+            this.visitor = new SmartAllVisitor(elements);
+        }
+
+        private SmartParseJDT(ASTVisitor visitor) {
+            this.visitor = visitor;
+        }
+
+        public static ParseJDT of(ASTVisitor visitor) {
+            return new SmartParseJDT(visitor);
+        }
 
         @Override
         public List<No> from(Project project) {
@@ -70,5 +83,4 @@ public class Parse {
             return this;
         }
     }
-
 }

@@ -8,14 +8,12 @@ package ifpb.gpes.jdt;
 import ifpb.gpes.No;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
-import ifpb.gpes.io.SmartFile;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static org.hamcrest.CoreMatchers.*;
 import org.hamcrest.collection.IsIterableContainingInOrder;
@@ -25,6 +23,7 @@ import static org.junit.Assert.assertThat;
 public class AnonymousClassTest {
 
     private final List<No> result = ofAnonymousClass();
+    private static final Logger logger = Logger.getLogger(AnonymousClassTest.class.getName());
 
     @Test
     public void testM1() {
@@ -41,6 +40,8 @@ public class AnonymousClassTest {
         assertEquals(result.size(), expected.size());
         assertThat(result, is(expected));
         assertThat(result, IsIterableContainingInOrder.contains(expected.toArray()));
+        
+        result.forEach(no -> logger.log(Level.INFO, no.callGraph()));
 
     }
 
@@ -64,29 +65,16 @@ public class AnonymousClassTest {
     }
 
     //TODO: Refatorar para a classe de negocio
-    // talvez criar uma classe que encapsule esse processamento
+    // talvez criar uma classe que encapsule esse processamento. Done!
     private List<No> ofAnonymousClass() {
-//        SmartAllVisitor visitor = new SmartAllVisitor();
-//        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java";
-//        String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/"};
-//        SmartFile smart = SmartFile.from(Paths.get(path));
-//        SmartASTParser parser = SmartASTParser.from(sources);
-//
-//        Stream<Path> files = smart.extension(".java");
-//
-//        files.forEach(p -> {
-//            parser.updateUnitName(p);
-//            parser.acceptVisitor(visitor);
-//        });
-//        return visitor.methodsCall();
         Project project = Project
                 .root("/Users/job/Documents/dev/gpes/parse-review/parse-jdt/")
                 .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 
-        return  Parse.with(Parse.ParseStrategies.JDT).from(project);
- 
+        return Parse.with(Parse.ParseStrategies.JDT).from(project);
+
     }
 
 }
