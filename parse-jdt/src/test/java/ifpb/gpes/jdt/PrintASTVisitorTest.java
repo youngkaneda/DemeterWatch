@@ -1,20 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
-import ifpb.gpes.io.SmartFile;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import ifpb.gpes.SingletonPath;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Stream;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -30,7 +22,7 @@ public class PrintASTVisitorTest {
     @Test
     public void testPrintVisitor() {
         Project project = Project
-                .root("/Users/job/Documents/dev/gpes/parse-review/parse-jdt/")
+                .root(SingletonPath.ROOT)
                 .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
