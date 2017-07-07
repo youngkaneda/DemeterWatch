@@ -1,6 +1,8 @@
-package ifpb.gpes;
+package ifpb.gpes.jdt;
 
-import ifpb.gpes.jdt.SmartParseJDT;
+import ifpb.gpes.No;
+import ifpb.gpes.ParseStrategy;
+import ifpb.gpes.Project;
 import java.util.List;
 
 /**

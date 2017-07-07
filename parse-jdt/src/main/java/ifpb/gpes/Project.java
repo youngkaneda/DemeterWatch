@@ -3,6 +3,7 @@ package ifpb.gpes;
 import ifpb.gpes.io.SmartFile;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 /**
@@ -16,6 +17,7 @@ public class Project {
     private SmartFile smart;
     private ProjectType type = new DefaultProjectType();
     private final String root;
+    private String name = UUID.randomUUID().toString();
 
     private Project(String dir) {
         this.root = dir;
@@ -35,6 +37,11 @@ public class Project {
         return this;
     }
 
+    public Project name(String name) {
+        this.name = name;
+        return this;
+    }
+
     public Project sources(String string) {
         this.type.addSources(string);
         return this;
@@ -46,6 +53,10 @@ public class Project {
 
     public String sources() {
         return this.root + this.type.sources();
+    }
+
+    public String name() {
+        return this.name;
     }
 
     public Project filter(String extension) {

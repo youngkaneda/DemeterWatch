@@ -2,7 +2,6 @@ package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
 import ifpb.gpes.Parse;
-import ifpb.gpes.ParseStrategies;
 import ifpb.gpes.Project;
 import ifpb.gpes.SingletonPath;
 import org.junit.Test;
