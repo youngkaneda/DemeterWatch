@@ -1,5 +1,6 @@
 package ifpb.gpes;
 
+import ifpb.gpes.jdt.ParseStrategies;
 import ifpb.gpes.jdt.PrintASTVisitor;
 import ifpb.gpes.jdt.SmartParseJDT;
 import java.util.List;
