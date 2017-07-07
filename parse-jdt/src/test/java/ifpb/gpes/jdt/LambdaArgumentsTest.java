@@ -1,20 +1,22 @@
 package ifpb.gpes.jdt;
 
 import ifpb.gpes.No;
-import ifpb.gpes.io.SmartFile;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
+import ifpb.gpes.Parse;
+import ifpb.gpes.ParseStrategies;
+import ifpb.gpes.Project;
+import ifpb.gpes.SingletonPath;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static org.hamcrest.CoreMatchers.hasItems;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
 public class LambdaArgumentsTest {
 
+    private static final Logger logger = Logger.getLogger(LambdaArgumentsTest.class.getName());
     private final List<No> result = ofLambdaArguments();
 
     @Test
@@ -31,26 +33,19 @@ public class LambdaArgumentsTest {
                 No.of("java.util.stream.Stream", "forEach[java.util.function.Consumer<? super ifpb.gpes.jdt.samples.A>]", "void", "ifpb.gpes.jdt.samples.LambdaComArgumento", "m3[]", null),
                 No.of("java.util.Collection", "stream[]", "java.util.stream.Stream<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.LambdaComArgumento", "m3[]", "forEach[java.util.function.Consumer<? super ifpb.gpes.jdt.samples.A>]")
         ));
+        assertNotNull(result);
+        assertFalse(result.isEmpty());
+        result.forEach(no -> logger.log(Level.INFO, no.callGraph()));
     }
 
     private List<No> ofLambdaArguments() {
-        SmartAllVisitor visitor = new SmartAllVisitor();
+        Project project = Project
+                .root(SingletonPath.ROOT)
+                .path("src/test/java/ifpb/gpes/jdt/samples/LambdaComArgumento.java") // root
+                .sources("src/test/java/") // root - não obrigatorio
+                .filter(".java");
 
-//        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/samples/LambdaComArgumento.java";
-//        String[] sources = {"/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/test/java/"};
-        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/samples/LambdaComArgumento.java";
-        String[] sources = {"/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/test/java"};
-
-        SmartFile smart = SmartFile.from(Paths.get(path));
-        SmartASTParser parser = SmartASTParser.from(sources);
-
-        Stream<Path> files = smart.extension(".java");
-
-        files.forEach(p -> {
-            parser.updateUnitName(p);
-            parser.acceptVisitor(visitor);
-        });
-        return visitor.methodsCall();
+        return Parse.with(ParseStrategies.JDT).from(project);
     }
 
 }

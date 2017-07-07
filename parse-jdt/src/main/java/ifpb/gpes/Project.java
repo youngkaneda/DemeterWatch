@@ -14,7 +14,7 @@ public class Project {
 
     private String extensions = "";
     private SmartFile smart;
-    private ProjectType type = new SmartProjectType();
+    private ProjectType type = new DefaultProjectType();
     private final String root;
 
     private Project(String dir) {
@@ -53,14 +53,7 @@ public class Project {
         return this;
     }
 
-    private static interface ProjectType {
-
-        void addSources(String source);
-
-        String sources();
-    }
-
-    private static class SmartProjectType implements ProjectType {
+    private static class DefaultProjectType implements ProjectType {
 
         private String sources;
 
@@ -74,18 +67,4 @@ public class Project {
             return this.sources;
         }
     }
-
-    public enum ProjectTypes implements ProjectType {
-        MAVEN {
-            @Override
-            public void addSources(String source) {
-            }
-
-            @Override
-            public String sources() {
-                return "src/main/java/";
-            }
-        }
-    }
-
 }
