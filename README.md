@@ -34,29 +34,21 @@ class C{
 
 2. Agora é necessário que você baixe ou clone um projeto do github na sua máquina, para clonar um projeto execute o seguinte comando dentro da pasta desejada: `git clone https://github.com/<perfil>/<repositorio>`.
 
-3. Copie o caminho da raiz do projeto e atribua como valor da variável __path__ do método __main__ na classe Start.java.
+3. Copie o caminho da raiz do projeto e atribua como argumento do método __root__ do método __main__ na classe Start.java.
 ```
     public static void main(String[] args) {
-        String path = "...";
-        ASTParser parser = ASTParser.newParser(AST.JLS8);
-        walkFileTreeInPath(Paths.get(path), parser);
+        Project project = Project
+                .root(".../<nome_do_projeto>/")
+                .path("src/") 
+                .sources("src/")
+                .filter(".java");
+        
+        Study.of(project)
+                .toFile("<nome_do_projeto>")
+                .execute();
     }
 ```
-4. Copie o caminho da pasta source(src) do projeto e atribua como valor do array de strings **sources** do método __showMethods__ na mesma classe.
-```
-    private static void showMethods(Path path, ASTParser parser) {
-        try {
-            . . .
-            String[] sources = {".../src"};
-            String[] classpath = {System.getProperty("java.home") + "/lib/rt.jar"};
-            parser.setEnvironment(classpath, sources, new String[]{"UTF-8"}, true);
-            . . .
-        } catch (IOException ex) {
-            . . .
-        }
-    }
-```
-5. Após executar a classe, a saída deverá ter a seguinte formulação.
+4. Após executar a classe, um arquivo `.txt` será gerado, e estará localizado no diretório desta ferramenta, com a seguinte saída:
 ```
 <A,m(),java.util.List,C, m1(), mi()>
 <...>
