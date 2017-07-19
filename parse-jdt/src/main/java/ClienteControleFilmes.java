@@ -10,14 +10,36 @@ import ifpb.gpes.Study;
 public class ClienteControleFilmes {
 
     public static void main(String[] args) {
+//        Project project = Project
+//                .root("/Users/job/Documents/dev/gpes/parse-review/controle-filmes/")
+//                .path("src/")
+//                .sources("src/")
+//                .filter(".java");
+//
+//        Study.of(project)
+//                .toFile("controle-filmes")
+//                .execute();
+
+//https://github.com/MayconGesser/Projeto_Faculdade_Java
+//        Project project = Project
+//                .root("/home/juan/facul/periodo4/projetoDePesquisa/parse-review/")
+//                .path("teste/")
+//                .sources("teste/")
+//                .filter(".java");
+//        
+//        Study.of(project)
+//                .toFile("teste")
+//                .execute();
+
+//https://github.com/lucasbcorreia/projeto
         Project project = Project
-                .root("/Users/job/Documents/dev/gpes/parse-review/controle-filmes/")
+                .root("/home/juan/facul/periodo4/projetoDePesquisa/parse-review/teste2/")
                 .path("src/")
                 .sources("src/")
                 .filter(".java");
-
+        
         Study.of(project)
-                .toFile("controle-filmes")
+                .toFile("teste2")
                 .execute();
     }
 }
