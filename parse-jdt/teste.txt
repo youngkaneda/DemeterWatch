@@ -1,0 +1,893 @@
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaRegistAcomp, TelaRegistAcomp[controle.ControleChamados], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaRegistAcomp, TelaRegistAcomp[controle.ControleChamados], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaRegistAcomp, TelaRegistAcomp[controle.ControleChamados], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaRegistAcomp, TelaRegistAcomp[controle.ControleChamados], null>
+<apresentacao.TelaRegistAcomp, inicializar[], void, apresentacao.TelaRegistAcomp, TelaRegistAcomp[controle.ControleChamados], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComboBox, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.util.Set, iterator[], java.util.Iterator<java.lang.Integer>, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.util.HashMap, keySet[], java.util.Set<java.lang.Integer>, apresentacao.TelaRegistAcomp, inicializar[], iterator[]>
+<Persistencia.TecnicoDAO, voltaCashTecnico[], java.util.HashMap<java.lang.Integer,entidade.Tecnico>, apresentacao.TelaRegistAcomp, inicializar[], keySet[]>
+<java.util.Iterator, hasNext[], boolean, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.util.HashMap, get[java.lang.Object], entidade.Tecnico, apresentacao.TelaRegistAcomp, inicializar[], null>
+<Persistencia.TecnicoDAO, voltaCashTecnico[], java.util.HashMap<java.lang.Integer,entidade.Tecnico>, apresentacao.TelaRegistAcomp, inicializar[], get[java.lang.Object]>
+<java.util.Iterator, next[], java.lang.Object, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaRegistAcomp, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp, inicializar[], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, voltaChamadoCodigo[java.lang.Integer], entidade.Chamado, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Integer, parseInt[java.lang.String], int, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, alterarChamado[entidade.Chamado, java.lang.String, java.lang.String, java.lang.String], entidade.Chamado, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, inserirRegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], entidade.RegistroChamado, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, fecharTelaAlteracao[], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.io.PrintStream, println[java.lang.String], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Chamado, getStatus[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Chamado, getCausaProblema[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Chamado, getSolucaoProblema[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.io.PrintStream, println[java.lang.String], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.RegistroChamado, getAssunto[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Pessoa, getNome[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.RegistroChamado, getTecnico[], entidade.Tecnico, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], getNome[]>
+<entidade.Chamado, getCodigo[], int, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.RegistroChamado, getChamado[], entidade.Chamado, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], getCodigo[]>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, voltaChamadoCodigo[java.lang.Integer], entidade.Chamado, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Integer, parseInt[java.lang.String], int, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Chamado, getTitulo[], java.lang.String, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaRegistAcomp.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<controle.ControleChamados, fecharTelaAlteracao[], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaRegistAcomp.TelaCancelar, TelaCancelar[], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaRelatorioChamado, TelaRelatorioChamado[controle.ControleChamados], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaRelatorioChamado, TelaRelatorioChamado[controle.ControleChamados], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaRelatorioChamado, TelaRelatorioChamado[controle.ControleChamados], null>
+<apresentacao.TelaRelatorioChamado, inicializar[], void, apresentacao.TelaRelatorioChamado, TelaRelatorioChamado[controle.ControleChamados], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.String], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.String], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.String], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaRelatorioChamado, inicializar[], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaRelatorioChamado, incluirTexto[java.lang.String], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, emitirRelatorios[int], java.lang.String, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedIndex[], int, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<apresentacao.TelaRelatorioChamado, incluirTexto[java.lang.String], void, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<apresentacao.TelaRelatorioChamado, incluirTexto[java.lang.String], void, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, emitirRelatorios[int], java.lang.String, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedIndex[], int, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<apresentacao.TelaRelatorioChamado, incluirTexto[java.lang.String], void, apresentacao.TelaRelatorioChamado.GE, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaCadastroTecnico, TelaCadastroTecnico[controle.ControleTecnicos], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaCadastroTecnico, TelaCadastroTecnico[controle.ControleTecnicos], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaCadastroTecnico, TelaCadastroTecnico[controle.ControleTecnicos], null>
+<apresentacao.TelaCadastroTecnico, inicializar[], void, apresentacao.TelaCadastroTecnico, TelaCadastroTecnico[controle.ControleTecnicos], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroTecnico, inicializar[], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaCadastroTecnico, limparTela[], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaCadastroTecnico, limparTela[], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Long, parseLong[java.lang.String], long, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleTecnicos, inserir[long, java.lang.String], entidade.Tecnico, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<apresentacao.TelaCadastroTecnico, limparTela[], void, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleTecnicos, fecharTelaTecnico[], void, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, apresentacao.TelaCadastroTecnico.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<controle.ControleTecnicos, fecharTelaTecnico[], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroTecnico.TelaCancelar, TelaCancelar[], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaPrincipal, TelaPrincipal[controle.ControladorPrincipal], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaPrincipal, TelaPrincipal[controle.ControladorPrincipal], null>
+<javax.swing.JFrame, setDefaultCloseOperation[int], void, apresentacao.TelaPrincipal, TelaPrincipal[controle.ControladorPrincipal], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaPrincipal, TelaPrincipal[controle.ControladorPrincipal], null>
+<apresentacao.TelaPrincipal, inicializar[], void, apresentacao.TelaPrincipal, TelaPrincipal[controle.ControladorPrincipal], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaPrincipal, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaPrincipal, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaPrincipal, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaPrincipal, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaPrincipal, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaPrincipal, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaPrincipal, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaPrincipal, inicializar[], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleEmpresas, cadastrarEmpresa[], void, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControladorPrincipal, getCtrEmpresa[], controle.ControleEmpresas, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], cadastrarEmpresa[]>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleClientes, cadastrarCliente[], void, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControladorPrincipal, getCtrClientes[], controle.ControleClientes, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], cadastrarCliente[]>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleTecnicos, cadastrarTecnico[], void, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControladorPrincipal, getCtrTecnicos[], controle.ControleTecnicos, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], cadastrarTecnico[]>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, cadastrarChamado[], void, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControladorPrincipal, getCtrChamados[], controle.ControleChamados, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], cadastrarChamado[]>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, alterarChamado[], void, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControladorPrincipal, getCtrChamados[], controle.ControleChamados, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], alterarChamado[]>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, abrirRelatorio[], void, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControladorPrincipal, getCtrChamados[], controle.ControleChamados, apresentacao.TelaPrincipal.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], abrirRelatorio[]>
+<apresentacao.TelaCadastroEmpresa, inicializar[], void, apresentacao.TelaCadastroEmpresa, TelaCadastroEmpresa[controle.ControleEmpresas], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaCadastroEmpresa, TelaCadastroEmpresa[controle.ControleEmpresas], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaCadastroEmpresa, TelaCadastroEmpresa[controle.ControleEmpresas], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.JLabel, setText[java.lang.String], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.JLabel, setText[java.lang.String], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Component, setSize[java.awt.Dimension], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Component, setSize[java.awt.Dimension], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroEmpresa, inicializar[], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Long, parseLong[java.lang.String], long, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleEmpresas, inserir[long, java.lang.String], entidade.Empresa, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleEmpresas, fecharTela[], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.io.PrintStream, println[java.lang.String], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<controle.ControleEmpresas, fecharTela[], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroEmpresa.GerenciadorEventos.TelaCancelar, TelaCancelar[], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaCadastroCliente, TelaCadastroCliente[controle.ControleClientes], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaCadastroCliente, TelaCadastroCliente[controle.ControleClientes], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaCadastroCliente, TelaCadastroCliente[controle.ControleClientes], null>
+<apresentacao.TelaCadastroCliente, inicializar[], void, apresentacao.TelaCadastroCliente, TelaCadastroCliente[controle.ControleClientes], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.util.Set, iterator[], java.util.Iterator, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.util.HashMap, keySet[], java.util.Set, apresentacao.TelaCadastroCliente, inicializar[], iterator[]>
+<Persistencia.EmpresaDAO, voltaEmpresa[], java.util.HashMap<java.lang.Long,entidade.Empresa>, apresentacao.TelaCadastroCliente, inicializar[], keySet[]>
+<java.util.Iterator, hasNext[], boolean, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.util.HashMap, get[java.lang.Object], entidade.Empresa, apresentacao.TelaCadastroCliente, inicializar[], null>
+<Persistencia.EmpresaDAO, voltaEmpresa[], java.util.HashMap<java.lang.Long,entidade.Empresa>, apresentacao.TelaCadastroCliente, inicializar[], get[java.lang.Object]>
+<java.util.Iterator, next[], java.lang.Object, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente, inicializar[], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaCadastroCliente, limparTela[], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaCadastroCliente, limparTela[], null>
+<javax.swing.text.JTextComponent, setText[java.lang.String], void, apresentacao.TelaCadastroCliente, limparTela[], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Long, parseLong[java.lang.String], long, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<Persistencia.ClienteDAO, validarCPF[long], boolean, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleClientes, getClienteDAO[], Persistencia.ClienteDAO, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], validarCPF[long]>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Long, parseLong[java.lang.String], long, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Long, parseLong[java.lang.String], long, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleClientes, incluiNovoCliente[entidade.Empresa, long, java.lang.String, long], entidade.ClienteEmpresa, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Pessoa, getNome[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.ClienteEmpresa, getCpf[], long, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.ClienteEmpresa, getEmpresa[], entidade.Empresa, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<apresentacao.TelaCadastroCliente, limparTela[], void, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleClientes, fecharTelaCliente[], void, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, apresentacao.TelaCadastroCliente.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<controle.ControleClientes, fecharTelaCliente[], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroCliente.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaCadastroChamado, TelaCadastroChamado[controle.ControleChamados], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaCadastroChamado, TelaCadastroChamado[controle.ControleChamados], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaCadastroChamado, TelaCadastroChamado[controle.ControleChamados], null>
+<apresentacao.TelaCadastroChamado, inicializar[], void, apresentacao.TelaCadastroChamado, TelaCadastroChamado[controle.ControleChamados], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.util.Set, iterator[], java.util.Iterator, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.util.HashMap, keySet[], java.util.Set, apresentacao.TelaCadastroChamado, inicializar[], iterator[]>
+<Persistencia.TecnicoDAO, voltaCashTecnico[], java.util.HashMap<java.lang.Integer,entidade.Tecnico>, apresentacao.TelaCadastroChamado, inicializar[], keySet[]>
+<java.util.Iterator, hasNext[], boolean, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.util.HashMap, get[java.lang.Object], entidade.Tecnico, apresentacao.TelaCadastroChamado, inicializar[], null>
+<Persistencia.TecnicoDAO, voltaCashTecnico[], java.util.HashMap<java.lang.Integer,entidade.Tecnico>, apresentacao.TelaCadastroChamado, inicializar[], get[java.lang.Object]>
+<java.util.Iterator, next[], java.lang.Object, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.util.Set, iterator[], java.util.Iterator, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.util.HashMap, keySet[], java.util.Set, apresentacao.TelaCadastroChamado, inicializar[], iterator[]>
+<Persistencia.ClienteDAO, voltaCashCliente[], java.util.HashMap<java.lang.Long,entidade.ClienteEmpresa>, apresentacao.TelaCadastroChamado, inicializar[], keySet[]>
+<java.util.Iterator, hasNext[], boolean, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.util.HashMap, get[java.lang.Object], entidade.ClienteEmpresa, apresentacao.TelaCadastroChamado, inicializar[], null>
+<Persistencia.ClienteDAO, voltaCashCliente[], java.util.HashMap<java.lang.Long,entidade.ClienteEmpresa>, apresentacao.TelaCadastroChamado, inicializar[], get[java.lang.Object]>
+<java.util.Iterator, next[], java.lang.Object, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.String], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.String], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.String], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.String], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComboBox, addItem[java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.JComponent, setPreferredSize[java.awt.Dimension], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.AbstractButton, setActionCommand[java.lang.String], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.AbstractButton, getText[], java.lang.String, apresentacao.TelaCadastroChamado, inicializar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.awt.Container, add[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado, inicializar[], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, InserirChamadoRede[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], entidade.Chamado, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Chamado, getCodigo[], int, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, fecharTela[], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<controle.ControleChamados, InserirChamadoDesempenho[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], entidade.Chamado, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Integer, parseInt[java.lang.String], int, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Chamado, getCodigo[], int, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, fecharTela[], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<controle.ControleChamados, InserirChamadoBancoDeDados[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], entidade.Chamado, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.text.JTextComponent, getText[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<controle.ControleChamados, fecharTela[], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<entidade.Chamado, getCodigo[], int, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object, java.lang.String, int], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.String, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.event.ActionEvent, getActionCommand[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.AbstractButton, getActionCommand[], java.lang.String, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<java.lang.Object, equals[java.lang.Object], boolean, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComboBox, getSelectedItem[], java.lang.Object, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], equals[java.lang.Object]>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JComponent, setVisible[boolean], void, apresentacao.TelaCadastroChamado.GerenciadorEventos, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.JFrame, getContentPane[], java.awt.Container, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, setLayout[java.awt.LayoutManager], void, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setSize[int, int], void, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setLocationRelativeTo[java.awt.Component], void, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<controle.ControleChamados, fecharTela[], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<javax.swing.AbstractButton, addActionListener[java.awt.event.ActionListener], void, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<java.awt.Window, setVisible[boolean], void, java.lang.Object, actionPerformed[java.awt.event.ActionEvent], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<java.awt.Container, add[java.awt.Component], java.awt.Component, apresentacao.TelaCadastroChamado.TelaCancelar, TelaCancelar[], null>
+<Persistencia.ClienteDAO, load[], void, Persistencia.ClienteDAO, ClienteDAO[], null>
+<java.util.HashMap, get[java.lang.Object], entidade.ClienteEmpresa, Persistencia.ClienteDAO, validarCPF[long], null>
+<java.util.Set, size[], int, Persistencia.ClienteDAO, gerarCodigo[], null>
+<java.util.HashMap, keySet[], java.util.Set, Persistencia.ClienteDAO, gerarCodigo[], size[]>
+<entidade.ClienteEmpresa, setCodigo[java.lang.Integer], void, Persistencia.ClienteDAO, put[entidade.ClienteEmpresa], null>
+<Persistencia.ClienteDAO, gerarCodigo[], int, Persistencia.ClienteDAO, put[entidade.ClienteEmpresa], null>
+<java.util.HashMap, put[java.lang.Long, entidade.ClienteEmpresa], entidade.ClienteEmpresa, Persistencia.ClienteDAO, put[entidade.ClienteEmpresa], null>
+<entidade.ClienteEmpresa, getCpf[], long, Persistencia.ClienteDAO, put[entidade.ClienteEmpresa], null>
+<Persistencia.ClienteDAO, persit[], void, Persistencia.ClienteDAO, put[entidade.ClienteEmpresa], null>
+<java.util.HashMap, get[java.lang.Object], entidade.ClienteEmpresa, Persistencia.ClienteDAO, get[java.lang.Long], null>
+<java.io.ObjectInputStream, readObject[], java.lang.Object, Persistencia.ClienteDAO, load[], null>
+<java.io.ObjectInputStream, close[], void, Persistencia.ClienteDAO, load[], null>
+<java.io.FileInputStream, close[], void, Persistencia.ClienteDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ClienteDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ClienteDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ClienteDAO, load[], null>
+<java.io.ObjectOutputStream, writeObject[java.lang.Object], void, Persistencia.ClienteDAO, persit[], null>
+<java.io.ObjectOutputStream, flush[], void, Persistencia.ClienteDAO, persit[], null>
+<java.io.OutputStream, flush[], void, Persistencia.ClienteDAO, persit[], null>
+<java.io.ObjectOutputStream, close[], void, Persistencia.ClienteDAO, persit[], null>
+<java.io.FileOutputStream, close[], void, Persistencia.ClienteDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, persit[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ClienteDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ClienteDAO, persit[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ClienteDAO, persit[], null>
+<Persistencia.ChamadoDAO, load[], void, Persistencia.ChamadoDAO, ChamadoDAO[], null>
+<java.util.Set, size[], int, Persistencia.ChamadoDAO, gerarCodigo[], null>
+<java.util.HashMap, keySet[], java.util.Set, Persistencia.ChamadoDAO, gerarCodigo[], size[]>
+<java.util.Set, size[], int, Persistencia.ChamadoDAO, gerarCodigoRegistroChamado[], null>
+<java.util.HashMap, keySet[], java.util.Set, Persistencia.ChamadoDAO, gerarCodigoRegistroChamado[], size[]>
+<entidade.Chamado, setCodigo[int], void, Persistencia.ChamadoDAO, put[entidade.Chamado], null>
+<Persistencia.ChamadoDAO, gerarCodigo[], int, Persistencia.ChamadoDAO, put[entidade.Chamado], null>
+<java.util.HashMap, put[java.lang.Integer, entidade.Chamado], entidade.Chamado, Persistencia.ChamadoDAO, put[entidade.Chamado], null>
+<entidade.Chamado, getCodigo[], int, Persistencia.ChamadoDAO, put[entidade.Chamado], null>
+<Persistencia.ChamadoDAO, persit[], void, Persistencia.ChamadoDAO, put[entidade.Chamado], null>
+<java.util.HashMap, put[java.lang.Integer, entidade.RegistroChamado], entidade.RegistroChamado, Persistencia.ChamadoDAO, putRegistro[entidade.RegistroChamado], null>
+<entidade.RegistroChamado, getCodigo[], java.lang.Integer, Persistencia.ChamadoDAO, putRegistro[entidade.RegistroChamado], null>
+<Persistencia.ChamadoDAO, persit[], void, Persistencia.ChamadoDAO, putRegistro[entidade.RegistroChamado], null>
+<java.util.HashMap, get[java.lang.Object], entidade.Chamado, Persistencia.ChamadoDAO, get[java.lang.Integer], null>
+<java.io.ObjectInputStream, readObject[], java.lang.Object, Persistencia.ChamadoDAO, load[], null>
+<java.io.ObjectInputStream, close[], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.FileInputStream, close[], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.ObjectInputStream, readObject[], java.lang.Object, Persistencia.ChamadoDAO, load[], null>
+<java.io.ObjectInputStream, close[], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.FileInputStream, close[], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ChamadoDAO, load[], null>
+<java.io.ObjectOutputStream, writeObject[java.lang.Object], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.ObjectOutputStream, flush[], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.OutputStream, flush[], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.ObjectOutputStream, close[], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.FileOutputStream, close[], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.ObjectOutputStream, writeObject[java.lang.Object], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.ObjectOutputStream, flush[], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.OutputStream, flush[], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.ObjectOutputStream, close[], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.FileOutputStream, close[], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, persit[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ChamadoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.ChamadoDAO, persit[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.ChamadoDAO, persit[], null>
+<java.util.HashMap, values[], java.util.Collection, Persistencia.ChamadoDAO, getChamados[], null>
+<java.util.HashMap, values[], java.util.Collection, Persistencia.ChamadoDAO, getRegistros[], null>
+<Persistencia.TecnicoDAO, load[], void, Persistencia.TecnicoDAO, TecnicoDAO[], null>
+<java.util.Set, size[], int, Persistencia.TecnicoDAO, gerarCodigo[], null>
+<java.util.HashMap, keySet[], java.util.Set, Persistencia.TecnicoDAO, gerarCodigo[], size[]>
+<java.util.HashMap, put[java.lang.Integer, entidade.Tecnico], entidade.Tecnico, Persistencia.TecnicoDAO, put[entidade.Tecnico], null>
+<Persistencia.TecnicoDAO, gerarCodigo[], int, Persistencia.TecnicoDAO, put[entidade.Tecnico], null>
+<Persistencia.TecnicoDAO, persit[], void, Persistencia.TecnicoDAO, put[entidade.Tecnico], null>
+<java.util.HashMap, get[java.lang.Object], entidade.Tecnico, Persistencia.TecnicoDAO, get[java.lang.Integer], null>
+<java.io.ObjectInputStream, readObject[], java.lang.Object, Persistencia.TecnicoDAO, load[], null>
+<java.io.ObjectInputStream, close[], void, Persistencia.TecnicoDAO, load[], null>
+<java.io.FileInputStream, close[], void, Persistencia.TecnicoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.TecnicoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.TecnicoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.TecnicoDAO, load[], null>
+<java.io.ObjectOutputStream, writeObject[java.lang.Object], void, Persistencia.TecnicoDAO, persit[], null>
+<java.io.ObjectOutputStream, flush[], void, Persistencia.TecnicoDAO, persit[], null>
+<java.io.OutputStream, flush[], void, Persistencia.TecnicoDAO, persit[], null>
+<java.io.ObjectOutputStream, close[], void, Persistencia.TecnicoDAO, persit[], null>
+<java.io.FileOutputStream, close[], void, Persistencia.TecnicoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, persit[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.TecnicoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.TecnicoDAO, persit[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.TecnicoDAO, persit[], null>
+<Persistencia.EmpresaDAO, load[], void, Persistencia.EmpresaDAO, EmpresaDAO[], null>
+<java.util.HashMap, put[java.lang.Long, entidade.Empresa], entidade.Empresa, Persistencia.EmpresaDAO, put[entidade.Empresa], null>
+<entidade.Empresa, getNumeroContrato[], long, Persistencia.EmpresaDAO, put[entidade.Empresa], null>
+<Persistencia.EmpresaDAO, persit[], void, Persistencia.EmpresaDAO, put[entidade.Empresa], null>
+<java.io.ObjectInputStream, readObject[], java.lang.Object, Persistencia.EmpresaDAO, load[], null>
+<java.io.ObjectInputStream, close[], void, Persistencia.EmpresaDAO, load[], null>
+<java.io.FileInputStream, close[], void, Persistencia.EmpresaDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.EmpresaDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.EmpresaDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, load[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, load[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.EmpresaDAO, load[], null>
+<java.io.ObjectOutputStream, writeObject[java.lang.Object], void, Persistencia.EmpresaDAO, persit[], null>
+<java.io.ObjectOutputStream, flush[], void, Persistencia.EmpresaDAO, persit[], null>
+<java.io.OutputStream, flush[], void, Persistencia.EmpresaDAO, persit[], null>
+<java.io.ObjectOutputStream, close[], void, Persistencia.EmpresaDAO, persit[], null>
+<java.io.FileOutputStream, close[], void, Persistencia.EmpresaDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, persit[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.EmpresaDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, persit[], null>
+<java.io.PrintStream, println[java.lang.String], void, Persistencia.EmpresaDAO, persit[], null>
+<java.lang.Throwable, getMessage[], java.lang.String, Persistencia.EmpresaDAO, persit[], null>
+<java.util.HashMap, values[], java.util.Collection, Persistencia.EmpresaDAO, getEmpresas[], null>
+<java.util.Calendar, getInstance[], java.util.Calendar, entidade.Chamado, Chamado[java.lang.Integer, java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], null>
+<java.text.DateFormat, format[java.util.Date], java.lang.String, entidade.Chamado, Chamado[java.lang.Integer, java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], null>
+<java.text.DateFormat, getTimeInstance[], java.text.DateFormat, entidade.Chamado, Chamado[java.lang.Integer, java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], format[java.util.Date]>
+<java.util.Calendar, getTime[], java.util.Date, entidade.Chamado, Chamado[java.lang.Integer, java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], null>
+<java.text.DateFormat, format[java.util.Date], java.lang.String, entidade.Chamado, Chamado[java.lang.Integer, java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], null>
+<java.text.DateFormat, getDateInstance[], java.text.DateFormat, entidade.Chamado, Chamado[java.lang.Integer, java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], format[java.util.Date]>
+<java.util.Calendar, getTime[], java.util.Date, entidade.Chamado, Chamado[java.lang.Integer, java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], null>
+<java.util.Calendar, getInstance[], java.util.Calendar, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], null>
+<java.text.DateFormat, format[java.util.Date], java.lang.String, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], null>
+<java.text.DateFormat, getTimeInstance[], java.text.DateFormat, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], format[java.util.Date]>
+<java.util.Calendar, getTime[], java.util.Date, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], null>
+<java.text.DateFormat, format[java.util.Date], java.lang.String, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], null>
+<java.text.DateFormat, getDateInstance[], java.text.DateFormat, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], format[java.util.Date]>
+<java.util.Calendar, getTime[], java.util.Date, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], null>
+<java.util.Calendar, getInstance[], java.util.Calendar, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], null>
+<java.text.DateFormat, format[java.util.Date], java.lang.String, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], null>
+<java.text.DateFormat, getTimeInstance[], java.text.DateFormat, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], format[java.util.Date]>
+<java.util.Calendar, getTime[], java.util.Date, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], null>
+<java.text.DateFormat, format[java.util.Date], java.lang.String, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], null>
+<java.text.DateFormat, getDateInstance[], java.text.DateFormat, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], format[java.util.Date]>
+<java.util.Calendar, getTime[], java.util.Date, entidade.Chamado, Chamado[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], null>
+<entidade.Chamado, getCodigo[], int, entidade.Chamado, equals[java.lang.Object], null>
+<entidade.Chamado, getCodigo[], int, entidade.Chamado, equals[java.lang.Object], null>
+<java.lang.String, equals[java.lang.Object], boolean, entidade.Chamado, equals[java.lang.Object], null>
+<entidade.Chamado, getData[], java.lang.String, entidade.Chamado, equals[java.lang.Object], equals[java.lang.Object]>
+<entidade.Chamado, getData[], java.lang.String, entidade.Chamado, equals[java.lang.Object], null>
+<java.lang.String, equals[java.lang.Object], boolean, entidade.Chamado, equals[java.lang.Object], null>
+<entidade.Chamado, getTitulo[], java.lang.String, entidade.Chamado, equals[java.lang.Object], equals[java.lang.Object]>
+<entidade.Chamado, getTitulo[], java.lang.String, entidade.Chamado, equals[java.lang.Object], null>
+<entidade.Empresa, getNumeroContrato[], long, entidade.ClienteEmpresa, toString[], null>
+<entidade.Empresa, getNomeEmpresa[], java.lang.String, entidade.ClienteEmpresa, toString[], null>
+<entidade.ClienteEmpresa, getCpf[], long, entidade.ClienteEmpresa, toString[], null>
+<entidade.Pessoa, getNome[], java.lang.String, entidade.ClienteEmpresa, toString[], null>
+<entidade.Pessoa, getNome[], java.lang.String, entidade.Tecnico, toString[], null>
+<java.util.Calendar, getInstance[], java.util.Calendar, entidade.RegistroChamado, RegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], null>
+<java.text.DateFormat, format[java.util.Date], java.lang.String, entidade.RegistroChamado, RegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], null>
+<java.text.DateFormat, getTimeInstance[], java.text.DateFormat, entidade.RegistroChamado, RegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], format[java.util.Date]>
+<java.util.Calendar, getTime[], java.util.Date, entidade.RegistroChamado, RegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], null>
+<java.text.DateFormat, format[java.util.Date], java.lang.String, entidade.RegistroChamado, RegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], null>
+<java.text.DateFormat, getDateInstance[], java.text.DateFormat, entidade.RegistroChamado, RegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], format[java.util.Date]>
+<java.util.Calendar, getTime[], java.util.Date, entidade.RegistroChamado, RegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], null>
+<Persistencia.EmpresaDAO, getEmpresas[], java.util.Collection<entidade.Empresa>, controle.ControleEmpresas, ControleEmpresas[], null>
+<java.lang.String, equals[java.lang.Object], boolean, controle.ControleEmpresas, retorna[long, java.lang.String], null>
+<entidade.Empresa, getNomeEmpresa[], java.lang.String, controle.ControleEmpresas, retorna[long, java.lang.String], equals[java.lang.Object]>
+<entidade.Empresa, getNumeroContrato[], long, controle.ControleEmpresas, retorna[long, java.lang.String], null>
+<Persistencia.EmpresaDAO, getEmpresas[], java.util.Collection<entidade.Empresa>, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<entidade.Empresa, getNumeroContrato[], long, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<java.lang.String, equals[java.lang.Object], boolean, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<entidade.Empresa, getNomeEmpresa[], java.lang.String, controle.ControleEmpresas, validar[long, java.lang.String], equals[java.lang.Object]>
+<entidade.Empresa, getNumeroContrato[], long, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<java.lang.String, equals[java.lang.Object], boolean, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<entidade.Empresa, getNomeEmpresa[], java.lang.String, controle.ControleEmpresas, validar[long, java.lang.String], equals[java.lang.Object]>
+<entidade.Empresa, getNumeroContrato[], long, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<java.lang.String, equals[java.lang.Object], boolean, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<entidade.Empresa, getNomeEmpresa[], java.lang.String, controle.ControleEmpresas, validar[long, java.lang.String], equals[java.lang.Object]>
+<entidade.Empresa, getNumeroContrato[], long, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<java.lang.String, equals[java.lang.Object], boolean, controle.ControleEmpresas, validar[long, java.lang.String], null>
+<entidade.Empresa, getNomeEmpresa[], java.lang.String, controle.ControleEmpresas, validar[long, java.lang.String], equals[java.lang.Object]>
+<controle.ControleEmpresas, checar[java.lang.Long, java.lang.String], boolean, controle.ControleEmpresas, inserir[long, java.lang.String], null>
+<Persistencia.EmpresaDAO, getEmpresas[], java.util.Collection<entidade.Empresa>, controle.ControleEmpresas, inserir[long, java.lang.String], null>
+<Persistencia.EmpresaDAO, put[entidade.Empresa], void, controle.ControleEmpresas, inserir[long, java.lang.String], null>
+<javax.swing.JOptionPane, showMessageDialog[java.awt.Component, java.lang.Object], void, controle.ControleEmpresas, inserir[long, java.lang.String], null>
+<Persistencia.EmpresaDAO, getEmpresas[], java.util.Collection<entidade.Empresa>, controle.ControleEmpresas, checar[java.lang.Long, java.lang.String], null>
+<java.lang.String, equals[java.lang.Object], boolean, controle.ControleEmpresas, checar[java.lang.Long, java.lang.String], null>
+<entidade.Empresa, getNomeEmpresa[], java.lang.String, controle.ControleEmpresas, checar[java.lang.Long, java.lang.String], equals[java.lang.Object]>
+<entidade.Empresa, getNumeroContrato[], long, controle.ControleEmpresas, checar[java.lang.Long, java.lang.String], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleEmpresas, cadastrarEmpresa[], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleEmpresas, fecharTela[], null>
+<Persistencia.TecnicoDAO, put[entidade.Tecnico], void, controle.ControleTecnicos, inserir[long, java.lang.String], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleTecnicos, cadastrarTecnico[], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleTecnicos, fecharTelaTecnico[], null>
+<entidade.Chamado, setStatus[java.lang.String], void, controle.ControleChamados, alterarChamado[entidade.Chamado, java.lang.String, java.lang.String, java.lang.String], null>
+<entidade.Chamado, setCausaProblema[java.lang.String], void, controle.ControleChamados, alterarChamado[entidade.Chamado, java.lang.String, java.lang.String, java.lang.String], null>
+<entidade.Chamado, setSolucaoProblema[java.lang.String], void, controle.ControleChamados, alterarChamado[entidade.Chamado, java.lang.String, java.lang.String, java.lang.String], null>
+<Persistencia.ChamadoDAO, put[entidade.Chamado], void, controle.ControleChamados, InserirChamadoRede[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, java.lang.String], null>
+<Persistencia.ChamadoDAO, put[entidade.Chamado], void, controle.ControleChamados, InserirChamadoBancoDeDados[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String], null>
+<Persistencia.ChamadoDAO, put[entidade.Chamado], void, controle.ControleChamados, InserirChamadoDesempenho[java.lang.String, java.lang.String, int, entidade.Tecnico, entidade.ClienteEmpresa, java.lang.String, java.lang.String, java.lang.String, double], null>
+<Persistencia.ChamadoDAO, putRegistro[entidade.RegistroChamado], void, controle.ControleChamados, inserirRegistroChamado[java.lang.String, entidade.Chamado, entidade.Tecnico], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleChamados, cadastrarChamado[], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleChamados, fecharTela[], null>
+<Persistencia.ChamadoDAO, get[java.lang.Integer], entidade.Chamado, controle.ControleChamados, voltaChamadoCodigo[java.lang.Integer], null>
+<Persistencia.ChamadoDAO, getChamados[], java.util.Collection<entidade.Chamado>, controle.ControleChamados, emitirRelatorios[int], null>
+<Persistencia.ChamadoDAO, getRegistros[], java.util.Collection<entidade.RegistroChamado>, controle.ControleChamados, emitirRelatorios[int], null>
+<java.lang.String, equals[java.lang.Object], boolean, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getTipoProblema[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], equals[java.lang.Object]>
+<entidade.Chamado, getPrioridade[], int, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getData[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getHora[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getTitulo[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getCodigo[], int, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getDescricao[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getStatus[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getTipoProblema[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getTecnico[], entidade.Tecnico, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getCliente[], entidade.ClienteEmpresa, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, equals[java.lang.Object], boolean, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.RegistroChamado, getChamado[], entidade.Chamado, controle.ControleChamados, emitirRelatorios[int], equals[java.lang.Object]>
+<entidade.RegistroChamado, getData[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.RegistroChamado, getHora[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.RegistroChamado, getAssunto[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Pessoa, getNome[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.RegistroChamado, getTecnico[], entidade.Tecnico, controle.ControleChamados, emitirRelatorios[int], getNome[]>
+<entidade.Chamado, getCausaProblema[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<entidade.Chamado, getSolucaoProblema[], java.lang.String, controle.ControleChamados, emitirRelatorios[int], null>
+<Persistencia.ChamadoDAO, getChamados[], java.util.Collection<entidade.Chamado>, controle.ControleChamados, buscaPeloCodigo[int], null>
+<entidade.Chamado, getCodigo[], int, controle.ControleChamados, buscaPeloCodigo[int], null>
+<entidade.Chamado, getData[], java.lang.String, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<entidade.Chamado, getHora[], java.lang.String, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<entidade.Chamado, getTitulo[], java.lang.String, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<entidade.Chamado, getDescricao[], java.lang.String, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<entidade.Chamado, getPrioridade[], int, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<entidade.Chamado, getStatus[], java.lang.String, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<entidade.Chamado, getTipoProblema[], java.lang.String, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<entidade.Chamado, getTecnico[], entidade.Tecnico, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<entidade.Chamado, getCliente[], entidade.ClienteEmpresa, controle.ControleChamados, retornaDetalhesChamado[entidade.Chamado], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleChamados, alterarChamado[], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleChamados, abrirRelatorio[], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleChamados, fecharTelaAlteracao[], null>
+<Persistencia.ChamadoDAO, getChamados[], java.util.Collection<entidade.Chamado>, controle.ControleChamados, validarQtdChamados[entidade.ClienteEmpresa], null>
+<entidade.Chamado, getCliente[], entidade.ClienteEmpresa, controle.ControleChamados, validarQtdChamados[entidade.ClienteEmpresa], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleClientes, cadastrarCliente[], null>
+<Persistencia.ClienteDAO, put[entidade.ClienteEmpresa], void, controle.ControleClientes, incluiNovoCliente[entidade.Empresa, long, java.lang.String, long], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControleClientes, fecharTelaCliente[], null>
+<java.awt.Window, setVisible[boolean], void, controle.ControladorPrincipal, start[], null>
+<controle.ControladorPrincipal, start[], void, SistemaChamadosMain, main[java.lang.String[]], null>
