@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.AnonymousClassDeclaration;
 import org.eclipse.jdt.core.dom.Expression;
+import org.eclipse.jdt.core.dom.ExpressionMethodReference;
 import org.eclipse.jdt.core.dom.IMethodBinding;
 import org.eclipse.jdt.core.dom.ITypeBinding;
 import org.eclipse.jdt.core.dom.LambdaExpression;
@@ -50,6 +51,41 @@ public class SmartAllVisitor extends ASTVisitor {
     @Override
     public void endVisit(LambdaExpression node) {
         this.currentExpression = null;
+        super.endVisit(node);
+    }
+
+    @Override
+    public boolean visit(ExpressionMethodReference node) {
+        Expression ex = node.getExpression();
+        Expression exmd = (Expression) node;
+        String mfilled = fillMethodName(
+                node.getName().getFullyQualifiedName(), 
+                node.resolveTypeBinding().getTypeArguments()
+        );
+        IMethodBinding imb = exmd.resolveTypeBinding().getFunctionalInterfaceMethod();          
+        String m1filled = fillMethodName(imb.getName(), imb.getParameterTypes());
+        
+        No no = new No();
+       
+        no.setA(ex.resolveTypeBinding().getQualifiedName());
+        no.setM(mfilled);
+        no.setRt(node.getName().resolveTypeBinding().toString());
+        no.setC(exmd.resolveTypeBinding().getQualifiedName());
+        no.setM1(m1filled);
+        no.setMi(null);
+        
+        //nao é faz parte de nenhuma sequencia de chamadas
+        //esta soulução precisa ser revisada
+        no.setInv(ex.toString());
+        //Nem todos os que vagueiam estao perdidos
+        
+        ns.add(no);
+        
+        return super.visit(node);
+    }
+
+    @Override
+    public void endVisit(ExpressionMethodReference node) {
         super.endVisit(node);
     }
 
