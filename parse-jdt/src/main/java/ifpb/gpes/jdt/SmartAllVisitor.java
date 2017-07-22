@@ -25,7 +25,6 @@ public class SmartAllVisitor extends ASTVisitor {
     private Expression currentExpression;
     //TODO: criar uma classe para fazer substituir
     private final Stack<MethodDeclaration> stackMethodDeclaration = new Stack<>();
-    private final Stack<MethodInvocation> stackMethodInvocation = new Stack<>();
 
     public SmartAllVisitor() {
         this(new ArrayList<>());
@@ -151,23 +150,10 @@ public class SmartAllVisitor extends ASTVisitor {
         String methodInvocation = getMethodInvocation(count, mi.getName().toString());
 
         no.setMi(methodInvocation);
-        ns.add(no);
-
-        //TODO: com o methodInvocation funcionou. 
-        //As informações são iguais.
-        // precisamos capturar os argumentos
-        if (!stackMethodInvocation.isEmpty() && stackMethodInvocation.peek() != null) {
-//            System.out.println(methodInvocation + " < - > "+stackMethodInvocation.peek().getName());
-        }
-        stackMethodInvocation.push(mi);
+        ns.add(no); 
         return super.visit(mi);
     }
-
-    @Override
-    public void endVisit(MethodInvocation node) {
-        stackMethodInvocation.pop();
-        super.endVisit(node);
-    }
+ 
 
     @Override
     public void endVisit(MethodDeclaration node) {
