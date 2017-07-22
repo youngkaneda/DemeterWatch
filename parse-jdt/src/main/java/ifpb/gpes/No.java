@@ -99,9 +99,7 @@ public class No {
     }
     
     public String noOf(){
-//        No.of("java.util.List", "", rt, c, m1, mi, inv)
         return "No.of(\""+a + "\", \"" + m + "\",\"" + rt + "\",\"" + c + "\",\"" + m1 + "\",\"" + mi + "\"),";
-//        No.of(a, m, rt, c, m1, mi, inv)
     }
 
     @Override
