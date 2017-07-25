@@ -1,6 +1,6 @@
 package ifpb.gpes.jdt;
 
-import ifpb.gpes.No;
+import ifpb.gpes.Call;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,7 +19,7 @@ import org.eclipse.jdt.core.dom.MethodInvocation;
 
 public class SmartAllVisitor extends ASTVisitor {
 
-    private List<No> ns;// = new ArrayList<>();
+    private List<Call> ns;// = new ArrayList<>();
 
     private MethodDeclaration currentMethodDeclaration;
     private Expression currentExpression;
@@ -30,7 +30,7 @@ public class SmartAllVisitor extends ASTVisitor {
         this(new ArrayList<>());
     }
 
-    public SmartAllVisitor(List<No> elements) {
+    public SmartAllVisitor(List<Call> elements) {
         this.ns = elements;
     }
 
@@ -56,27 +56,25 @@ public class SmartAllVisitor extends ASTVisitor {
     @Override
     public boolean visit(ExpressionMethodReference node) {
         Expression ex = node.getExpression();
-        Expression exmd = (Expression) node;
-        String mfilled = fillMethodName(
+        Expression castedEx = (Expression) node;
+        String methodName = fillMethodName(
                 node.getName().getFullyQualifiedName(), 
                 node.resolveTypeBinding().getTypeArguments()
         );
-        IMethodBinding imb = exmd.resolveTypeBinding().getFunctionalInterfaceMethod();          
-        String m1filled = fillMethodName(imb.getName(), imb.getParameterTypes());
+        IMethodBinding imb = castedEx.resolveTypeBinding().getFunctionalInterfaceMethod();          
+        String calledInMethod = fillMethodName(imb.getName(), imb.getParameterTypes());
         
-        No no = new No();
+        Call no = new Call();
        
-        no.setA(ex.resolveTypeBinding().getQualifiedName());
-        no.setM(mfilled);
-        no.setRt(node.getName().resolveTypeBinding().toString());
-        no.setC(exmd.resolveTypeBinding().getQualifiedName());
-        no.setM1(m1filled);
-        no.setMi(null);
+        no.setClassType(ex.resolveTypeBinding().getQualifiedName());
+        no.setMethodName(methodName);
+        no.setReturnType(node.getName().resolveTypeBinding().toString());
+        no.setCalledInClass(castedEx.resolveTypeBinding().getQualifiedName());
+        no.setCalledInMethod(calledInMethod);
+        no.setCallMethod(null);
         
-        //nao é faz parte de nenhuma sequencia de chamadas
-        //esta soulução precisa ser revisada
-        no.setInv(ex.toString());
-        //Nem todos os que vagueiam estao perdidos
+        no.setInvokedBy(ex.toString());
+        //"Nem todos os que vagueiam estao perdidos"
         
         ns.add(no);
         
@@ -102,54 +100,54 @@ public class SmartAllVisitor extends ASTVisitor {
 
     @Override
     public boolean visit(MethodInvocation mi) {
-        No no = new No();
-        String a = "SAD";
+        Call no = new Call();
+        String classType = "SAD";
         String returnType = "SADNESS";
         IMethodBinding imb = mi.resolveMethodBinding();
         ITypeBinding[] bindings = {};
         if (imb != null) {
             bindings = imb.getParameterTypes();
-            a = imb.getDeclaringClass().getBinaryName();
+            classType = imb.getDeclaringClass().getBinaryName();
             returnType = imb.getReturnType().getQualifiedName();
         }
 
-        no.setA(a);
-        no.setRt(returnType);
+        no.setClassType(classType);
+        no.setReturnType(returnType);
 
-        String m = fillMethodName(mi.getName().toString(), bindings);
-        no.setM(m);
+        String methodName = fillMethodName(mi.getName().toString(), bindings);
+        no.setMethodName(methodName);
 
         ITypeBinding callClass = currentMethodDeclaration.resolveBinding().getDeclaringClass();
-        String c = callClassToString(callClass);
+        String calledInClass = callClassToString(callClass);
 
-        no.setC(c);
+        no.setCalledInClass(calledInClass);
 
         bindings = currentMethodDeclaration.resolveBinding().getParameterTypes();
 
-        String m1 = fillMethodName(currentMethodDeclaration.getName().getIdentifier(), bindings);
-        no.setM1(m1);
+        String calledInMethod = fillMethodName(currentMethodDeclaration.getName().getIdentifier(), bindings);
+        no.setCalledInMethod(calledInMethod);
 
         if (currentExpression != null) { //lambda
-            no.setC(currentExpression
+            no.setCalledInClass(currentExpression
                     .resolveTypeBinding()
                     .getQualifiedName());
             ITypeBinding[] bindingsLambda = currentExpression.resolveTypeBinding().
                     getTypeArguments();
-            String m1Lambda = fillMethodName(currentExpression
+            String calledInMethodLambda = fillMethodName(currentExpression
                     .resolveTypeBinding()
                     .getFunctionalInterfaceMethod()
                     .getName(), bindingsLambda);
-            no.setM1(m1Lambda);
+            no.setCalledInMethod(calledInMethodLambda);
         }
 
         int count = ns.size();
 
         //TODO: podemos usar a ideia do Stack para analisar?
-        no.setInv(updateInv(mi));
+        no.setInvokedBy(updateInv(mi));
 
         String methodInvocation = getMethodInvocation(count, mi.getName().toString());
 
-        no.setMi(methodInvocation);
+        no.setCallMethod(methodInvocation);
         ns.add(no); 
         return super.visit(mi);
     }
@@ -186,11 +184,11 @@ public class SmartAllVisitor extends ASTVisitor {
             return null;
         }
 
-        if (!ns.get(count - 1).getInv().contains(methodName)) {
+        if (!ns.get(count - 1).getInvokedBy().contains(methodName)) {
             return null;
         }
 
-        return ns.get(count - 1).getM();
+        return ns.get(count - 1).getMethodName();
     }
 
     private String fillMethodName(String methodName, ITypeBinding[] bindings) {
@@ -203,14 +201,14 @@ public class SmartAllVisitor extends ASTVisitor {
                 .collect(Collectors.joining(", ", prefix, sufix));
     }
 
-    public List<No> methodsCall() {
+    public List<Call> methodsCall() {
         return Collections.unmodifiableList(ns);
     }
 
-    public List<No> methodsCallFilter() {
+    public List<Call> methodsCallFilter() {
         return Collections
                 .unmodifiableList(ns.stream()
-                        .filter(t -> t.getMi() != null || "null".equalsIgnoreCase(t.getMi()))
+                        .filter(t -> t.getCallMethod() != null || "null".equalsIgnoreCase(t.getCallMethod()))
                         .collect(Collectors.toList()));
     }
 }

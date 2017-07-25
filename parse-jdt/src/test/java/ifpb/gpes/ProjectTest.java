@@ -21,14 +21,14 @@ public class ProjectTest {
     public void testProjectDefault() {
         Project project = Project
                 .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
+                .path("src/test/java/ifpb/gpes/jdt/samples/AnonymousClass.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 
         Parse parse = Parse
                 .with(ParseStrategies.JDT);
 
-        List<No> result = parse.from(project);
+        List<Call> result = parse.from(project);
 
         assertNotNull(project);
         assertNotNull(parse);
@@ -42,13 +42,13 @@ public class ProjectTest {
     public void testProjectOtherVisit() {
         Project project = Project
                 .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
+                .path("src/test/java/ifpb/gpes/jdt/samples/AnonymousClass.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 
         PrintASTVisitor visit = new PrintASTVisitor();
         ParseStrategy visitor = SmartParseJDT.of(visit);
-        List<No> returnList = Parse.with(visitor).from(project);
+        List<Call> returnList = Parse.with(visitor).from(project);
 
         assertNotNull(project);
         assertNotNull(visitor);

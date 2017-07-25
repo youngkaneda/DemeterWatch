@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface ParseStrategy {
 
-    public List<No> from(Project project);
+    public List<Call> from(Project project);
 }

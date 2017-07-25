@@ -1,6 +1,6 @@
 package ifpb.gpes.jdt;
 
-import ifpb.gpes.No;
+import ifpb.gpes.Call;
 import ifpb.gpes.Project;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.eclipse.jdt.core.dom.ASTVisitor;
  */
 public class SmartParseJDT implements ParseJDT {
 
-    private List<No> elements = new ArrayList<>();
+    private List<Call> elements = new ArrayList<>();
     private ASTVisitor visitor;
 
     //TODO: isso não está bom. Just do It!
@@ -31,7 +31,7 @@ public class SmartParseJDT implements ParseJDT {
     }
 
     @Override
-    public List<No> from(Project project) {
+    public List<Call> from(Project project) {
         SmartASTParser parser = SmartASTParser.from(project.sources());
 
         project.files().forEach(p -> {

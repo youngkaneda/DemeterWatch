@@ -32,14 +32,14 @@ public class ClienteControleFilmes {
 //                .execute();
 
 //https://github.com/lucasbcorreia/projeto
-        Project project = Project
-                .root("/home/juan/facul/periodo4/projetoDePesquisa/parse-review/teste2/")
-                .path("src/")
-                .sources("src/")
-                .filter(".java");
-        
-        Study.of(project)
-                .toFile("teste2")
-                .execute();
+//        Project project = Project
+//                .root("/home/juan/facul/periodo4/projetoDePesquisa/parse-review/teste2/")
+//                .path("src/")
+//                .sources("src/")
+//                .filter(".java");
+//        
+//        Study.of(project)
+//                .toFile("teste2")
+//                .execute();
     }
 }

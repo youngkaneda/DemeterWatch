@@ -1,6 +1,6 @@
 package ifpb.gpes.jdt;
 
-import ifpb.gpes.No;
+import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
 import ifpb.gpes.SingletonPath;
@@ -16,22 +16,21 @@ import org.junit.Test;
 public class RandomCallsTest {
 
     private static final Logger logger = Logger.getLogger(RandomCallsTest.class.getName());
-    private List<No> result = ofRandomCalls();
+    private List<Call> result = ofRandomCalls();
 
     @Test
     public void random() {
-        assertThat(result, hasItems(
-                No.of("ifpb.gpes.jdt.samples.I", "semRetorno[]", "void", "ifpb.gpes.jdt.samples.X",
+        assertThat(result, hasItems(Call.of("ifpb.gpes.jdt.samples.Interface", "semRetorno[]", "void", "ifpb.gpes.jdt.samples.LambdaAndAnonymous",
                         "m3[]", null),
-                No.of("ifpb.gpes.jdt.samples.X", "listar[java.util.List<ifpb.gpes.jdt.samples.A>]",
-                        "void", "ifpb.gpes.jdt.samples.X", "m3[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]",
-                        "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.X",
+                Call.of("ifpb.gpes.jdt.samples.LambdaAndAnonymous", "listar[java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>]",
+                        "void", "ifpb.gpes.jdt.samples.LambdaAndAnonymous", "m3[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]",
+                        "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.LambdaAndAnonymous",
                         "m3[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "m6[ifpb.gpes.jdt.samples.A]",
-                        "java.util.function.Predicate<ifpb.gpes.jdt.samples.A>",
-                        "java.util.function.Consumer<ifpb.gpes.jdt.samples.A>",
-                        "accept[ifpb.gpes.jdt.samples.A]", "negate[]")
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "m6[ifpb.gpes.jdt.samples.HasJCFObject]",
+                        "java.util.function.Predicate<ifpb.gpes.jdt.samples.HasJCFObject>",
+                        "java.util.function.Consumer<ifpb.gpes.jdt.samples.HasJCFObject>",
+                        "accept[ifpb.gpes.jdt.samples.HasJCFObject]", "negate[]")
         ));
         assertNotNull(result);
         assertFalse(result.isEmpty());
@@ -39,10 +38,10 @@ public class RandomCallsTest {
 
     }
 
-    private List<No> ofRandomCalls() {
+    private List<Call> ofRandomCalls() {
         Project project = Project
                 .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/X.java")
+                .path("src/test/java/ifpb/gpes/jdt/samples/LambdaAndAnonymous.java")
                 .sources("src/test/java/")
                 .filter(".java");
 

@@ -1,7 +1,7 @@
 package ifpb.gpes.io;
 
 import ifpb.gpes.ExportManager;
-import ifpb.gpes.No;
+import ifpb.gpes.Call;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -30,9 +30,9 @@ public class FileExportManager implements ExportManager {
     }
 
     @Override
-    public void export(List<No> elements) {
+    public void export(List<Call> elements) {
         String text = elements.stream()
-                .map(No::callGraph)
+                .map(Call::callGraph)
                 .collect(Collectors.joining("\n"));
 
         write(text);

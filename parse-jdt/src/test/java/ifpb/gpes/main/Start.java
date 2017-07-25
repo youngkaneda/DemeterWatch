@@ -21,7 +21,8 @@ public class Start {
 //    static PrintASTVisitor visitor = new PrintASTVisitor();
 
     public static void main(String[] args) {
-        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/samples/X.java";
+        String path = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/test/java/ifpb/gpes/jdt/"
+                + "samples/LambdaAndAnonymous.java";
         String sources = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/src/test/java";
 //        String path = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/ifpb/gpes/jdt/samples/X.java";
 //        String sources ="/Users/job/Documents/dev/gpes/parse-review/parse-jdt/src/main/java/";

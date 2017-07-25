@@ -1,6 +1,6 @@
 package ifpb.gpes.jdt;
 
-import ifpb.gpes.No;
+import ifpb.gpes.Call;
 import ifpb.gpes.ParseStrategy;
 import ifpb.gpes.Project;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 public enum ParseStrategies implements ParseStrategy {
     JDT {
         @Override
-        public List<No> from(Project project) {
+        public List<Call> from(Project project) {
             return new SmartParseJDT().from(project);
         }
 
