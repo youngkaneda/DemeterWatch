@@ -8,19 +8,19 @@ import java.util.function.Predicate;
  * @mail ricardo.job@ifpb.edu.br
  * @since 19/08/2016, 17:34:16
  */
-public class A {
+public class HasJCFObject {
 
-    private List<A> elements;
+    private List<HasJCFObject> elements;
 
-    public List<A> getElements() {
+    public List<HasJCFObject> getElements() {
         return this.elements;
     }
 
-    public Predicate<A> m6(A a) {
+    public Predicate<HasJCFObject> m6(HasJCFObject a) {
 
-        return new Predicate<A>() {
+        return new Predicate<HasJCFObject>() {
             @Override
-            public boolean test(A t) {
+            public boolean test(HasJCFObject t) {
                 return false;
             }
         };

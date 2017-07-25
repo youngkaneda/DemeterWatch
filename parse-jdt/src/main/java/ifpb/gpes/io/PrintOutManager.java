@@ -1,7 +1,7 @@
 package ifpb.gpes.io;
 
 import ifpb.gpes.ExportManager;
-import ifpb.gpes.No;
+import ifpb.gpes.Call;
 import java.util.List;
 
 /**
@@ -12,7 +12,7 @@ import java.util.List;
 public class PrintOutManager  implements ExportManager {
 
         @Override
-        public void export(List<No> elements) {
+        public void export(List<Call> elements) {
             elements.stream()
 //                    .filter(t -> t.getMi() != null || "null".equalsIgnoreCase(t.getMi()))
 //                    .collect(Collectors.toList())

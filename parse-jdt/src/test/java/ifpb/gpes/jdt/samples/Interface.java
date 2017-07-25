@@ -10,7 +10,7 @@ package ifpb.gpes.jdt.samples;
  * @author juan
  */
 @FunctionalInterface    
-public interface I {
+public interface Interface {
 
     public void semRetorno();
 

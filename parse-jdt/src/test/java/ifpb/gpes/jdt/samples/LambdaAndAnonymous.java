@@ -6,10 +6,10 @@ import java.util.List;
  *
  * @author juan
  */
-public class X {
+public class LambdaAndAnonymous {
 
-    private D d = new D();
-    private I i;
+    private SampleObject d = new SampleObject();
+    private Interface i;
 
     public void testeOutro() {
         this.d.teste();
@@ -17,23 +17,23 @@ public class X {
 
     public void m3() {
         i.semRetorno();
-        I seg = () -> new A().getElements().iterator();
-        B b = new B() {
+        Interface seg = () -> new HasJCFObject().getElements().iterator();
+        AbstractClass b = new AbstractClass() {
             @Override
             public String m5() {
-                new A().getElements()
+                new HasJCFObject().getElements()
                         .stream()
-                        .forEach((A ts) -> {
+                        .forEach((HasJCFObject ts) -> {
                             ts.m6(ts).negate();
                         });
                 return "2";
             }
         };
-        A a = new A();
+        HasJCFObject a = new HasJCFObject();
         listar(a.getElements());
     }
 
-    private void listar(List<A> lista) {
+    private void listar(List<HasJCFObject> lista) {
         lista.get(0);
     }
 }

@@ -1,6 +1,6 @@
 package ifpb.gpes.jdt;
 
-import ifpb.gpes.No;
+import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.ParseStrategy;
 import ifpb.gpes.Project;
@@ -24,12 +24,12 @@ public class PrintASTVisitorTest {
     public void testPrintVisitor() {
         Project project = Project
                 .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
+                .path("src/test/java/ifpb/gpes/jdt/samples/AnonymousClass.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 
         ParseStrategy strategy = SmartParseJDT.of(visitor);
-        List<No> returnList = Parse.with(strategy).from(project);
+        List<Call> returnList = Parse.with(strategy).from(project);
 
         assertNotNull(returnList);
         assertTrue(returnList.isEmpty());

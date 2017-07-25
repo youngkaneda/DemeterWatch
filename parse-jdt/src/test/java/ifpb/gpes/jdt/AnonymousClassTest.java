@@ -1,6 +1,6 @@
 package ifpb.gpes.jdt;
 
-import ifpb.gpes.No;
+import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
 import ifpb.gpes.SingletonPath;
@@ -18,19 +18,18 @@ import static org.junit.Assert.assertThat;
 
 public class AnonymousClassTest {
 
-    private final List<No> result = ofAnonymousClass();
+    private final List<Call> result = ofAnonymousClass();
     private static final Logger logger = Logger.getLogger(AnonymousClassTest.class.getName());
 
     @Test
     public void testM1() {
-        List<No> expected = ofListM1();
+        List<Call> expected = ofListM1();
 
-        assertThat(result, hasItems(
-                No.of("java.util.List", "add[ifpb.gpes.jdt.samples.A]", "boolean", "ifpb.gpes.jdt.samples.D", "m2[]", null),
-                No.of("java.util.List", "remove[java.lang.Object]", "boolean", "ifpb.gpes.jdt.samples.D", "m3[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m3[]", "isEmpty[]"),
-                No.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", "hashCode[]")
+        assertThat(result, hasItems(Call.of("java.util.List", "add[ifpb.gpes.jdt.samples.HasJCFObject]", "boolean", "ifpb.gpes.jdt.samples.SampleObject", "m2[]", null),
+                Call.of("java.util.List", "remove[java.lang.Object]", "boolean", "ifpb.gpes.jdt.samples.SampleObject", "m3[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "m3[]", "isEmpty[]"),
+                Call.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.jdt.samples.AnonymousClass", "m1[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.AnonymousClass", "m1[]", "hashCode[]")
         ));
         
         assertEquals(result.size(), expected.size());
@@ -41,29 +40,28 @@ public class AnonymousClassTest {
 
     }
 
-    private List<No> ofListM1() {
-        return Arrays.asList(
-                No.of("java.util.List", "add[ifpb.gpes.jdt.samples.A]", "boolean", "ifpb.gpes.jdt.samples.D", "m2[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m2[]", "add[ifpb.gpes.jdt.samples.A]"),
-                No.of("java.util.List", "remove[java.lang.Object]", "boolean", "ifpb.gpes.jdt.samples.D", "m3[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m3[]", "remove[java.lang.Object]"),
-                No.of("java.util.List", "isEmpty[]", "boolean", "ifpb.gpes.jdt.samples.D", "m3[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m3[]", "isEmpty[]"),
-                No.of("java.util.List", "iterator[]", "java.util.Iterator<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m2[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m2[]", "iterator[]"),
-                No.of("java.util.List", "listIterator[]", "java.util.ListIterator<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m2[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.D", "m2[]", "listIterator[]"),
-                No.of("java.util.List", "iterator[]", "java.util.Iterator<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.I", "semRetorno[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.I", "semRetorno[]", "iterator[]"),
-                No.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", null),
-                No.of("ifpb.gpes.jdt.samples.A", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.A>", "ifpb.gpes.jdt.samples.ClasseAnonima", "m1[]", "hashCode[]"));
+    private List<Call> ofListM1() {
+        return Arrays.asList(Call.of("java.util.List", "add[ifpb.gpes.jdt.samples.HasJCFObject]", "boolean", "ifpb.gpes.jdt.samples.SampleObject", "m2[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "m2[]", "add[ifpb.gpes.jdt.samples.HasJCFObject]"),
+                Call.of("java.util.List", "remove[java.lang.Object]", "boolean", "ifpb.gpes.jdt.samples.SampleObject", "m3[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "m3[]", "remove[java.lang.Object]"),
+                Call.of("java.util.List", "isEmpty[]", "boolean", "ifpb.gpes.jdt.samples.SampleObject", "m3[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "m3[]", "isEmpty[]"),
+                Call.of("java.util.List", "iterator[]", "java.util.Iterator<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "m2[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "m2[]", "iterator[]"),
+                Call.of("java.util.List", "listIterator[]", "java.util.ListIterator<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "m2[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "m2[]", "listIterator[]"),
+                Call.of("java.util.List", "iterator[]", "java.util.Iterator<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.Interface", "semRetorno[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.Interface", "semRetorno[]", "iterator[]"),
+                Call.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.jdt.samples.AnonymousClass", "m1[]", null),
+                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.AnonymousClass", "m1[]", "hashCode[]"));
 
     }
 
-    private List<No> ofAnonymousClass() {
+    private List<Call> ofAnonymousClass() {
         Project project = Project
                 .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/ClasseAnonima.java") // root
+                .path("src/test/java/ifpb/gpes/jdt/samples/AnonymousClass.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 

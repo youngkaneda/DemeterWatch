@@ -19,7 +19,7 @@ public class Parse {
         return new Parse(type);
     }
 
-    public List<No> from(Project project) {
+    public List<Call> from(Project project) {
         return type.from(project);
     }
 }
