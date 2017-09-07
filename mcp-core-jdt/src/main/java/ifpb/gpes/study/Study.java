@@ -1,5 +1,8 @@
-package ifpb.gpes;
+package ifpb.gpes.study;
 
+import ifpb.gpes.ExportManager;
+import ifpb.gpes.Parse;
+import ifpb.gpes.Project;
 import ifpb.gpes.io.FileExportManager;
 import ifpb.gpes.io.PrintOutManager;
 import ifpb.gpes.jdt.ParseStrategies;

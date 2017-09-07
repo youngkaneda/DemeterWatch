@@ -1,6 +1,6 @@
 
 import ifpb.gpes.Project;
-import ifpb.gpes.Study;
+import ifpb.gpes.study.Study;
 
 /**
  * @author Ricardo Job

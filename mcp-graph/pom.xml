@@ -11,5 +11,11 @@
     </parent>
 
     <artifactId>mcp-graph</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>mcp-core-jdt</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
