@@ -1,9 +1,9 @@
 package ifpb.gpes.graph;
 
-import br.edu.ifpb.gpes.mcp.core.Call;
-import br.edu.ifpb.gpes.mcp.core.Parse;
-import br.edu.ifpb.gpes.mcp.core.Project;
-import br.edu.ifpb.gpes.mcp.strategies.ParseStrategies;
+import ifpb.gpes.Call;
+import ifpb.gpes.Parse;
+import ifpb.gpes.Project;
+import ifpb.gpes.jdt.ParseStrategies;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
@@ -80,9 +80,12 @@ public class PredicateTest {
 //                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.LambdaWithArguments", "m1[]", "forEach[java.util.function.Consumer<? super br.edu.ifpb.gpes.mcp.samples.HasJCFObject>]"),
 //                Call.of("java.util.function.Predicate", "negate[]", "java.util.function.Predicate<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "java.lang.Object", "accept[br.edu.ifpb.gpes.mcp.samples.HasJCFObject]", null));
 
-        Project project = Project.root("")
-                .path("src/test/java/br/edu/ifpb/gpes/mcp/samples/LambdaWithArguments.java")
-                .sources("src/test/java/")
+        Project project = Project
+                .root("")
+                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
+                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
+                        + "LambdaWithArguments.java") // root
+                .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 
         return Parse.with(ParseStrategies.JDT).from(project);

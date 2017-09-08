@@ -1,5 +1,7 @@
 package ifpb.gpes.jdt.samples;
 
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.function.Consumer;
 
 /**
@@ -17,6 +19,7 @@ public class LambdaWithArguments {
                         ts.m6(ts).negate();
                     }
                 });
+//        m4().add(1);
     }
 
     public void m2() {
@@ -33,4 +36,9 @@ public class LambdaWithArguments {
                 .stream()
                 .forEach(t -> System.out.println(t.getElements().add(null)));
     }
+
+    public Set<Integer> m4() {
+        return new TreeSet<>();
+    }
+
 }

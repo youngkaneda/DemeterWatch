@@ -10,7 +10,8 @@ public class SampleObject {
     public void teste() {
         a.getElements().add(new HasJCFObject());
     }
-    public HasJCFObject m1(){
+
+    public HasJCFObject m1() {
         return this.a;
     }
 }

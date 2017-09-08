@@ -1,6 +1,6 @@
 package ifpb.gpes.filter;
 
-import br.edu.ifpb.gpes.mcp.core.Call;
+import ifpb.gpes.Call;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;

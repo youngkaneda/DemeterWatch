@@ -7,6 +7,11 @@ package ifpb.gpes;
  */
 public interface SingletonPath {
 
-    public static final String ROOT = "/home/juan/facul/periodo4/projetoDePesquisa/parse-review/parse-jdt/";
-//    public static final String ROOT = "/Users/job/Documents/dev/gpes/parse-review/parse-jdt/";
+    public static final String ROOT = resolveRootPath();
+
+    // TODO resolver como o projeto irá pegar o caminho do projeto 
+    public static String resolveRootPath() {
+        return "";
+    }
+    
 }

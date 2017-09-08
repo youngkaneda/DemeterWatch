@@ -1,10 +1,9 @@
 package ifpb.gpes.graph;
 
-import br.edu.ifpb.gpes.graph.DirectGraph;
-import br.edu.ifpb.gpes.mcp.core.Call;
-import br.edu.ifpb.gpes.mcp.core.Parse;
-import br.edu.ifpb.gpes.mcp.core.Project;
-import br.edu.ifpb.gpes.mcp.strategies.ParseStrategies;
+import ifpb.gpes.Call;
+import ifpb.gpes.Parse;
+import ifpb.gpes.Project;
+import ifpb.gpes.jdt.ParseStrategies;
 import java.io.IOException;
 import java.util.List;
 import org.junit.Assert;
@@ -23,8 +22,11 @@ public class MatrixConfidenceTest {
     DirectGraph dg = new DirectGraph();
 
     private List<Call> ofProject() {
-        Project project = Project.root("")
-                .path("src/test/java/br/edu/ifpb/gpes/mcp/samples/LambdaWithArguments.java")
+        Project project = Project
+                .root("")
+                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
+                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
+                        + "LambdaWithArguments.java")
                 .sources("src/test/java/")
                 .filter(".java");
 
