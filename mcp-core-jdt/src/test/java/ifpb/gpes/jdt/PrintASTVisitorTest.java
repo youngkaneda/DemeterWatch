@@ -24,7 +24,9 @@ public class PrintASTVisitorTest {
     public void testPrintVisitor() {
         Project project = Project
                 .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/AnonymousClass.java") // root
+                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
+                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
+                        + "AnonymousClass.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 

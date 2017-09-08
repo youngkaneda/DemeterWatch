@@ -1,6 +1,6 @@
 package ifpb.gpes.graph;
 
-import br.edu.ifpb.gpes.mcp.core.Call;
+import ifpb.gpes.Call;
 
 /**
  *

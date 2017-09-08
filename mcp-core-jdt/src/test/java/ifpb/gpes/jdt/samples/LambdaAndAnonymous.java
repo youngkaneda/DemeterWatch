@@ -25,6 +25,7 @@ public class LambdaAndAnonymous {
                         .stream()
                         .forEach((HasJCFObject ts) -> {
                             ts.m6(ts).negate();
+                            ts.m6(ts).hashCode();
                         });
                 return "2";
             }

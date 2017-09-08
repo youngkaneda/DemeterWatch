@@ -1,7 +1,7 @@
 package ifpb.gpes.io;
 
-import ifpb.gpes.ExportManager;
 import ifpb.gpes.Call;
+import ifpb.gpes.ExportManager;
 import java.util.List;
 
 /**

@@ -20,7 +20,7 @@ public class Call {
     public Call() {
     }
 
-    public Call(String classType, String methodName, String returnType, String calledInClass, 
+    public Call(String classType, String methodName, String returnType, String calledInClass,
             String calledInMethod, String callMethod) {
         this.classType = classType;
         this.methodName = methodName;
@@ -30,10 +30,26 @@ public class Call {
         this.callMethod = callMethod;
     }
 
-
-    public static Call of(String classType, String methodName, String returnType, String calledInClass, 
+    public static Call of(String classType, String methodName, String returnType, String calledInClass,
             String calledInMethod, String callMethod) {
         return new Call(classType, methodName, returnType, calledInClass, calledInMethod, callMethod);
+    }
+
+    //TODO: refatorar
+    public static Call of(String line) {
+        String[] fields = line.split(",");
+        String campo = fields[5].trim();
+        return new Call(fields[0].trim(), fields[1].trim(), fields[2].trim(), fields[3].trim(), fields[4].trim(), campo.equals("null") ? null : campo);
+    }
+
+    public boolean isFrom(String classe) {
+        try {
+            Class classType = Class.forName(returnType.split("<")[0]);
+            return Class.forName(classe).isAssignableFrom(classType);
+        } catch (Exception ex) {
+            //TODO: refatorar. incluir exception não checada
+            return false;
+        }
     }
 
     public String getInvokedBy() {
@@ -100,9 +116,9 @@ public class Call {
     public String callGraph() {
         return "<" + classType + ", " + methodName + ", " + returnType + ", " + calledInClass + ", " + calledInMethod + ", " + callMethod + ">";
     }
-    
-    public String noOf(){
-        return "No.of(\""+classType + "\", \"" + methodName + "\",\"" + returnType + "\",\"" + calledInClass + "\",\"" + calledInMethod + "\",\"" + callMethod + "\"),";
+
+    public String noOf() {
+        return "No.of(\"" + classType + "\", \"" + methodName + "\",\"" + returnType + "\",\"" + calledInClass + "\",\"" + calledInMethod + "\",\"" + callMethod + "\"),";
     }
 
     @Override

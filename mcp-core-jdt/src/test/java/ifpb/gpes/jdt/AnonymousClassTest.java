@@ -3,14 +3,11 @@ package ifpb.gpes.jdt;
 import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
-import ifpb.gpes.SingletonPath;
 import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import static org.hamcrest.CoreMatchers.*;
 import org.hamcrest.collection.IsIterableContainingInOrder;
 import static org.junit.Assert.assertEquals;
@@ -60,8 +57,10 @@ public class AnonymousClassTest {
 
     private List<Call> ofAnonymousClass() {
         Project project = Project
-                .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/AnonymousClass.java") // root
+                .root("")
+                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
+                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
+                        + "AnonymousClass.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 

@@ -4,7 +4,6 @@ import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
 import ifpb.gpes.SingletonPath;
-import ifpb.gpes.jdt.ParseStrategies;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
@@ -32,7 +31,9 @@ public class MethodReferenceTest {
     private List<Call> ofMethodReferenceClass() {
         Project project = Project
                 .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/ExemploComMethodReferenceExample.java") // root
+                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
+                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
+                        + "MethodReferenceExample.java") // root
                 .sources("src/test/java/") // root - não obrigatorio
                 .filter(".java");
 

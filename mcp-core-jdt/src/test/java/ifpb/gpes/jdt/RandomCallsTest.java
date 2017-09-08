@@ -41,7 +41,9 @@ public class RandomCallsTest {
     private List<Call> ofRandomCalls() {
         Project project = Project
                 .root(SingletonPath.ROOT)
-                .path("src/test/java/ifpb/gpes/jdt/samples/LambdaAndAnonymous.java")
+                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
+                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
+                        + "LambdaAndAnonymous.java")
                 .sources("src/test/java/")
                 .filter(".java");
 
