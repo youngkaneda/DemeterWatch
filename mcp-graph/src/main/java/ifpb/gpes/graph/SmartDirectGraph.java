@@ -1,6 +1,9 @@
 package ifpb.gpes.graph;
 
 import ifpb.gpes.Call;
+import ifpb.gpes.graph.Graph;
+import ifpb.gpes.graph.Matrix;
+import ifpb.gpes.graph.Node;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 
@@ -8,7 +11,7 @@ import org.jgrapht.graph.SimpleDirectedWeightedGraph;
  *
  * @author juan
  */
-public class DirectGraph implements Graph{
+public class SmartDirectGraph implements Graph{
 
     private final SimpleDirectedWeightedGraph<Node, DefaultWeightedEdge> graph = new SimpleDirectedWeightedGraph<>(DefaultWeightedEdge.class);
     private Matrix matrix = new Matrix();

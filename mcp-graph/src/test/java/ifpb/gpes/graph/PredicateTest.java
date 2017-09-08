@@ -20,6 +20,8 @@ import org.junit.Test;
  */
 public class PredicateTest {
 
+    private static final String sources = "../mcp-samples/src/main/java/";
+
     @Test
     public void ReturnSubListTest() {
 //        Predicate<Call> and = DecoratorPredicate.and(new TypePredicate("java.util.Collection"));
@@ -35,8 +37,8 @@ public class PredicateTest {
                 Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.LambdaWithArguments", "m3[]", "toArray[]"),
                 Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.LambdaWithArguments", "m3[]", "stream[]"),
                 Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "java.util.function.Consumer<? super br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "accept[? super br.edu.ifpb.gpes.mcp.samples.HasJCFObject]", "add[br.edu.ifpb.gpes.mcp.samples.HasJCFObject]")
-//                Call.of("br.edu.ifpb.gpes.mcp.samples.LambdaWithArguments", "m4[]", "java.util.Set<java.lang.Integer>", "br.edu.ifpb.gpes.mcp.samples.LambdaWithArguments", "m1[]", "add[java.lang.Integer]")
-            )
+        //                Call.of("br.edu.ifpb.gpes.mcp.samples.LambdaWithArguments", "m4[]", "java.util.Set<java.lang.Integer>", "br.edu.ifpb.gpes.mcp.samples.LambdaWithArguments", "m1[]", "add[java.lang.Integer]")
+        )
         );
 
     }
@@ -69,7 +71,7 @@ public class PredicateTest {
         Predicate<Call> compositePredicate = DecoratorPredicate
                 .and(new MethodPredicate("accept"),
                         new TypePredicate("java.util.List")
-                        );
+                );
 
         List<Call> collect = calls().stream().filter(compositePredicate).collect(Collectors.toList());
 
@@ -82,10 +84,8 @@ public class PredicateTest {
 
         Project project = Project
                 .root("")
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "LambdaWithArguments.java") // root
-                .sources("src/test/java/") // root - não obrigatorio
+                .path(sources + "ifpb/gpes/jdt/samples/LambdaWithArguments.java") // root
+                .sources(sources) // root - não obrigatorio
                 .filter(".java");
 
         return Parse.with(ParseStrategies.JDT).from(project);

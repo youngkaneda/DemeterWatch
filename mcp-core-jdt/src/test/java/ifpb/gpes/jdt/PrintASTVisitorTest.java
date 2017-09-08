@@ -4,7 +4,6 @@ import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.ParseStrategy;
 import ifpb.gpes.Project;
-import ifpb.gpes.SingletonPath;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,15 +18,14 @@ public class PrintASTVisitorTest {
 
     private final PrintASTVisitor visitor = new PrintASTVisitor();
     private static final Logger logger = Logger.getLogger(PrintASTVisitorTest.class.getName());
+    private static final String sources = "../mcp-samples/src/main/java/";
 
     @Test
     public void testPrintVisitor() {
         Project project = Project
-                .root(SingletonPath.ROOT)
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "AnonymousClass.java") // root
-                .sources("src/test/java/") // root - não obrigatorio
+                .root("")
+                .path(sources + "ifpb/gpes/jdt/samples/AnonymousClass.java") // root
+                .sources(sources) // root - não obrigatorio
                 .filter(".java");
 
         ParseStrategy strategy = SmartParseJDT.of(visitor);

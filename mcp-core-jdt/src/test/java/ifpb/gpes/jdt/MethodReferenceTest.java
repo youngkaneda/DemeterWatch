@@ -3,7 +3,6 @@ package ifpb.gpes.jdt;
 import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
-import ifpb.gpes.SingletonPath;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
@@ -13,6 +12,7 @@ public class MethodReferenceTest {
 
     private final List<Call> result = ofMethodReferenceClass();
     private static final Logger logger = Logger.getLogger(MethodReferenceTest.class.getName());
+    private static final String sources = "../mcp-samples/src/main/java/";
 
     @Test
     public void testeChamadaComReference() {
@@ -30,11 +30,9 @@ public class MethodReferenceTest {
 
     private List<Call> ofMethodReferenceClass() {
         Project project = Project
-                .root(SingletonPath.ROOT)
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "MethodReferenceExample.java") // root
-                .sources("src/test/java/") // root - não obrigatorio
+                .root("")
+                .path(sources + "ifpb/gpes/jdt/samples/MethodReferenceExample.java") // root
+                .sources(sources) // root - não obrigatorio
                 .filter(".java");
 
         return Parse.with(ParseStrategies.JDT).from(project);

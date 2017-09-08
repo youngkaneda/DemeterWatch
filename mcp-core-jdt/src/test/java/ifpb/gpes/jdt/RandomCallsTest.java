@@ -3,7 +3,6 @@ package ifpb.gpes.jdt;
 import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
-import ifpb.gpes.SingletonPath;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,11 +16,12 @@ public class RandomCallsTest {
 
     private static final Logger logger = Logger.getLogger(RandomCallsTest.class.getName());
     private List<Call> result = ofRandomCalls();
+    private static final String sources = "../mcp-samples/src/main/java/";
 
     @Test
     public void random() {
         assertThat(result, hasItems(Call.of("ifpb.gpes.jdt.samples.Interface", "semRetorno[]", "void", "ifpb.gpes.jdt.samples.LambdaAndAnonymous",
-                        "m3[]", null),
+                "m3[]", null),
                 Call.of("ifpb.gpes.jdt.samples.LambdaAndAnonymous", "listar[java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>]",
                         "void", "ifpb.gpes.jdt.samples.LambdaAndAnonymous", "m3[]", null),
                 Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]",
@@ -40,11 +40,9 @@ public class RandomCallsTest {
 
     private List<Call> ofRandomCalls() {
         Project project = Project
-                .root(SingletonPath.ROOT)
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "LambdaAndAnonymous.java")
-                .sources("src/test/java/")
+                .root("")
+                .path(sources + "ifpb/gpes/jdt/samples/LambdaAndAnonymous.java")
+                .sources(sources)
                 .filter(".java");
 
         return Parse.with(ParseStrategies.JDT).from(project);

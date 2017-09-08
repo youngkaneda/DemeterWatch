@@ -17,10 +17,8 @@ public class SampleObjectTest {
 
     private static List<Call> calls() {
         Project project = Project.root("")
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                + "SampleObject.java")
-                .sources("src/test/java/")
+                .path("../mcp-samples/src/main/java/ifpb/gpes/jdt/samples/SampleObject.java")
+                .sources("../mcp-samples/src/main/java/")
                 .filter(".java");
 
         return Parse.with(ParseStrategies.JDT).from(project);
@@ -30,11 +28,11 @@ public class SampleObjectTest {
     public void sampleTest() {
 
         List<Call> samples = calls();
+        System.out.println(samples.size());
 
         assertThat(samples, hasItems(Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "teste[]", "add[ifpb.gpes.jdt.samples.HasJCFObject]"),
                 Call.of("java.util.List", "add[ifpb.gpes.jdt.samples.HasJCFObject]", "boolean", "ifpb.gpes.jdt.samples.SampleObject", "teste[]", null)));
-
-        assertEquals(2,samples.size());
+        assertEquals(2, samples.size());
     }
 
 }

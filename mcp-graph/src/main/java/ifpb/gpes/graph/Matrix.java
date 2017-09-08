@@ -8,15 +8,15 @@ import java.util.List;
  * @author Ricardo Job
  * @mail ricardo.job@ifpb.edu.br
  */
-public class Matrix{
+public class Matrix {
 
     protected final int[][] matrix;
 
-    private Matrix(int[][] matrix){
+    private Matrix(int[][] matrix) {
         this.matrix = matrix;
     }
-    
-    protected Matrix(int numeroDeVertices) {
+
+    public Matrix(int numeroDeVertices) {
         this(new int[numeroDeVertices][numeroDeVertices]);
     }
 
@@ -97,15 +97,16 @@ public class Matrix{
         return Arrays.stream(matrix).flatMapToInt(Arrays::stream).sum();
     }
 
-    public List<Integer> linhasNaoNulas(int[][] dados){
+    public List<Integer> linhasNaoNulas(int[][] dados) {
         List<Integer> linhasIndex = new ArrayList<>();
         for (int i = 0; i < dados.length; i++) {
-            if(Arrays.stream(dados[i]).sum() > 0)
+            if (Arrays.stream(dados[i]).sum() > 0) {
                 linhasIndex.add(i);
+            }
         }
         return linhasIndex;
     }
-    
+
 //    TODO: It's not work 
     public Matrix matrizDeAdjacencia() {
         List<Integer> linhasNaoNulas = linhasNaoNulas(matrix);
@@ -145,66 +146,42 @@ public class Matrix{
     }
 }
 /**
- * 
-public static void main(String[] args) throws java.lang.Exception {
-        int[][] data = new int[][]{
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-
-        useArray(data);
-
-        useObject(data);
-
-        useStream(data);
-    }
-
-    private static void useArray(int[][] data) {
-        System.out.println("----- usando Array -----");
-        int size = data.length;
-        Integer[][] array = IntStream.range(0, size)
-                .filter(linhas -> Arrays.stream(data[linhas]).sum() > 6)
-                .mapToObj((int linha) -> IntStream.range(0, size)
-                .mapToObj(coluna -> {
-                    return data[linha][coluna];
-                })
-                .toArray(Integer[]::new))
-                .toArray(Integer[][]::new);
-
-        for (Integer[] integers : array) {
-            for (Integer integer : integers) {
-                System.out.println(integer);
-            }
-        }
-    }
-
-    private static void useObject(int[][] data) {
-        System.out.println("----- usando Object -----");
-        Object[] ll = Arrays
-                .stream(data)
-                .map((a) -> a)
-                .toArray();
-
-        for (Object l : ll) { //cada elemento referencia um outro array
-            System.out.println(l + " " + l.getClass().getSimpleName());
-        }
-    }
-
-    private static void useStream(int[][] data) {
-        System.out.println("----- usando Stream -----");
-
-        Integer[][] toArray = Arrays.stream(data)
-                .filter(linhas -> Arrays.stream(linhas).sum() > 6)
-                .map(
-                        r -> Arrays.stream(r).mapToObj(Integer::new).toArray(Integer[]::new)
-                ).toArray(Integer[][]::new);
-
-        for (Integer[] integers : toArray) {
-            for (Integer integer : integers) {
-                System.out.println(integer);
-            }
-        }
-    }
-    * 
-**/
+ *
+ * public static void main(String[] args) throws java.lang.Exception { int[][]
+ * data = new int[][]{ {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+ *
+ * useArray(data);
+ *
+ * useObject(data);
+ *
+ * useStream(data); }
+ *
+ * private static void useArray(int[][] data) { System.out.println("----- usando
+ * Array -----"); int size = data.length; Integer[][] array = IntStream.range(0,
+ * size) .filter(linhas -> Arrays.stream(data[linhas]).sum() > 6) .mapToObj((int
+ * linha) -> IntStream.range(0, size) .mapToObj(coluna -> { return
+ * data[linha][coluna]; }) .toArray(Integer[]::new)) .toArray(Integer[][]::new);
+ *
+ * for (Integer[] integers : array) { for (Integer integer : integers) {
+ * System.out.println(integer); } } }
+ *
+ * private static void useObject(int[][] data) { System.out.println("-----
+ * usando Object -----"); Object[] ll = Arrays .stream(data) .map((a) -> a)
+ * .toArray();
+ *
+ * for (Object l : ll) { //cada elemento referencia um outro array
+ * System.out.println(l + " " + l.getClass().getSimpleName()); } }
+ *
+ * private static void useStream(int[][] data) { System.out.println("-----
+ * usando Stream -----");
+ *
+ * Integer[][] toArray = Arrays.stream(data) .filter(linhas ->
+ * Arrays.stream(linhas).sum() > 6) .map( r ->
+ * Arrays.stream(r).mapToObj(Integer::new).toArray(Integer[]::new)
+ * ).toArray(Integer[][]::new);
+ *
+ * for (Integer[] integers : toArray) { for (Integer integer : integers) {
+ * System.out.println(integer); } } }
+ *
+ *
+ */
