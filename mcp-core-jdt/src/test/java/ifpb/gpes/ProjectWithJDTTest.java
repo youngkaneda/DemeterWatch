@@ -13,18 +13,17 @@ import static org.junit.Assert.*;
  *
  * @author Ricardo Job
  */
-public class ProjectTest {
+public class ProjectWithJDTTest {
 
-    private static final Logger logger = Logger.getLogger(ProjectTest.class.getName());
+    private static final Logger logger = Logger.getLogger(ProjectWithJDTTest.class.getName());
+    private static final String sources = "../mcp-samples/src/main/java/";
 
     @Test
     public void testProjectDefault() {
         Project project = Project
                 .root("")
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "AnonymousClass.java") // root
-                .sources("src/test/java/") // root - não obrigatorio
+                .path(sources + "ifpb/gpes/jdt/samples/AnonymousClass.java") // root
+                .sources(sources) // root - não obrigatorio
                 .filter(".java");
 
         Parse parse = Parse
@@ -43,11 +42,9 @@ public class ProjectTest {
     @Test
     public void testProjectOtherVisit() {
         Project project = Project
-                .root(SingletonPath.ROOT)
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "AnonymousClass.java") // root
-                .sources("src/test/java/") // root - não obrigatorio
+                .root("")
+                .path(sources + "ifpb/gpes/jdt/samples/AnonymousClass.java") // root
+                .sources(sources)// root - não obrigatorio
                 .filter(".java");
 
         PrintASTVisitor visit = new PrintASTVisitor();

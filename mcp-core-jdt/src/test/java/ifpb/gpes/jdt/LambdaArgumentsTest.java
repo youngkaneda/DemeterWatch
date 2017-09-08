@@ -3,7 +3,6 @@ package ifpb.gpes.jdt;
 import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
-import ifpb.gpes.SingletonPath;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,6 +16,7 @@ public class LambdaArgumentsTest {
 
     private static final Logger logger = Logger.getLogger(LambdaArgumentsTest.class.getName());
     private final List<Call> result = ofLambdaArguments();
+    private static final String sources = "../mcp-samples/src/main/java/";
 
     @Test
     public void testeM1() {
@@ -38,11 +38,9 @@ public class LambdaArgumentsTest {
 
     private List<Call> ofLambdaArguments() {
         Project project = Project
-                .root(SingletonPath.ROOT)
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "LambdaWithArguments.java") // root
-                .sources("src/test/java/") // root - não obrigatorio
+                .root("")
+                .path(sources + "ifpb/gpes/jdt/samples/LambdaWithArguments.java") // root
+                .sources(sources) // root - não obrigatorio
                 .filter(".java");
 
         return Parse.with(ParseStrategies.JDT).from(project);

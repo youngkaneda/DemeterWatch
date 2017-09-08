@@ -18,16 +18,15 @@ import org.junit.Test;
  */
 public class MatrixConfidenceTest {
 
-    List<Call> calls = ofProject();
-    DirectGraph dg = new DirectGraph();
+    private final List<Call> calls = ofProject();
+    private final SmartDirectGraph dg = new SmartDirectGraph();
+    private static final String sources = "../mcp-samples/src/main/java/";
 
     private List<Call> ofProject() {
         Project project = Project
                 .root("")
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "LambdaWithArguments.java")
-                .sources("src/test/java/")
+                .path(sources + "ifpb/gpes/jdt/samples/LambdaWithArguments.java")
+                .sources(sources)
                 .filter(".java");
 
         return Parse.with(ParseStrategies.JDT).from(project);
@@ -43,6 +42,7 @@ public class MatrixConfidenceTest {
         Assert.assertEquals(9, dg.getGraph().vertexSet().size());
     }
 //
+
     @Test
     public void EdgeNumberTest() throws IOException {
         Assert.assertEquals(7, dg.getGraph().edgeSet().size());

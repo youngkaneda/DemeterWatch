@@ -1,4 +1,4 @@
-package ifpb.gpes.filter;
+package ifpb.gpes.graph.filter;
 
 import ifpb.gpes.Call;
 import java.util.Arrays;
@@ -11,8 +11,8 @@ import java.util.function.Predicate;
  */
 public class FilterByMethod implements Predicate<Call> {
 
-    String methodName;
-    List<String> nameList;
+    private String methodName;
+    private List<String> nameList;
 
     //estrategia para receber varios nomes de metodos possiveis
     public FilterByMethod(String... methods) {
@@ -32,5 +32,4 @@ public class FilterByMethod implements Predicate<Call> {
 //    public boolean test(Call t) {
 //        return nameList.stream().anyMatch((name) -> (t.getMethodName().contains(name)));
 //    }
-
 }

@@ -1,4 +1,4 @@
-package ifpb.gpes.file;
+package ifpb.gpes.io;
 
 import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
@@ -20,10 +20,10 @@ import org.hamcrest.collection.IsIterableContainingInOrder;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
-public class RearFileTest {
+public class ReadFileToCallTest {
 
     private final List<Call> result = readOfFile();
-    private static final Logger logger = Logger.getLogger(RearFileTest.class.getName());
+    private static final Logger logger = Logger.getLogger(ReadFileToCallTest.class.getName());
 
     @Test
     public void testM1() {

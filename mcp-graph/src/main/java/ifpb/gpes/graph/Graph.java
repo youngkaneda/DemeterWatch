@@ -9,4 +9,5 @@ import ifpb.gpes.Call;
 public interface Graph {
     Matrix generateMatrix();
     void adicionarNos(Call call);
+    //TODO: metodo para criar o graph
 }

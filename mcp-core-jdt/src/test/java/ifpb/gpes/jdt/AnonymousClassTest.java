@@ -17,6 +17,7 @@ public class AnonymousClassTest {
 
     private final List<Call> result = ofAnonymousClass();
     private static final Logger logger = Logger.getLogger(AnonymousClassTest.class.getName());
+    private static final String sources = "../mcp-samples/src/main/java/";
 
     @Test
     public void testM1() {
@@ -28,7 +29,7 @@ public class AnonymousClassTest {
                 Call.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.jdt.samples.AnonymousClass", "m1[]", null),
                 Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.AnonymousClass", "m1[]", "hashCode[]")
         ));
-        
+
         assertEquals(result.size(), expected.size());
         assertThat(result, is(expected));
         assertThat(result, IsIterableContainingInOrder.contains(expected.toArray()));
@@ -58,10 +59,8 @@ public class AnonymousClassTest {
     private List<Call> ofAnonymousClass() {
         Project project = Project
                 .root("")
-                .path("/home/juan/facul/periodo4/projetoDePesquisa/mcp/"
-                        + "mcp-core-jdt/src/test/java/ifpb/gpes/jdt/samples/"
-                        + "AnonymousClass.java") // root
-                .sources("src/test/java/") // root - não obrigatorio
+                .path(sources + "ifpb/gpes/jdt/samples/AnonymousClass.java") // root
+                .sources(sources) // root - não obrigatorio
                 .filter(".java");
 
         return Parse.with(ParseStrategies.JDT).from(project);

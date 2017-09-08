@@ -1,11 +1,14 @@
 package ifpb.gpes.study;
 
-import ifpb.gpes.ExportManager;
-import ifpb.gpes.Parse;
-import ifpb.gpes.Project;
 import ifpb.gpes.io.FileExportManager;
 import ifpb.gpes.io.PrintOutManager;
-import ifpb.gpes.jdt.ParseStrategies;
+import ifpb.gpes.Call;
+import ifpb.gpes.ExportManager;
+import ifpb.gpes.Parse;
+import ifpb.gpes.ParseStrategy;
+import ifpb.gpes.Project;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Ricardo Job
@@ -29,7 +32,7 @@ public class Study {
     }
 
     public static Study of(Project project) {
-        return new Study(new PrintOutManager(), Parse.with(ParseStrategies.JDT), project);
+        return new Study(new PrintOutManager(), Parse.with(new DefaultStrategy()), project);
     }
 
     public Study with(Parse parse) {
@@ -42,6 +45,15 @@ public class Study {
 
     public Study toFile(String fileName) {
         return new Study(FileExportManager.name(fileName + ".txt"), this.parse, this.project);
+    }
+
+    private static class DefaultStrategy implements ParseStrategy {
+
+        @Override
+        public List<Call> from(Project project) {
+            return Collections.EMPTY_LIST;
+        }
+
     }
 
 }
