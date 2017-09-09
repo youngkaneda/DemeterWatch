@@ -1,9 +1,6 @@
 package ifpb.gpes.graph;
 
 import ifpb.gpes.Call;
-import ifpb.gpes.graph.Graph;
-import ifpb.gpes.graph.Matrix;
-import ifpb.gpes.graph.Node;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 
