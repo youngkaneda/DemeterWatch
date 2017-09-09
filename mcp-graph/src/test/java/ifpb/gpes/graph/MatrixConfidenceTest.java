@@ -25,7 +25,7 @@ public class MatrixConfidenceTest {
     private List<Call> ofProject() {
         Project project = Project
                 .root("")
-                .path(sources + "ifpb/gpes/jdt/samples/LambdaWithArguments.java")
+                .path(sources + "ifpb/gpes/domain/LambdaWithArguments.java")
                 .sources(sources)
                 .filter(".java");
 

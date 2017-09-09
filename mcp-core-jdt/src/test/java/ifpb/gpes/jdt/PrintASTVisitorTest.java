@@ -24,7 +24,7 @@ public class PrintASTVisitorTest {
     public void testPrintVisitor() {
         Project project = Project
                 .root("")
-                .path(sources + "ifpb/gpes/jdt/samples/AnonymousClass.java") // root
+                .path(sources + "ifpb/gpes/domain/AnonymousClass.java") // root
                 .sources(sources) // root - não obrigatorio
                 .filter(".java");
 

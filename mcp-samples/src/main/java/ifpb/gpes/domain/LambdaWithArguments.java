@@ -1,4 +1,4 @@
-package ifpb.gpes.jdt.samples;
+package ifpb.gpes.domain;
 
 import java.util.Set;
 import java.util.TreeSet;

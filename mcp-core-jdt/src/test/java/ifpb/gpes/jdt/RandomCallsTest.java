@@ -20,17 +20,17 @@ public class RandomCallsTest {
 
     @Test
     public void random() {
-        assertThat(result, hasItems(Call.of("ifpb.gpes.jdt.samples.Interface", "semRetorno[]", "void", "ifpb.gpes.jdt.samples.LambdaAndAnonymous",
+        assertThat(result, hasItems(Call.of("ifpb.gpes.domain.Interface", "semRetorno[]", "void", "ifpb.gpes.domain.LambdaAndAnonymous",
                 "m3[]", null),
-                Call.of("ifpb.gpes.jdt.samples.LambdaAndAnonymous", "listar[java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>]",
-                        "void", "ifpb.gpes.jdt.samples.LambdaAndAnonymous", "m3[]", null),
-                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]",
-                        "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.LambdaAndAnonymous",
+                Call.of("ifpb.gpes.domain.LambdaAndAnonymous", "listar[java.util.List<ifpb.gpes.domain.HasJCFObject>]",
+                        "void", "ifpb.gpes.domain.LambdaAndAnonymous", "m3[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]",
+                        "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.LambdaAndAnonymous",
                         "m3[]", null),
-                Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "m6[ifpb.gpes.jdt.samples.HasJCFObject]",
-                        "java.util.function.Predicate<ifpb.gpes.jdt.samples.HasJCFObject>",
-                        "java.util.function.Consumer<ifpb.gpes.jdt.samples.HasJCFObject>",
-                        "accept[ifpb.gpes.jdt.samples.HasJCFObject]", "negate[]")
+                Call.of("ifpb.gpes.domain.HasJCFObject", "m6[ifpb.gpes.domain.HasJCFObject]",
+                        "java.util.function.Predicate<ifpb.gpes.domain.HasJCFObject>",
+                        "java.util.function.Consumer<ifpb.gpes.domain.HasJCFObject>",
+                        "accept[ifpb.gpes.domain.HasJCFObject]", "negate[]")
         ));
         assertNotNull(result);
         assertFalse(result.isEmpty());
@@ -41,7 +41,7 @@ public class RandomCallsTest {
     private List<Call> ofRandomCalls() {
         Project project = Project
                 .root("")
-                .path(sources + "ifpb/gpes/jdt/samples/LambdaAndAnonymous.java")
+                .path(sources + "ifpb/gpes/domain/LambdaAndAnonymous.java")
                 .sources(sources)
                 .filter(".java");
 

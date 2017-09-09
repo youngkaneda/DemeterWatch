@@ -29,11 +29,11 @@ public class ReadFileToCallTest {
     public void testM1() {
         List<Call> expected = ofAllCall();
 
-        assertThat(result, hasItems(Call.of("java.util.List", "add[br.edu.ifpb.gpes.mcp.samples.HasJCFObject]", "boolean", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m2[]", null),
-                Call.of("java.util.List", "remove[java.lang.Object]", "boolean", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m3[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m3[]", "isEmpty[]"),
-                Call.of("java.util.List", "hashCode[]", "int", "br.edu.ifpb.gpes.mcp.samples.AnonymousClass", "m1[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.AnonymousClass", "m1[]", "hashCode[]")
+        assertThat(result, hasItems(Call.of("java.util.List", "add[ifpb.gpes.domain.HasJCFObject]", "boolean", "ifpb.gpes.domain.SampleObject", "m2[]", null),
+                Call.of("java.util.List", "remove[java.lang.Object]", "boolean", "ifpb.gpes.domain.SampleObject", "m3[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "m3[]", "isEmpty[]"),
+                Call.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.domain.AnonymousClass", "m1[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.AnonymousClass", "m1[]", "hashCode[]")
         ));
 
         assertEquals(result.size(), expected.size());
@@ -46,20 +46,20 @@ public class ReadFileToCallTest {
 
     private List<Call> ofAllCall() {
         return Arrays.asList(
-                Call.of("java.util.List", "add[br.edu.ifpb.gpes.mcp.samples.HasJCFObject]", "boolean", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m2[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m2[]", "add[br.edu.ifpb.gpes.mcp.samples.HasJCFObject]"),
-                Call.of("java.util.List", "remove[java.lang.Object]", "boolean", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m3[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m3[]", "remove[java.lang.Object]"),
-                Call.of("java.util.List", "isEmpty[]", "boolean", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m3[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m3[]", "isEmpty[]"),
-                Call.of("java.util.List", "iterator[]", "java.util.Iterator<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m2[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m2[]", "iterator[]"),
-                Call.of("java.util.List", "listIterator[]", "java.util.ListIterator<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m2[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.SampleObject", "m2[]", "listIterator[]"),
-                Call.of("java.util.List", "iterator[]", "java.util.Iterator<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.Interface", "semRetorno[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.Interface", "semRetorno[]", "iterator[]"),
-                Call.of("java.util.List", "hashCode[]", "int", "br.edu.ifpb.gpes.mcp.samples.AnonymousClass", "m1[]", null),
-                Call.of("br.edu.ifpb.gpes.mcp.samples.HasJCFObject", "getElements[]", "java.util.List<br.edu.ifpb.gpes.mcp.samples.HasJCFObject>", "br.edu.ifpb.gpes.mcp.samples.AnonymousClass", "m1[]", "hashCode[]"));
+                Call.of("java.util.List", "add[ifpb.gpes.domain.HasJCFObject]", "boolean", "ifpb.gpes.domain.SampleObject", "m2[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "m2[]", "add[ifpb.gpes.domain.HasJCFObject]"),
+                Call.of("java.util.List", "remove[java.lang.Object]", "boolean", "ifpb.gpes.domain.SampleObject", "m3[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "m3[]", "remove[java.lang.Object]"),
+                Call.of("java.util.List", "isEmpty[]", "boolean", "ifpb.gpes.domain.SampleObject", "m3[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "m3[]", "isEmpty[]"),
+                Call.of("java.util.List", "iterator[]", "java.util.Iterator<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "m2[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "m2[]", "iterator[]"),
+                Call.of("java.util.List", "listIterator[]", "java.util.ListIterator<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "m2[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "m2[]", "listIterator[]"),
+                Call.of("java.util.List", "iterator[]", "java.util.Iterator<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.Interface", "semRetorno[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.Interface", "semRetorno[]", "iterator[]"),
+                Call.of("java.util.List", "hashCode[]", "int", "ifpb.gpes.domain.AnonymousClass", "m1[]", null),
+                Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.AnonymousClass", "m1[]", "hashCode[]"));
 
     }
 
