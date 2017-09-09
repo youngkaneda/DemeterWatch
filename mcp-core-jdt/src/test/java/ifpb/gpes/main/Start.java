@@ -2,7 +2,6 @@ package ifpb.gpes.main;
 //package br.edu.ifpb.scm.api.git
 
 import ifpb.gpes.io.SmartFile;
-import ifpb.gpes.jdt.PrintASTVisitor;
 import ifpb.gpes.jdt.SmartASTParser;
 import ifpb.gpes.jdt.SmartAllVisitor;
 import java.nio.file.Path;

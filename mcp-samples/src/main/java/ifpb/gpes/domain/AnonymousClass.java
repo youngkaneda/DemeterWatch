@@ -1,4 +1,4 @@
-package ifpb.gpes.jdt.samples;
+package ifpb.gpes.domain;
 
 /**
  * @author Ricardo Job

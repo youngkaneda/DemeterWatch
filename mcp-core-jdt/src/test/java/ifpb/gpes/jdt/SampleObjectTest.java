@@ -17,7 +17,7 @@ public class SampleObjectTest {
 
     private static List<Call> calls() {
         Project project = Project.root("")
-                .path("../mcp-samples/src/main/java/ifpb/gpes/jdt/samples/SampleObject.java")
+                .path("../mcp-samples/src/main/java/ifpb/gpes/domain/SampleObject.java")
                 .sources("../mcp-samples/src/main/java/")
                 .filter(".java");
 
@@ -30,8 +30,8 @@ public class SampleObjectTest {
         List<Call> samples = calls();
         System.out.println(samples.size());
 
-        assertThat(samples, hasItems(Call.of("ifpb.gpes.jdt.samples.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.jdt.samples.HasJCFObject>", "ifpb.gpes.jdt.samples.SampleObject", "teste[]", "add[ifpb.gpes.jdt.samples.HasJCFObject]"),
-                Call.of("java.util.List", "add[ifpb.gpes.jdt.samples.HasJCFObject]", "boolean", "ifpb.gpes.jdt.samples.SampleObject", "teste[]", null)));
+        assertThat(samples, hasItems(Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.SampleObject", "teste[]", "add[ifpb.gpes.domain.HasJCFObject]"),
+                Call.of("java.util.List", "add[ifpb.gpes.domain.HasJCFObject]", "boolean", "ifpb.gpes.domain.SampleObject", "teste[]", null)));
         assertEquals(2, samples.size());
     }
 
