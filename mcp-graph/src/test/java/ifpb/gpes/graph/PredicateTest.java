@@ -3,6 +3,7 @@ package ifpb.gpes.graph;
 import ifpb.gpes.Call;
 import ifpb.gpes.Parse;
 import ifpb.gpes.Project;
+import ifpb.gpes.VerificationException;
 import ifpb.gpes.jdt.ParseStrategies;
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +24,12 @@ public class PredicateTest {
     private static final String sources = "../mcp-samples/src/main/java/";
 
     @Test
-    public void ReturnSubListTest() {
+    public void captureException(){
+        
+    }
+    
+    @Test
+    public void returnSubListTest() {
 //        Predicate<Call> and = DecoratorPredicate.and(new TypePredicate("java.util.Collection"));
         Predicate<Call> and = DecoratorPredicate.and(new TypePredicate("java.util.List"));
         List<Call> coletado = calls().stream().filter(and).collect(Collectors.toList());
@@ -53,7 +59,7 @@ public class PredicateTest {
 
     }
 
-    @Test
+    @Test//(expected = VerificationException.class)
     public void andPredicate() {
         Predicate<Call> and = new DecoratorPredicate()
                 .and(new TypePredicate("java.util.List"))
@@ -117,7 +123,13 @@ class TypePredicate implements Predicate<Call> {
 
     @Override
     public boolean test(Call t) {
-        return t.isFrom(value);
+
+        try {
+            return t.isFrom(value);
+        } catch (VerificationException ex) {
+            System.out.println("ex = " + ex);
+        }
+        return false;
     }
 
 }
