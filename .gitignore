@@ -1,11 +1,20 @@
-/nbproject
-/target/
-parse-jdt/target/
-parse-javaparser/target/
-**/target/
 .DS_Store
+
+# Maven
+/target/
+**/target/
+**/target/
+
+# Netbeans
+/nbproject
 nb-configuration.xml
+
+# Eclipse
 **/.settings
 **/.project
 **/.classpath
-/parse-jdt/nbproject/
+
+# IDEA
+**/target
+.idea/**
+**/*.iml
