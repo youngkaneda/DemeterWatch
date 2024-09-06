@@ -26,9 +26,7 @@ import java.util.stream.Collectors;
  */
 public class BrokeExportManager implements ExportManager {
 
-    private final String MATRIX_FILE_NAME = "matrix.csv";
-    private final String METRICS_FILE_NAME = "metrics.txt";
-    private final String BROKEN_FILE_NAME = "file.txt";
+    private final String BROKEN_FILE_NAME = "calls.txt";
     private String outputDir;
 
     public BrokeExportManager(String outputDir) {
@@ -64,7 +62,7 @@ public class BrokeExportManager implements ExportManager {
 
         candidates = candidates.stream().filter(predicate).collect(Collectors.toList());
 
-        result.append("\n\nCalls That Are Candidatas (").append(candidates.size()).append(")\n\n");
+        result.append("\n\nCalls That Are Candidates (").append(candidates.size()).append(")\n\n");
         candidates.forEach((call) -> result.append(call.callGraph()).append("\n"));
 
         candidates = candidates.stream().filter(new FilterByMethod()).collect(Collectors.toList());
@@ -82,27 +80,12 @@ public class BrokeExportManager implements ExportManager {
             }
         }
 
-        result.append("\n\nCalls That Broken Confinement (").append(brokers.size()).append(")\n\n");
+        result.append("\n\nCalls That Breaks Confinement (").append(brokers.size()).append(")\n\n");
         brokers.forEach((call) -> {
             result.append(call.callGraph()).append("\n");
         });
         write(result.toString(), Paths.get(handleOutputFilePath(outputDir, BROKEN_FILE_NAME)));
         new JsonMatrix(matrix).toJson(indices, handleOutputFilePath(outputDir, ""));
-        StringBuffer buffer = new StringBuffer();
-        for (int[] line : matrix.toArray()) {
-            for (int column : line) {
-                buffer.append(column);
-                buffer.append(",");
-            }
-            buffer.append("\n");
-        }
-        write(buffer.toString(), Paths.get(handleOutputFilePath(outputDir, MATRIX_FILE_NAME)));
-        buffer = new StringBuffer();
-        for (Metric metric : matrix.computeMetric()) {
-            buffer.append(metric.toString());
-            buffer.append("\n");
-        }
-        write(buffer.toString(), Paths.get(handleOutputFilePath(outputDir, METRICS_FILE_NAME)));
     }
 
     private void write(String text, Path path) {

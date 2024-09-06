@@ -1,68 +1,109 @@
-# method-call-parser(MCP)
+# DemeterWatch
 
-# What is it?
-MCP is a tool developed in the java language with the purpose of analyzing projects developed in this same language.
-The main objective of the analysis is to extract information from the project by searching for confinement breaks in classes that use the JCF(Java Collection Framework). Afterwards, the user will be shown which methods cause the confinement to break and change the object's state.
+DemeterWatch is a tool developed in the java language with the purpose of analyzing projects developed in this same language.
+The main objective of the analysis is to extract information from the project by searching for breaks in the 
+[Law of Demeter (LoD)](https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/paper-boy/demeter.pdf) in classes 
+that use the JCF(Java Collection Framework). Afterwards, the user will be shown which methods cause the confinement to 
+break and change the object's state.
 
-# An example
-We will take this two classes as a sample:
+## Getting Started
 
+### Requirements
+
+* JDK17; *the version used to build this tool was the OpenJDK (build 17.0.1+12-39)*
+* Maven;
+
+### Installation
+
+First, download the source from this repository, you can do it using git:
+```shell
+git clone https://github.com/youngkaneda/DemeterWatch
 ```
-// Target Class
-class A{
-    private List<A> elements;
-    public List<A> getElements(){
-        return this.elements;
-    }
-}
-// Client Class
-class C{
-    private A a;
-    public void m(){
-        a.getElements().add(new A());
-    }
-}
+Next, you need to build the Java package using maven, this will also install the maven dependencies of the project:
+```shell
+cd DemeterWatch/demeter-watch
+mvn clean package
 ```
+This will generate a `demeter-watch.jar` archive and you are ready to go.
 
-`A` is the class that has the method that returns an object belonging to the JCF framework, the `getElements()` method, `C` is the class that has an instance of `A` and calls the `getElements` method , allowing `C` to have full access to the attribute of `A` and to change its state, which is done in the call `a.getElements().add(new A())`, it is clear here that the breaking of confinement; and these are the cases that our tool seeks to identify and detail, here is the result of the analysis of the example carried out by the tool:
+### How use the tool
 
-`<java.util.List, add[A], boolean, C, m[], void, null>`
+To see the basic usage of the tool run `java -jar demeter-watch.jar --help`. This will present all the required arguments 
+to run the analysis.
 
-This is the raw text result produced by the tool, after the analysis, we use another module to produce a more interactive result to the user.
+Next will be presented an example of how use the tool properly, and then an explanation about its outputs:
 
-# How use the tool
-
-1. First of all, you need to download or clone a project from github on your machine, to clone a project run the following command inside the desired folder: `git clone https://github.com/<profile>/<repository>`.
-
-2. Now you need to have Java version 8 installed, and maven, after installed go to this project folder and open the terminal, type `mvn clean install` This will install the necessary dependencies for the tool to work.
-
-3. You can see a brief explanations of the options using this command ```java -jar mcp --help```.
-
-![img](https://i.imgur.com/4TX5doe.png)
-
-_PS.: classpath file paths are based on the value on -p option._
-4. Copy the path of the Java project that you want to analyze, in the options showed on the image, eg.:
+*PS.: the classpath -cp generally is not needed since the tool will analyze the project source code, but in some cases it 
+is necessary to load additional source code entries to the AST parse library used.*
+```shell
+java -jar demeter-watch.jar \
+    -o=/home/user/output \ 
+    -r=/home/user/projects/ \
+    -p=tomcat-7.0.2/ \
+    -s=tomcat-7.0.2/java/ \
+    -cp="lib/ lib2/"
 ```
-java -jar mcp.jar -o=/home/kaneda/call-parser/output -r=/home/kaneda/projects/ -p=tomcat-7.0.2/ -s=tomcat-7.0.2/java/ -cp="lib/ lib2/"
-
+After the program run completely it will produce output files so the user can visualize where in the code the principle was 
+broken. They are as follows:
 ```
-5. After execute the tool, a text file will be generated, and will be located in the directory path you provided, with the following outputs:
+elements.json
+script.js
+graph.html
+calls.txt
 ```
-<A,m(),java.util.List,C, m1(), void, mi()>
-<...>
-<...>
+The first three files are necessary for the visualization of the chain call of methods inside the project through a graph 
+structure, the page also includes a search feature to help access the methods more easily.
+
+The file `calls.txt` will be divided into three sections containing the method calls of the project and then filtering it:
+```text
+All Method Calls (62890)
+...
+Calls That Are Candidates (207)
+...
+Calls That Breaks Confinement (20)
+...
+<java.util.Set; remove[java.lang.Object]; boolean; org.apache.catalina.realm.JAASMemoryLoginModule; logout[]; boolean; null; subject.getPrincipals()>
 ```
-`A` - Class that own the `m()` method;
+The method call shown in the example can be read as:
 
-`m()` - the method that returns one of the types defined in the JCF, the return used in the formulation is merely illustrative;
+`java.util.Set` - Class that own the `remove[java.lang.Object]` method;
 
-`java.util.List` - the fully qualified return type of the `m()` method;
+`remove[java.lang.Object]` - The method that changed the state of an JCF object;
 
-`C` - class that has the `m1()` method;
+`boolean` - The fully qualified return type of the `remove` method;
 
-`m1()` - method that has some invocation of the `m()` method;
+`org.apache.catalina.realm.JAASMemoryLoginModule` - Class that has the `logout[]` method;
 
-`void` - the return type of the m1() method;
+`logout[]` - Method that has some invocation of the `remove` method;
 
-`mi` - the method invoked that causes the confinement to break.
+`boolean` - The return type of the previous method;
 
+`null` - The next method on the method call chain, in this case there are none.
+
+`subject.getPrincipals()` - Who incorrectly called the method, and broke the LoD.
+
+### Visualization page
+
+To access the graph visualization page you only need to open the `graph.html` file in any browser, be aware that since all 
+files are local, you may need change the CORS origin policy in your browser configuration to accept local files.
+
+![ss](https://i.imgur.com/M6GNKEf.png)
+
+The nodes that breaks the LoD principle are painted with red, and the graph edges have weight to indicate how many times 
+that method node is called.
+
+### Examples
+
+This repository also contains an examples directory containing the results of running the tool with 40 projects randomly 
+selected from [Qualitas.class Corpus](http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html) a compiled archive of 
+open source Java projects.
+
+## License
+
+This project is licensed under [the GPL v3+ license](https://github.com/youngkaneda/DemeterWatch/blob/master/COPYING).
+
+## About the name
+
+This project was previously called "Method Call Parser" until the 1.0.0 release due to its high modularization, some of its 
+modules can be used and extended to do other type of analysis, even be extended to use another Abstract Syntax Tree parsing 
+libraries.
