@@ -95,7 +95,7 @@ that method node is called.
 ### Examples
 
 This repository also contains an examples directory containing the results of running the tool with 40 projects randomly 
-selected from [Qualitas.class Corpus](http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html) a compiled archive of 
+selected from [Qualitas.class corpus](http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html) a compiled archive of 
 open source Java projects.
 
 ## License
