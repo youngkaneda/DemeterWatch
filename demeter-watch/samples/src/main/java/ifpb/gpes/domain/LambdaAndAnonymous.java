@@ -2,20 +2,17 @@ package ifpb.gpes.domain;
 
 import java.util.List;
 
-/**
- * @author juan
- */
 public class LambdaAndAnonymous {
 
     private SampleObject d = new SampleObject();
     private Interface i;
 
-    public void testeOutro() {
-        this.d.teste();
+    public void testOther() {
+        this.d.test();
     }
 
     public void m3() {
-        i.semRetorno();
+        i.noReturn();
         Interface seg = () -> new HasJCFObject().getElements().iterator();
         AbstractClass b = new AbstractClass() {
             @Override
@@ -30,10 +27,10 @@ public class LambdaAndAnonymous {
             }
         };
         HasJCFObject a = new HasJCFObject();
-        listar(a.getElements());
+        list(a.getElements());
     }
 
-    private void listar(List<HasJCFObject> lista) {
-        lista.get(0);
+    private void list(List<HasJCFObject> collection) {
+        collection.get(0);
     }
 }

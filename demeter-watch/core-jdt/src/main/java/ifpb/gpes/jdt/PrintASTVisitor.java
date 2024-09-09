@@ -1,11 +1,5 @@
 package ifpb.gpes.jdt;
 
-/**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 03/07/2017, 09:32:14
- */
-
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.AnnotationTypeDeclaration;
@@ -103,10 +97,25 @@ import org.eclipse.jdt.core.dom.WildcardType;
 
 import java.io.File;
 
+/**
+ * A custom AST visitor for printing details about visited AST nodes.
+ * <p>
+ * This class extends {@link ASTVisitor} and is designed to accumulate information about
+ * the nodes it visits into a {@link StringBuilder}.
+ * The collected information can be retrieved as a string using the {@link #visitToString()} method.
+ * </p>
+ *
+ * @see ASTVisitor
+ */
 public class PrintASTVisitor extends ASTVisitor {
 
     private StringBuilder builder = new StringBuilder();
 
+    /**
+     * Retrieves the accumulated string representation of the visited nodes.
+     *
+     * @return A {@link String} containing the accumulated information about the visited nodes.
+     */
     public String visitToString() {
         return this.builder.toString();
     }

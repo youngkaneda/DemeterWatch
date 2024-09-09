@@ -19,11 +19,6 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-/**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 17/08/2017, 15:32:22
- */
 public class PredicateTest {
 
     private static final String sources = PathUtils.connect("..", "samples", "src", "main", "java");
@@ -31,9 +26,9 @@ public class PredicateTest {
     @Test
     public void returnSubListTest() {
         Predicate<Call> predicate = DecoratorPredicate.and(new TypePredicate("ifpb.gpes.domain.HasJCFObject"));
-        List<Call> coletado = calls().stream().filter(predicate).collect(Collectors.toList());
-        Assert.assertEquals(coletado.size(), 7);
-        assertThat(coletado, hasItems(
+        List<Call> collect = calls().stream().filter(predicate).collect(Collectors.toList());
+        Assert.assertEquals(collect.size(), 7);
+        assertThat(collect, hasItems(
             Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.LambdaWithArguments", "m1[]", "void", "forEach[java.util.function.Consumer<? super ifpb.gpes.domain.HasJCFObject>]", "new HasJCFObject()"),
             Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.LambdaWithArguments", "m2[]", "void", "forEach[java.util.function.Consumer<? super ifpb.gpes.domain.HasJCFObject>]", "new HasJCFObject()"),
             Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.LambdaWithArguments", "m3[]", "void", "toArray[]", "a"),
@@ -46,7 +41,7 @@ public class PredicateTest {
     public void listPredicate() {
         List<Predicate<Call>> predicates = Arrays.asList(new MethodPredicate("add"), new TypePredicate("ifpb.gpes.domain.HasJCFObject"));
         Predicate<Call> compositePredicate = predicates.stream().reduce(w -> true, Predicate::and);
-        List<Call> collect = calls().stream().filter(compositePredicate).collect(Collectors.toList());
+        List<Call> collect = calls().stream().filter(compositePredicate).toList();
         collect.forEach(System.out::println);
     }
 
@@ -55,7 +50,7 @@ public class PredicateTest {
         Predicate<Call> predicate = new DecoratorPredicate()
             .and(new TypePredicate("java.util.List"))
             .or(new TypePredicate("java.util.Collection"));
-        List<Call> collect = calls().stream().filter(predicate).collect(Collectors.toList());
+        List<Call> collect = calls().stream().filter(predicate).toList();
         collect.forEach(System.out::println);
     }
 
@@ -63,8 +58,7 @@ public class PredicateTest {
     public void decoratorPredicate() {
         Predicate<Call> compositePredicate = DecoratorPredicate.and(new MethodPredicate("forEach"), new TypePredicate("java.util.Collection"));
         List<Call> collect = calls().stream()
-            .filter(compositePredicate)
-            .collect(Collectors.toList());
+            .filter(compositePredicate).toList();
         collect.forEach(System.out::println);
     }
 

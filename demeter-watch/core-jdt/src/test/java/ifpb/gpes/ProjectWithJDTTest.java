@@ -14,9 +14,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * @author Ricardo Job
- */
 public class ProjectWithJDTTest {
 
     private static final Logger logger = Logger.getLogger(ProjectWithJDTTest.class.getName());

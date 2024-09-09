@@ -4,11 +4,6 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.Consumer;
 
-/**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 03/07/2017, 09:50:52
- */
 public class LambdaWithArguments {
 
     public void m1() {

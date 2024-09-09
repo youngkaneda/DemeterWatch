@@ -1,10 +1,5 @@
 package ifpb.gpes.domain.jcf;
 
-/**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 11/10/2017, 15:32:12
- */
 public class Source {
 
     public void m1() {

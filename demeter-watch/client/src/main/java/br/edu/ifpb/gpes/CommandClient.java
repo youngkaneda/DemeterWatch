@@ -10,6 +10,10 @@ import picocli.CommandLine;
 import java.io.File;
 import java.util.concurrent.Callable;
 
+/**
+ * Command-line client for parsing a project and analyzing its collections
+ * to identify violations of the Law of Demeter.
+ */
 @CommandLine.Command(
     description = "Parse a project in which its collections will be analyzed to catch breaks in the Law of Demeter.",
     name = "demeter-watch",
@@ -23,21 +27,26 @@ public class CommandClient implements Callable<Void> {
     @CommandLine.Option(names = {"-v", "--version"}, versionHelp = true, description = "Display version number.")
     private boolean versionHelp;
 
-    @CommandLine.Option(names = {"-r", "--root"}, required = true, description = "The root path where the project are.")
+    @CommandLine.Option(names = {"-r", "--root"}, required = true, description = "The root path where the project resides.")
     private String root;
 
-    @CommandLine.Option(names = {"-s", "--source"}, required = true, description = "The java source code path that will be used by the AST parser, e.g.: 'path/to/java/files'. It is based on <root>")
+    @CommandLine.Option(names = {"-s", "--source"}, required = true, description = "The Java source code path used by the AST parser, e.g., 'path/to/java/files'. Relative to <root>.")
     private String source;
 
-    @CommandLine.Option(names = {"-p", "--path"}, required = true, description = "The path of the project directory, or the Java file to be analyzed, based on <root>.")
+    @CommandLine.Option(names = {"-p", "--path"}, required = true, description = "The path of the project directory or the Java file to be analyzed, relative to <root>.")
     private String path;
 
-    @CommandLine.Option(names = {"-o", "--output"}, required = true, description = "The path where the generated outputs will be created. If not found, it will be created.")
+    @CommandLine.Option(names = {"-o", "--output"}, required = true, description = "The path where the generated outputs will be created. The directory will be created if it does not exist.")
     private String outputDir;
 
-    @CommandLine.Option(names = {"-c", "--classpath"}, split = " ", description = "List of classpath to be added. The tool only work on code from the project, please use only if the tool break the analysis. The paths are based starting from <path>.")
+    @CommandLine.Option(names = {"-c", "--classpath"}, split = " ", description = "List of classpath entries to be added. Only use if necessary for the tool to analyze code. Paths are relative to <path>.")
     private String[] classpath;
 
+    /**
+     * Main method to execute the command-line client.
+     *
+     * @param args Command-line arguments passed to the application.
+     */
     public static void main(String[] args) {
         CommandLine cli = new CommandLine(new CommandClient());
         cli.setUsageHelpAutoWidth(true);
@@ -45,6 +54,11 @@ public class CommandClient implements Callable<Void> {
         System.exit(code);
     }
 
+    /**
+     * Executes the command-line client logic.
+     *
+     * @return {@code null} as this method is required to return {@code Void}.
+     */
     @Override
     public Void call() {
         Project project = Project
@@ -60,6 +74,12 @@ public class CommandClient implements Callable<Void> {
         return null;
     }
 
+    /**
+     * Formats the given file path by ensuring it ends with a file separator.
+     *
+     * @param fpath The file path to format.
+     * @return The formatted file path ending with a file separator if it wasn't already.
+     */
     private String formatPath(String fpath) {
         return fpath.endsWith(File.separator) ? fpath : fpath + File.separator;
     }

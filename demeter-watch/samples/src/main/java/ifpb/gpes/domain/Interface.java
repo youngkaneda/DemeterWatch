@@ -5,15 +5,12 @@
  */
 package ifpb.gpes.domain;
 
-/**
- * @author juan
- */
 @FunctionalInterface
 public interface Interface {
 
-    public void semRetorno();
+    public void noReturn();
 
     public default void methodDefault(String nome) {
-        System.out.println("oi" + nome);
+        System.out.println("Hello, " + nome);
     }
 }

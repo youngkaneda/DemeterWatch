@@ -11,6 +11,10 @@ import java.util.stream.Collectors;
 
 import org.eclipse.jdt.core.dom.*;
 
+/**
+ * An AST visitor for analyzing Java source code. Collects method calls and lambda expressions,
+ * and tracks the context of method invocations, including their origin and the methods they call.
+ */
 public class DefaultVisitor extends ASTVisitor {
 
     private List<Call> calls;
@@ -19,10 +23,18 @@ public class DefaultVisitor extends ASTVisitor {
     private Expression currentExpression;
     private final Stack<MethodDeclaration> stackMethodDeclaration = new Stack<>();
 
+    /**
+     * Constructs a {@code DefaultVisitor} with an empty list of calls.
+     */
     public DefaultVisitor() {
         this(new ArrayList<>());
     }
 
+    /**
+     * Constructs a {@code DefaultVisitor} with the specified list of calls.
+     *
+     * @param elements The list of {@code Call} objects to populate.
+     */
     public DefaultVisitor(List<Call> elements) {
         this.calls = elements;
     }
@@ -122,7 +134,7 @@ public class DefaultVisitor extends ASTVisitor {
 
         no.setCalledInClass(calledInClass);
 
-        bindings = inferMethodDeclarationParamenters(currentMethodDeclaration);
+        bindings = inferMethodDeclarationParameters(currentMethodDeclaration);
 
         if (currentMethodDeclaration != null) {
             String calledInMethod = fillMethodName(currentMethodDeclaration.getName().getIdentifier(), bindings);
@@ -172,6 +184,12 @@ public class DefaultVisitor extends ASTVisitor {
         super.visit(node);
     }
 
+    /**
+     * Converts the given class type binding to a string representation.
+     *
+     * @param callClass The class type binding.
+     * @return The string representation of the class type.
+     */
     public String callClassToString(ITypeBinding callClass) {
         if (callClass.isAnonymous()) {
             return callClass.getSuperclass().getQualifiedName();
@@ -179,6 +197,12 @@ public class DefaultVisitor extends ASTVisitor {
         return callClass.getQualifiedName();
     }
 
+    /**
+     * Updates the invocation string for the method invocation.
+     *
+     * @param mi The method invocation node.
+     * @return The invocation string.
+     */
     private String updateInv(MethodInvocation mi) {
         Expression inv = mi.getExpression();
         if (inv == null) {
@@ -187,6 +211,13 @@ public class DefaultVisitor extends ASTVisitor {
         return inv.toString();
     }
 
+    /**
+     * Retrieves the method invocation based on the current count and method name.
+     *
+     * @param count The current count of method calls.
+     * @param methodName The method name to check.
+     * @return The method invocation string or {@code null} if not found.
+     */
     private String getMethodInvocation(int count, String methodName) {
         if (count < 1) {
             return null;
@@ -199,6 +230,13 @@ public class DefaultVisitor extends ASTVisitor {
         return calls.get(count - 1).getMethodName();
     }
 
+    /**
+     * Formats the method name with its parameter types.
+     *
+     * @param methodName The method name.
+     * @param bindings The method parameter bindings.
+     * @return The formatted method name.
+     */
     private String fillMethodName(String methodName, ITypeBinding[] bindings) {
         String prefix = methodName + "[";
         String sufix = "]";
@@ -207,6 +245,13 @@ public class DefaultVisitor extends ASTVisitor {
             .collect(Collectors.joining(", ", prefix, sufix));
     }
 
+    /**
+     * Infers the class in which the method is called.
+     *
+     * @param mi The method invocation node.
+     * @param md The method declaration node.
+     * @return The class type binding in which the method is called.
+     */
     private ITypeBinding inferCalledInClass(MethodInvocation mi, MethodDeclaration md) {
         if (md == null) {
             ASTNode parent = mi.getParent();
@@ -219,7 +264,13 @@ public class DefaultVisitor extends ASTVisitor {
         return binding != null ? binding.getDeclaringClass() : ((TypeDeclaration) md.getParent()).resolveBinding();
     }
 
-    private ITypeBinding[] inferMethodDeclarationParamenters(MethodDeclaration md) {
+    /**
+     * Infers the parameter types of the method declaration.
+     *
+     * @param md The method declaration node.
+     * @return The array of parameter type bindings.
+     */
+    private ITypeBinding[] inferMethodDeclarationParameters(MethodDeclaration md) {
         if (md == null) {
             return new ITypeBinding[0];
         }
@@ -236,6 +287,13 @@ public class DefaultVisitor extends ASTVisitor {
             .toArray(ITypeBinding[]::new);
     }
 
+    /**
+     * Infers the return type value of the method declaration.
+     *
+     * @param type The return type.
+     * @param md The method declaration node.
+     * @return The inferred return type binding.
+     */
     private ITypeBinding inferCalledInMethodReturnTypeValue(Type type, MethodDeclaration md) {
         if (!md.isConstructor()) {
             return type.resolveBinding() == null ? new DummyTypeBinding(type) : type.resolveBinding();
@@ -249,14 +307,12 @@ public class DefaultVisitor extends ASTVisitor {
         }
     }
 
+    /**
+     * Returns an unmodifiable list of method calls collected by this visitor.
+     *
+     * @return An unmodifiable list of {@code Call} objects.
+     */
     public List<Call> methodsCall() {
         return Collections.unmodifiableList(calls);
-    }
-
-    public List<Call> methodsCallFilter() {
-        return Collections
-            .unmodifiableList(calls.stream()
-                .filter(t -> t.getCallMethod() != null || "null".equalsIgnoreCase(t.getCallMethod()))
-                .collect(Collectors.toList()));
     }
 }

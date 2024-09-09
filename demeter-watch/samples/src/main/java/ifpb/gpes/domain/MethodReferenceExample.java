@@ -4,7 +4,7 @@ import java.util.function.Predicate;
 
 public class MethodReferenceExample {
 
-    public void chamadaComReference() {
+    public void referenceCall() {
         HasJCFObject a = new HasJCFObject();
         a.getElements().forEach(System.out::println);
     }

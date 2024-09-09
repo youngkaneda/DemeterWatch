@@ -18,9 +18,6 @@ import static org.junit.Assert.assertNotEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author juan
- */
 public class MatrixConfidenceTest {
 
     private final List<Call> calls = ofProject();
@@ -51,7 +48,7 @@ public class MatrixConfidenceTest {
     public void WeightSumTest() throws IOException {
         assertNotEquals(0, dg.toMatrix().sumAllWeight());
         assertEquals(17, dg.toMatrix().sumAllWeight());
-        Assert.assertEquals(13, dg.toMatrix().matrizDeAdjacencia().toArray().length);
+        Assert.assertEquals(13, dg.toMatrix().adjacencyMatrix().toArray().length);
     }
 
 }

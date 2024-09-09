@@ -6,7 +6,6 @@ import ifpb.gpes.graph.Node;
 import java.io.*;
 import java.nio.file.*;
 import java.util.List;
-import java.util.function.IntFunction;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -15,24 +14,44 @@ import java.util.stream.IntStream;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 /**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 25/11/2017, 09:56:38
+ * Handles the conversion of a {@link Matrix} to JSON format and generates necessary files for visualization.
+ * <p>
+ * This class provides functionality to generate JSON representations of nodes and edges in a matrix,
+ * and create corresponding files for visualization purposes. It also includes methods to normalize strings
+ * for JSON formatting and to copy resource files.
+ * </p>
  */
 public class JsonMatrix {
 
     private Matrix matrix;
 
+    /**
+     * Constructs a {@code JsonMatrix} with the specified {@link Matrix}.
+     *
+     * @param matrix The matrix to be converted to JSON.
+     */
     public JsonMatrix(Matrix matrix) {
         this.matrix = matrix;
     }
 
+    /**
+     * Converts the matrix to JSON format and generates the necessary files for visualization.
+     *
+     * @param indices   The list of indices to highlight in the JSON output.
+     * @param outputDir The directory where the generated files will be saved.
+     */
     public void toJson(List<Integer> indices, String outputDir) {
         String nodes = nodesToJson(matrix, indices);
         String edges = edgesToJson(matrix);
         generateFiles(nodes, edges, matrix.namesColumns(), outputDir);
     }
 
+    /**
+     * Converts the edges of the matrix to JSON format.
+     *
+     * @param matrix The matrix containing the edges.
+     * @return A JSON string representing the edges of the matrix.
+     */
     private static String edgesToJson(Matrix matrix) {
         int[][] matrixs = matrix.toArray();
         return IntStream.range(0, matrixs.length)
@@ -45,10 +64,17 @@ public class JsonMatrix {
             .collect(Collectors.joining(", ", "[", "]"));
     }
 
+    /**
+     * Converts the nodes of the matrix to JSON format.
+     *
+     * @param matrix  The matrix containing the nodes.
+     * @param indices The list of indices to highlight in the JSON output.
+     * @return A JSON string representing the nodes of the matrix.
+     */
     private String nodesToJson(Matrix matrix, List<Integer> indices) {
         String[] namesColumns = matrix.namesColumns();
         return IntStream.range(0, namesColumns.length)
-            .filter(this.matrix::conectado)
+            .filter(this.matrix::connected)
             .mapToObj((i) -> {
                 Node node = matrix.getColumns()[i];
                 if (indices.contains(i)) {
@@ -62,6 +88,12 @@ public class JsonMatrix {
             .collect(Collectors.joining(", ", "[", "]"));
     }
 
+    /**
+     * Normalizes a string for JSON formatting by escaping special characters.
+     *
+     * @param value The string to be normalized.
+     * @return The normalized string suitable for JSON.
+     */
     public String normalizeToJson(String value) {
         if (value == null) {
             return "";
@@ -72,6 +104,14 @@ public class JsonMatrix {
         return value;
     }
 
+    /**
+     * Generates the necessary files for visualization.
+     *
+     * @param nodes        The JSON representation of the nodes.
+     * @param edges        The JSON representation of the edges.
+     * @param namesColumns The names of the columns in the matrix.
+     * @param outputDir    The directory where the files will be saved.
+     */
     private void generateFiles(String nodes, String edges, String[] namesColumns, String outputDir) {
         Path script = Paths.get(outputDir + "script.js");
         Path elements = Paths.get(outputDir + "elements.json");
@@ -82,14 +122,26 @@ public class JsonMatrix {
         createFileCopy(script, "script.js");
     }
 
-    private void createJson(String texto, Path path) {
+    /**
+     * Creates a JSON file with the specified content at the given path.
+     *
+     * @param text The content to be written to the file.
+     * @param path The path where the file will be created.
+     */
+    private void createJson(String text, Path path) {
         try (BufferedWriter writer = Files.newBufferedWriter(path)) {
-            writer.write(texto);
+            writer.write(text);
         } catch (IOException ex) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "problem writing file, the directory was not found or not exist.");
         }
     }
 
+    /**
+     * Copies a resource file to the specified path.
+     *
+     * @param path             The path where the resource file will be copied.
+     * @param resourceFilename The name of the resource file to be copied.
+     */
     private void createFileCopy(Path path, String resourceFilename) {
         try {
             InputStream stream = getClass().getClassLoader().getResourceAsStream(resourceFilename);
@@ -99,19 +151,13 @@ public class JsonMatrix {
         }
     }
 
-    private String colunas(String[] namesColumns) {
-        String collect = IntStream.range(0, namesColumns.length)
-            .mapToObj(x -> String.format("%d - %s", x, namesColumns[x]))
-            .collect(Collectors.joining(" "));
-        return collect;
-    }
-
-    private String colunasFormatadasHtml(String[] namesColumns) {
-        return IntStream.range(0, namesColumns.length)
-            .mapToObj(x -> String.format("<p class=\"col-md-4\"><span class=\"badge\">%d</span> %s</p>", x, namesColumns[x]))
-            .collect(Collectors.joining(""));
-    }
-
+    /**
+     * Represents an edge in a graph for visualization purposes in JSON format for the vis.js library.
+     * <p>
+     * The {@code EdgeVis} class holds information about the source, destination, and label of an edge,
+     * and provides functionality to convert this information into a JSON string suitable for visualization.
+     * </p>
+     */
     private static class EdgeVis {
 
         private final String from;
@@ -119,29 +165,57 @@ public class JsonMatrix {
         private final String label;
         private final String arrows = "to";
 
+        /**
+         * Constructs an {@code EdgeVis} object with the specified source node, destination node, and label.
+         *
+         * @param from  The source node of the edge.
+         * @param to    The destination node of the edge.
+         * @param label The label associated with the edge.
+         */
         public EdgeVis(String from, String to, String label) {
             this.from = from;
             this.to = to;
             this.label = label;
         }
 
+        /**
+         * Constructs an empty {@code EdgeVis} object with default values.
+         */
         public EdgeVis() {
             this("", "", "");
         }
 
+        /**
+         * Constructs an {@code EdgeVis} object with the specified source and destination node indices and label.
+         *
+         * @param from  The index of the source node.
+         * @param to    The index of the destination node.
+         * @param label The label associated with the edge.
+         */
         private EdgeVis(int from, int to, int label) {
             this(String.valueOf(from),
                 String.valueOf(to),
                 String.valueOf(label));
         }
 
+        /**
+         * Returns a string representation of the edge.
+         *
+         * @return A string representing the edge, including the source, destination, and label.
+         */
         @Override
         public String toString() {
             return "EdgeVis{" + "from=" + from + ", to=" + to + ", label=" + label + ", arrows=" + arrows + '}';
         }
 
+        /**
+         * Converts the edge information to a JSON string following the vis.js format.
+         *
+         * @return A JSON string representing the edge.
+         */
         public String toJson() {
             return String.format("{\"from\":\"%s\", \"to\":\"%s\", \"arrows\":\"to\", \"label\":\"%s\"}", from, to, label);
         }
     }
+
 }

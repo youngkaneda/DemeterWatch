@@ -1,17 +1,36 @@
 package ifpb.gpes;
 
 /**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 06/07/2017, 19:04:36
+ * Interface representing a type of project configuration.
+ * This interface defines methods for managing source paths and classpath entries in a project.
  */
 public interface ProjectType {
 
-    public void addSources(String source);
+    /**
+     * Adds source paths to the project type.
+     *
+     * @param source The source paths to be added.
+     */
+    void addSources(String source);
 
-    public String sources();
+    /**
+     * Retrieves the source paths associated with the project type.
+     *
+     * @return The source paths as a {@code String}.
+     */
+    String sources();
 
+    /**
+     * Adds classpath entries to the project type.
+     *
+     * @param classpath An array of classpath entries to be added.
+     */
     void addClasspath(String[] classpath);
 
-    public String[] classpath();
+    /**
+     * Retrieves the classpath entries associated with the project type.
+     *
+     * @return An array of classpath entries.
+     */
+    String[] classpath();
 }

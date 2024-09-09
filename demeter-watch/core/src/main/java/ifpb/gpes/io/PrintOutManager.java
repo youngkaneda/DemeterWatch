@@ -6,12 +6,15 @@ import ifpb.gpes.ExportManager;
 import java.util.List;
 
 /**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 07/07/2017, 16:09:20
+ * The {@code FileExportManager} class is an implementation of the {@link ExportManager} interface
+ * that handles printing method call representations to standard output.
  */
 public class PrintOutManager implements ExportManager {
 
+    /**
+     * Exports the method call representations to stdout.
+     * @param elements List of {@link Call}.
+     */
     @Override
     public void export(List<Call> elements) {
         elements.stream().forEach(no -> System.out.println(no.callGraph()));

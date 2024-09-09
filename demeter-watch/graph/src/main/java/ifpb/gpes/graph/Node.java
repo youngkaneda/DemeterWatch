@@ -3,7 +3,9 @@ package ifpb.gpes.graph;
 import java.util.Objects;
 
 /**
- * @author juan
+ * The {@code Node} class represents a node in a graph structure, capturing some details about
+ * the {@link ifpb.gpes.Call} object, like the class name of the method call, its name, return type,
+ * and who invoked it.
  */
 public class Node {
 

@@ -1,25 +1,26 @@
 package ifpb.gpes.graph;
 
 import ifpb.gpes.Call;
-
 import java.util.List;
 import java.util.function.Function;
 
 /**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 19/11/2017, 18:23:21
+ * Adapter class that converts a list of {@code Call} objects into a {@code Graph}.
+ * <p>
+ * This class implements the {@code Function} interface and provides a way to transform
+ * a list of method calls into a directed graph representation.
+ * </p>
  */
 public class AdapterGraph implements Function<List<Call>, Graph> {
 
+    /**
+     * Applies the transformation from a list of {@code Call} objects to a {@code Graph}.
+     *
+     * @param calls the list of {@code Call} objects representing method calls.
+     * @return a {@code Graph} representation of the method calls.
+     */
     @Override
     public Graph apply(List<Call> calls) {
-        Graph graph = calls.stream()
-            .collect(DefaultDirectGraph::new,
-                DefaultDirectGraph::buildNode,
-                (t, u) -> {
-                });
-        return graph;
+        return calls.stream().collect(DefaultDirectGraph::new, DefaultDirectGraph::buildNode, (t, u) -> {});
     }
-
 }

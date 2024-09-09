@@ -3,6 +3,16 @@ package ifpb.gpes.jdt;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.dom.*;
 
+/**
+ * A dummy implementation of the {@link ITypeBinding} interface.
+ * <p>
+ * This class is used as a placeholder for type bindings in cases where actual type information is not available or where
+ * the binding being analyzed is a Constructor, as you can see in 
+ * {@link DefaultVisitor#inferCalledInMethodReturnTypeValue(Type, MethodDeclaration)} and {@link DefaultVisitor#inferMethodDeclarationParameters(MethodDeclaration)}.
+ * </p>
+ *
+ * @see ITypeBinding
+ */
 public class DummyTypeBinding implements ITypeBinding {
 
     private Type type;

@@ -4,16 +4,26 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 
 /**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 18/11/2017, 15:20:49
+ * DefaultStrategyMetric is an implementation of the {@code StrategyMetric} interface.
+ * <p>
+ * This class calculates a metric by dividing the number of incoming calls (callIn)
+ * by the number of outgoing calls (callOut) using {@code BigDecimal} for precision.
+ * The computation uses the {@code MathContext.DECIMAL32} for rounding and precision management.
+ * </p>
  */
 public class DefaultStrategyMetric implements StrategyMetric {
 
+    /**
+     * Computes the metric as the ratio of {@code callIn} to {@code callOut}.
+     *
+     * @param callIn the number of incoming method calls.
+     * @param callOut the number of outgoing method calls.
+     * @return a {@code BigDecimal} representing the computed ratio.
+     * @throws ArithmeticException if {@code callOut} is zero.
+     */
     @Override
     public BigDecimal compute(int callIn, int callOut) {
         return new BigDecimal(callIn)
-            .divide(new BigDecimal(callOut),
-                MathContext.DECIMAL32);
+            .divide(new BigDecimal(callOut), MathContext.DECIMAL32);
     }
 }

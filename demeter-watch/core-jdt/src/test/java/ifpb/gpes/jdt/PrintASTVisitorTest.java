@@ -15,9 +15,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * @author Ricardo Job
- */
 public class PrintASTVisitorTest {
 
     private final PrintASTVisitor visitor = new PrintASTVisitor();
@@ -37,7 +34,7 @@ public class PrintASTVisitorTest {
 
         assertNotNull(returnList);
         assertTrue(returnList.isEmpty());
-        assertFalse("".equals(visitor.visitToString().trim()));
+        assertNotEquals("", visitor.visitToString().trim());
         logger.log(Level.INFO, "---Visitor begin---");
         logger.log(Level.INFO, visitor.visitToString());
         logger.log(Level.INFO, "---Visitor end  ---");

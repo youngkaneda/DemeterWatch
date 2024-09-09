@@ -24,7 +24,7 @@ public class LambdaArgumentsTest {
     private static final String sources = PathUtils.connect("..", "samples", "src", "main", "java");
 
     @Test
-    public void testeM1() {
+    public void m1Test() {
         assertThat(result, hasItems(Call.of("java.lang.Iterable", "forEach[java.util.function.Consumer<? super ifpb.gpes.domain.HasJCFObject>]", "void", "ifpb.gpes.domain.LambdaWithArguments", "m1[]", "void", null, "new HasJCFObject().getElements()"),
             Call.of("ifpb.gpes.domain.HasJCFObject", "getElements[]", "java.util.List<ifpb.gpes.domain.HasJCFObject>", "ifpb.gpes.domain.LambdaWithArguments", "m1[]", "void", "forEach[java.util.function.Consumer<? super ifpb.gpes.domain.HasJCFObject>]", "new HasJCFObject()"),
             Call.of("java.util.function.Predicate", "negate[]", "java.util.function.Predicate<ifpb.gpes.domain.HasJCFObject>", "java.lang.Object", "accept[ifpb.gpes.domain.HasJCFObject]", "void", null, "ts.m6(ts)"),

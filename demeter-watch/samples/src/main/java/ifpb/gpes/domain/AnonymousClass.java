@@ -1,10 +1,5 @@
 package ifpb.gpes.domain;
 
-/**
- * @author Ricardo Job
- * @mail ricardo.job@ifpb.edu.br
- * @since 03/07/2017, 21:38:08
- */
 public class AnonymousClass {
 
     public void m1() {
