@@ -94,8 +94,8 @@ that method node is called.
 
 ### Examples
 
-This repository also contains an examples directory containing the results of running the tool with 40 projects randomly 
-selected from [Qualitas.class corpus](http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html) a compiled archive of 
+This repository also contains an examples directory containing the results of running the tool with 40 randomly 
+selected projects from [Qualitas.class corpus](http://java.labsoft.dcc.ufmg.br/qualitas.class/index.html) a compiled archive of 
 open source Java projects.
 
 ## License
@@ -105,5 +105,5 @@ This project is licensed under [the GPL v3+ license](https://github.com/youngkan
 ## About the name
 
 This project was previously called "Method Call Parser" until the 1.0.0 release due to its high modularization, some of its 
-modules can be used and extended to do other type of analysis, even be extended to use another Abstract Syntax Tree parsing 
+modules can be used and extended to do other types of analysis, even be extended to use others Abstract Syntax Tree parsing 
 libraries.
