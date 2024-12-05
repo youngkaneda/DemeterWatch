@@ -76,6 +76,26 @@ This approach is crucial as it highlights issues that are not readily apparent, 
 subtle and difficult-to-detect forms [@BLOCK]. It also provides a means to visualize 
 detected breaches, facilitating corrections in the source code.
 
+# State of field
+
+Some works have already attempted to identify such violations in other software 
+contexts and scopes. One such work [@LoDC] presented a specification language for 
+use by framework users, enabling them to mechanically check code compliance. This 
+allows framework developers to create constraints on what others must avoid when 
+coding with that framework in a C++ environment. It also demonstrates the creation 
+of a Law of Demeter specification outlining which couplings are acceptable and 
+which should be avoided. Unfortunately, it did not show any ways to detect when 
+an object's state is being changed, which is the focus of this project.
+
+A second work [@LoDP] aimed to detect Law of Demeter (LoD) violations within Java 
+as an Eclipse plugin, but it primarily focused on checking for dependencies between 
+packages.
+
+Unlike the tools cited above, this work contributes to the state of the field by 
+delving into the detection of not only pure LoD violations but also whether these 
+violations change the object's state without its consent, because this leads to a more 
+unpredictable context and a more difficult software to maintain.
+
 # Example use case
 
 The complete dataset of experiments is available in the repository to further
