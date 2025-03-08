@@ -33,7 +33,7 @@ to run the analysis.
 
 Next will be presented an example of how use the tool properly, and then an explanation about its outputs:
 
-*PS.: the classpath -cp generally is not needed since the tool will analyze the project source code, but in some cases it 
+*PS.: the classpath -c generally is not needed since the tool will analyze the project source code, but in some cases it 
 is necessary to load additional source code entries to the AST parse library used.*
 ```shell
 java -jar demeter-watch.jar \
