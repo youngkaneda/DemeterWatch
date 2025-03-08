@@ -41,7 +41,7 @@ java -jar demeter-watch.jar \
     -r=/home/user/projects/ \
     -p=tomcat-7.0.2/ \
     -s=tomcat-7.0.2/java/ \
-    -cp="lib/ lib2/"
+    -c="lib/ lib2/"
 ```
 After the program run completely it will produce output files so the user can visualize where in the code the principle was 
 broken. They are as follows:
