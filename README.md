@@ -85,12 +85,49 @@ The method call shown in the example can be read as:
 ### Visualization page
 
 To access the graph visualization page you only need to open the `graph.html` file in any browser, be aware that since all 
-files are local, you may need change the CORS origin policy in your browser configuration to accept local files.
+files are local, you may need change the CORS origin policy in your browser configuration to accept local files, look at [here](#how-enable-cors-requests-for-local-files).
+
+:warning: WARNING :warning:
+
+Larger codebases may cause the visualization page to load slower than usual because `vis.js` needs to build the whole graph 
+before presenting it.
 
 ![ss](https://i.imgur.com/M6GNKEf.png)
 
 The nodes that breaks the LoD principle are painted with red, and the graph edges have weight to indicate how many times 
 that method node is called.
+
+### How enable CORS requests for local files
+
+Modern browsers like Chromium and Firefox enforce strict security policies that prevent local files (`file://` URLs)
+from making cross-origin requests (CORS) to other resources, including other local files. However, if you need to allow
+CORS requests to local files for development or testing purposes, here are some approaches:
+
+#### Chromium-Based Browsers (Chrome, Edge, Brave, etc.)
+
+Run the browser with the `--disable-web-security` and `--allow-file-access-from-files` flags:
+
+```
+google-chrome --disable-web-security --allow-file-access-from-files --user-data-dir=/tmp/chrome_dev
+```
+
+The `--user-data-dir` is needed to prevent profile conflicts.
+
+#### Firefox
+
+Use `about:config` Settings:
+
+* Open Firefox and go to `about:config`.
+* Search for `security.fileuri.strict_origin_policy` and set it to `false`.
+* This allows local files to make CORS requests but is insecure and should only be used for testing.
+
+
+### Community guidelines
+
+If you found a bug, something that could be improved, or a new feature to increase the functionality of this software 
+you can open an issue, or fork this repository and send a PR.
+
+If you have any question about this project, how it works, or any implementation detail, email to juan.pablo@academico.ifpb.edu.br
 
 ### Examples
 
