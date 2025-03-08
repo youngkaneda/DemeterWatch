@@ -5,11 +5,12 @@ import ifpb.gpes.graph.Node;
 
 import java.io.*;
 import java.nio.file.*;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
@@ -41,27 +42,68 @@ public class JsonMatrix {
      * @param outputDir The directory where the generated files will be saved.
      */
     public void toJson(List<Integer> indices, String outputDir) {
-        String nodes = nodesToJson(matrix, indices);
-        String edges = edgesToJson(matrix);
-        generateFiles(nodes, edges, matrix.namesColumns(), outputDir);
+        boolean smallerOutput = Boolean.parseBoolean(System.getProperty("reducedGraph"));
+        Collection<EdgeVis> edges;
+        edges = smallerOutput ? buildEdges(matrix, indices) : buildEdges(matrix);
+        String nodesJson = nodesToJson(
+            matrix,
+            indices,
+            smallerOutput
+                ? edges.stream().flatMap(e -> Stream.of(Integer.valueOf(e.from), Integer.valueOf(e.to))).collect(Collectors.toSet())
+                : Collections.emptySet()
+            );
+        String edgesJson = edges.stream().map(EdgeVis::toJson).collect(Collectors.joining(", ", "[", "]"));
+        generateFiles(nodesJson, edgesJson, matrix.namesColumns(), outputDir);
     }
 
     /**
-     * Converts the edges of the matrix to JSON format.
+     * Converts the edges of the matrix to collection of objects.
      *
      * @param matrix The matrix containing the edges.
-     * @return A JSON string representing the edges of the matrix.
+     * @return A Collection of {@link EdgeVis} objects representing the edges of the matrix.
      */
-    private static String edgesToJson(Matrix matrix) {
+    private static Collection<EdgeVis> buildEdges(Matrix matrix) {
         int[][] matrixs = matrix.toArray();
         return IntStream.range(0, matrixs.length)
             .mapToObj(x -> IntStream.range(0, matrixs.length)
                 .filter(f -> matrixs[x][f] != 0)
                 .mapToObj(y -> new EdgeVis(x, y, matrixs[x][y]))
                 .collect(Collectors.toList()))
-            .flatMap(v -> v.stream())
-            .map(EdgeVis::toJson)
-            .collect(Collectors.joining(", ", "[", "]"));
+            .flatMap(Collection::stream).collect(Collectors.toList());
+    }
+
+    /**
+     * Converts the edges of the matrix to collection of objects.
+     *
+     * @param matrix The matrix containing the edges.
+     * @param indices The List with the indices of calls that break the LoD.
+     * @return A Collection of {@link EdgeVis} objects representing the edges of the matrix.
+     */
+    private static Collection<EdgeVis> buildEdges(Matrix matrix, List<Integer> indices) {
+        int[][] matrixs = matrix.toArray();
+        int nextIndex;
+        Set<EdgeVis> edges = new HashSet<>();
+        for (int j = 0; j < matrixs.length; j++) {
+            if (indices.contains(j)) {
+                nextIndex = j;
+                while (nextIndex != -1) {
+                    for (int i = 0; i < matrixs.length; i++) {
+                        if (matrixs[i][nextIndex] == 0) {
+                            if (i == matrixs.length - 1) {
+                                nextIndex = -1;
+                            }
+                            continue;
+                        }
+                        if (matrixs[i][nextIndex] != 0) {
+                            edges.add(new EdgeVis(i, nextIndex, matrixs[i][nextIndex]));
+                            nextIndex = i;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return edges;
     }
 
     /**
@@ -69,12 +111,15 @@ public class JsonMatrix {
      *
      * @param matrix  The matrix containing the nodes.
      * @param indices The list of indices to highlight in the JSON output.
+     * @param edgesToLookup The list of edges created, if the user selected a smaller output it will
+     * only produce the node representation of nodes with connections to LoD breaks.
      * @return A JSON string representing the nodes of the matrix.
      */
-    private String nodesToJson(Matrix matrix, List<Integer> indices) {
+    private String nodesToJson(Matrix matrix, List<Integer> indices, Collection<Integer> edgesToLookup) {
         String[] namesColumns = matrix.namesColumns();
         return IntStream.range(0, namesColumns.length)
             .filter(this.matrix::connected)
+            .filter(i -> edgesToLookup.isEmpty() || edgesToLookup.contains(i))
             .mapToObj((i) -> {
                 Node node = matrix.getColumns()[i];
                 if (indices.contains(i)) {
@@ -215,6 +260,24 @@ public class JsonMatrix {
          */
         public String toJson() {
             return String.format("{\"from\":\"%s\", \"to\":\"%s\", \"arrows\":\"to\", \"label\":\"%s\"}", from, to, label);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            EdgeVis edgeVis = (EdgeVis) o;
+            if (!Objects.equals(from, edgeVis.from)) return false;
+            if (!Objects.equals(to, edgeVis.to)) return false;
+            return Objects.equals(label, edgeVis.label);
+        }
+
+        @Override
+        public int hashCode() {
+            int result = from != null ? from.hashCode() : 0;
+            result = 31 * result + (to != null ? to.hashCode() : 0);
+            result = 31 * result + (label != null ? label.hashCode() : 0);
+            return result;
         }
     }
 

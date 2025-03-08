@@ -92,6 +92,14 @@ files are local, you may need change the CORS origin policy in your browser conf
 Larger codebases may cause the visualization page to load slower than usual because `vis.js` needs to build the whole graph 
 before presenting it.
 
+If you want to visualize a reduced call graph you can run the JAR file with the following property set
+
+```
+java -jar -DreducedGraph=True demeter-watch.jar ...options
+```
+
+This will produce only the root to leaf path of method calls that break the LoD
+
 ![ss](https://i.imgur.com/M6GNKEf.png)
 
 The nodes that breaks the LoD principle are painted with red, and the graph edges have weight to indicate how many times 
