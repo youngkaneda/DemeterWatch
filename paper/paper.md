@@ -66,10 +66,10 @@ with the LoD, other problems may arise. One such issue is the confinement break,
 occurs when an object can change the state of another object without its knowledge, by 
 calling methods that improperly expose their properties.
 
-Identifying principle violations in Java source code is challenging. Static analysis, 
+Identifying principle violations in Java source code is challenging. Static analysis [@static], 
 the method employed in this work, cannot pinpoint which methods alter an object's state. 
 Consequently, the analysis is focused on data structures within the Java Collections 
-Framework (JCF). The JCF is well-documented, and its documentation specifies which 
+Framework (JCF)[@JCF]. The JCF is well-documented, and its documentation specifies which 
 methods modify the state of collection objects.
 
 This approach is crucial as it highlights issues that are not readily apparent, including 
@@ -114,17 +114,16 @@ are well-known projects used by Java developers:
 **Table 1.** Example of violations found in real open source projects analyzed by the tool.
 
 In addition to textual output, the tool generates an HTML page with a graphical 
-representation of method call chains in the source code. Nodes that violate the 
-Law of Demeter (LoD) principle are highlighted in a distinct color. Each vertex's 
-weight indicates the frequency of method calls. Figure 1 contains an illustrated 
-example of a detected violation.
+representation of method call chains in the source code. Nodes that violate LoD principle are 
+highlighted in a distinct color. Each vertex's weight indicates the frequency of method calls. 
+Figure 1 contains an illustrated example of a detected violation.
 
 ![](ss.png)
 **Figure 1.** DemeterWatch HTML output page.
 
 # Acknowledgements
 
-The author would like to express gratitude to the IFPB Institute which made this 
-research project possible to be developed and offered the support needed.
+The main author, Juan Pablo P. de Aquino, would like to express gratitude to the IFPB Institute 
+which made this research project possible to be developed and offered the support needed.
 
 # References
