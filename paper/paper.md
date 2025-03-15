@@ -44,13 +44,13 @@ restricted [@PARNAS]. In this sense, when an object's encapsulation is compromis
 implementation becomes exposed, and other parts of the code can directly alter its 
 behavior, reducing the cohesion of the software. This coupling between components 
 can cause critical problems in the development cycle, increasing the costs of its 
-evolution and maintenance. This work presents DemeterWatch, a tool to identify a 
+evolution and maintenance. This paper presents DemeterWatch, a tool to identify a 
 specific case of coupling violations inside Java projects source code.
 
 # Statement of need
 
 One of the pillars of software engineering is the pursuit of continuous improvement of 
-processes and practices, incorporating feedback and learnings throughout the software 
+processes and practices, incorporating feedback and lessons throughout the software 
 lifecycle. Proper documentation, efficient team collaboration, and ensuring quality are 
 fundamental elements for success in this type of project. Additionally, the rapid 
 evolution of technology requires software engineering professionals to stay up-to-date 
@@ -79,7 +79,7 @@ detected breaches, facilitating corrections in the source code.
 # State of field
 
 Some works have already attempted to identify such violations in other software 
-contexts and scopes. One such work [@LoDC] presented a specification language for 
+contexts and scopes. One example is @LoDC, which presented a specification language for 
 use by framework users, enabling them to mechanically check code compliance. This 
 allows framework developers to create constraints on what others must avoid when 
 coding with that framework in a C++ environment. It also demonstrates the creation 
@@ -87,7 +87,7 @@ of a Law of Demeter specification outlining which couplings are acceptable and
 which should be avoided. Unfortunately, it did not show any ways to detect when 
 an object's state is being changed, which is the focus of this project.
 
-A second work [@LoDP] aimed to detect Law of Demeter (LoD) violations within Java 
+In a second work, @LoDP aimed to detect Law of Demeter (LoD) violations within Java 
 as an Eclipse plugin, but it primarily focused on checking for dependencies between 
 packages.
 
@@ -100,9 +100,9 @@ unpredictable context and a more difficult software to maintain.
 
 The complete dataset of experiments is available in the repository to further
 visualization containing forty randomly selected projects outputs, those 
-projects are present at Qualitas.class corpus [@QUALITAS]. The Table 1 
+projects are present at Qualitas.class corpus [@QUALITAS]. Table 1 
 shows how many LoD violations were found in open source projects, some of them 
-are well-known projects used by Java developers:
+well-known projects used by Java developers:
 
 |        Name        | Violations found |
 |:------------------:|:----------------:|
@@ -114,7 +114,7 @@ are well-known projects used by Java developers:
 **Table 1.** Example of violations found in real open source projects analyzed by the tool.
 
 In addition to textual output, the tool generates an HTML page with a graphical 
-representation of method call chains in the source code. Nodes that violate LoD principle are 
+representation of method call chains in the source code. Nodes that violated LoD principle are 
 highlighted in a distinct color. Each vertex's weight indicates the frequency of method calls. 
 Figure 1 contains an illustrated example of a detected violation.
 
